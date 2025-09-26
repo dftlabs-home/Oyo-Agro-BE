@@ -1,0 +1,897 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "OyoAgro.Api",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/v1/Lga/Create": {
+      "post": {
+        "tags": [
+          "Lga"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LgaParam"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LgaParam"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LgaParam"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Lga/GetLgas": {
+      "get": {
+        "tags": [
+          "Lga"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Lga/GetLgasByParam": {
+      "get": {
+        "tags": [
+          "Lga"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Lgaid": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Lganame": {
+                    "type": "string"
+                  },
+                  "Regionid": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              },
+              "encoding": {
+                "Lgaid": {
+                  "style": "form"
+                },
+                "Lganame": {
+                  "style": "form"
+                },
+                "Regionid": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Lga/deleteLga/{lgaId}": {
+      "get": {
+        "tags": [
+          "Lga"
+        ],
+        "parameters": [
+          {
+            "name": "lgaId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Lga/getLga/{lgaId}": {
+      "get": {
+        "tags": [
+          "Lga"
+        ],
+        "parameters": [
+          {
+            "name": "lgaId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/ProfileActivity/Create": {
+      "post": {
+        "tags": [
+          "ProfileActivity"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProfileActivityParam"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProfileActivityParam"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProfileActivityParam"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/ProfileActivity/GetList": {
+      "get": {
+        "tags": [
+          "ProfileActivity"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/ProfileActivity/GetListByParam": {
+      "get": {
+        "tags": [
+          "ProfileActivity"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Activityid": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Activityparentid": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Activityname": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "Activityid": {
+                  "style": "form"
+                },
+                "Activityparentid": {
+                  "style": "form"
+                },
+                "Activityname": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/ProfileActivity/getEntity/{activityId}": {
+      "get": {
+        "tags": [
+          "ProfileActivity"
+        ],
+        "parameters": [
+          {
+            "name": "activityId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/ProfileActivityParent/Create": {
+      "post": {
+        "tags": [
+          "ProfileActivityParent"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProfileActivityParentParam"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProfileActivityParentParam"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProfileActivityParentParam"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/ProfileActivityParent/GetList": {
+      "get": {
+        "tags": [
+          "ProfileActivityParent"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/ProfileActivityParent/GetListByParam": {
+      "get": {
+        "tags": [
+          "ProfileActivityParent"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Activityparentid": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Activityparentname": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "Activityparentid": {
+                  "style": "form"
+                },
+                "Activityparentname": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/ProfileActivityParent/getEntity/{parentId}": {
+      "get": {
+        "tags": [
+          "ProfileActivityParent"
+        ],
+        "parameters": [
+          {
+            "name": "parentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/ProfileAdditionalActivity/Create": {
+      "post": {
+        "tags": [
+          "ProfileAdditionalActivity"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProfileadditionalactivityParam"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProfileadditionalactivityParam"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProfileadditionalactivityParam"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/ProfileAdditionalActivity/GetList": {
+      "get": {
+        "tags": [
+          "ProfileAdditionalActivity"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/ProfileAdditionalActivity/GetListByParam": {
+      "get": {
+        "tags": [
+          "ProfileAdditionalActivity"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "UserId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "additionalActivityId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Activityid": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Canadd": {
+                    "type": "boolean"
+                  },
+                  "Canedit": {
+                    "type": "boolean"
+                  },
+                  "Canview": {
+                    "type": "boolean"
+                  },
+                  "Candelete": {
+                    "type": "boolean"
+                  },
+                  "Canapprove": {
+                    "type": "boolean"
+                  },
+                  "Expireon": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                }
+              },
+              "encoding": {
+                "UserId": {
+                  "style": "form"
+                },
+                "additionalActivityId": {
+                  "style": "form"
+                },
+                "Activityid": {
+                  "style": "form"
+                },
+                "Canadd": {
+                  "style": "form"
+                },
+                "Canedit": {
+                  "style": "form"
+                },
+                "Canview": {
+                  "style": "form"
+                },
+                "Candelete": {
+                  "style": "form"
+                },
+                "Canapprove": {
+                  "style": "form"
+                },
+                "Expireon": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/ProfileAdditionalActivity/deleteEntity/{profileAdditionalActivityId}": {
+      "get": {
+        "tags": [
+          "ProfileAdditionalActivity"
+        ],
+        "parameters": [
+          {
+            "name": "profileAdditionalActivityId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/ProfileAdditionalActivity/getEntity/{additionalActivityId}": {
+      "get": {
+        "tags": [
+          "ProfileAdditionalActivity"
+        ],
+        "parameters": [
+          {
+            "name": "profileAdditionalActivityId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "additionalActivityId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Region/Create": {
+      "post": {
+        "tags": [
+          "Region"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegionParam"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegionParam"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegionParam"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Region/GetRegions": {
+      "get": {
+        "tags": [
+          "Region"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Region/GetRegionsByParam": {
+      "get": {
+        "tags": [
+          "Region"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Regionid": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Regionname": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "Regionid": {
+                  "style": "form"
+                },
+                "Regionname": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Region/deleteRegion/{regionId}": {
+      "get": {
+        "tags": [
+          "Region"
+        ],
+        "parameters": [
+          {
+            "name": "regionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Region/getRegion/{regionId}": {
+      "get": {
+        "tags": [
+          "Region"
+        ],
+        "parameters": [
+          {
+            "name": "regionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/User/login": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "userName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/User/logout": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/User/register": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserParam"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserParam"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserParam"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "LgaParam": {
+        "type": "object",
+        "properties": {
+          "lgaid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "lganame": {
+            "type": "string",
+            "nullable": true
+          },
+          "regionid": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProfileActivityParam": {
+        "type": "object",
+        "properties": {
+          "activityid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "activityparentid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "activityname": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProfileActivityParentParam": {
+        "type": "object",
+        "properties": {
+          "activityparentid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "activityparentname": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProfileadditionalactivityParam": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "additionalActivityId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "activityid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "canadd": {
+            "type": "boolean"
+          },
+          "canedit": {
+            "type": "boolean"
+          },
+          "canview": {
+            "type": "boolean"
+          },
+          "candelete": {
+            "type": "boolean"
+          },
+          "canapprove": {
+            "type": "boolean"
+          },
+          "expireon": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegionParam": {
+        "type": "object",
+        "properties": {
+          "regionid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "regionname": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserParam": {
+        "type": "object",
+        "properties": {
+          "phonenumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "firstname": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastname": {
+            "type": "string",
+            "nullable": true
+          },
+          "decryptedPassword": {
+            "type": "string",
+            "nullable": true
+          },
+          "middlename": {
+            "type": "string",
+            "nullable": true
+          },
+          "gender": {
+            "type": "string",
+            "nullable": true
+          },
+          "emailAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "userName": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "salt": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "lgaid": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

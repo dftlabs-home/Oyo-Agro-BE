@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "T8HlPJ6aQsk3dKVNbYJlW77mNqTaJ+4SfaRwyvvgkAA=",
+  "Source": "OyoAgro.Api",
+  "BasePath": "_content/OyoAgro.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

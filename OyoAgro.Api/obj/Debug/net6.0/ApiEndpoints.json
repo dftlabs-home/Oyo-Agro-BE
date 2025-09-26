@@ -1,0 +1,462 @@
+[
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.LgaController",
+    "Method": "Create",
+    "RelativePath": "api/v1/Lga/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "OyoAgro.DataAccess.Layer.Models.Params.LgaParam",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.LgaController",
+    "Method": "DeleteEntity",
+    "RelativePath": "api/v1/Lga/deleteLga/{lgaId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "lgaId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.LgaController",
+    "Method": "GetEntity",
+    "RelativePath": "api/v1/Lga/getLga/{lgaId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "lgaId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.LgaController",
+    "Method": "GetList",
+    "RelativePath": "api/v1/Lga/GetLgas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.LgaController",
+    "Method": "GetList",
+    "RelativePath": "api/v1/Lga/GetLgasByParam",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Lgaid",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Lganame",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Regionid",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.ProfileActivityController",
+    "Method": "Create",
+    "RelativePath": "api/v1/ProfileActivity/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "OyoAgro.DataAccess.Layer.Models.Params.ProfileActivityParam",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.ProfileActivityController",
+    "Method": "GetEntity",
+    "RelativePath": "api/v1/ProfileActivity/getEntity/{activityId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "activityId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.ProfileActivityController",
+    "Method": "GetList",
+    "RelativePath": "api/v1/ProfileActivity/GetList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.ProfileActivityController",
+    "Method": "GetList",
+    "RelativePath": "api/v1/ProfileActivity/GetListByParam",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Activityid",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Activityparentid",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Activityname",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.ProfileActivityParentController",
+    "Method": "Create",
+    "RelativePath": "api/v1/ProfileActivityParent/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "OyoAgro.DataAccess.Layer.Models.Params.ProfileActivityParentParam",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.ProfileActivityParentController",
+    "Method": "GetEntity",
+    "RelativePath": "api/v1/ProfileActivityParent/getEntity/{parentId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "parentId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.ProfileActivityParentController",
+    "Method": "GetList",
+    "RelativePath": "api/v1/ProfileActivityParent/GetList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.ProfileActivityParentController",
+    "Method": "GetList",
+    "RelativePath": "api/v1/ProfileActivityParent/GetListByParam",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Activityparentid",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Activityparentname",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.ProfileAdditionalActivityController",
+    "Method": "Create",
+    "RelativePath": "api/v1/ProfileAdditionalActivity/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "OyoAgro.DataAccess.Layer.Models.Params.ProfileadditionalactivityParam",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.ProfileAdditionalActivityController",
+    "Method": "DeleteEntity",
+    "RelativePath": "api/v1/ProfileAdditionalActivity/deleteEntity/{profileAdditionalActivityId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "profileAdditionalActivityId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.ProfileAdditionalActivityController",
+    "Method": "GetEntity",
+    "RelativePath": "api/v1/ProfileAdditionalActivity/getEntity/{additionalActivityId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "profileAdditionalActivityId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "additionalActivityId",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.ProfileAdditionalActivityController",
+    "Method": "GetList",
+    "RelativePath": "api/v1/ProfileAdditionalActivity/GetList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.ProfileAdditionalActivityController",
+    "Method": "GetList",
+    "RelativePath": "api/v1/ProfileAdditionalActivity/GetListByParam",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "additionalActivityId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Activityid",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Canadd",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Canedit",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Canview",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Candelete",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Canapprove",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Expireon",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.RegionController",
+    "Method": "Create",
+    "RelativePath": "api/v1/Region/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "OyoAgro.DataAccess.Layer.Models.Params.RegionParam",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.RegionController",
+    "Method": "DeleteEntity",
+    "RelativePath": "api/v1/Region/deleteRegion/{regionId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "regionId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.RegionController",
+    "Method": "GetEntity",
+    "RelativePath": "api/v1/Region/getRegion/{regionId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "regionId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.RegionController",
+    "Method": "GetList",
+    "RelativePath": "api/v1/Region/GetRegions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.RegionController",
+    "Method": "GetList",
+    "RelativePath": "api/v1/Region/GetRegionsByParam",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Regionid",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Regionname",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.UserController",
+    "Method": "Login",
+    "RelativePath": "api/v1/User/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "password",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.UserController",
+    "Method": "LoginOff",
+    "RelativePath": "api/v1/User/logout",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.UserController",
+    "Method": "Register",
+    "RelativePath": "api/v1/User/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "OyoAgro.DataAccess.Layer.Models.Params.UserParam",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

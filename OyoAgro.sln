@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35514.174 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OyoAgro.Api", "OyoAgro.Api\OyoAgro.Api.csproj", "{3DCB11F4-6449-4F50-BA50-D0FB613885D1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2FF8EAC1-25B3-4759-8D53-544BD7C547D5} = {2FF8EAC1-25B3-4759-8D53-544BD7C547D5}
+		{D6ABDD52-F568-44CE-B072-1E843BB6E521} = {D6ABDD52-F568-44CE-B072-1E843BB6E521}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OyoAgro.DataAccess.Layer", "OyoAgro.DataAccess.Layer\OyoAgro.DataAccess.Layer.csproj", "{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OyoAgro.BusinessLogic.Layer", "OyoAgro.BusinessLogic.Layer\OyoAgro.BusinessLogic.Layer.csproj", "{D6ABDD52-F568-44CE-B072-1E843BB6E521}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3DCB11F4-6449-4F50-BA50-D0FB613885D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DCB11F4-6449-4F50-BA50-D0FB613885D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DCB11F4-6449-4F50-BA50-D0FB613885D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DCB11F4-6449-4F50-BA50-D0FB613885D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6ABDD52-F568-44CE-B072-1E843BB6E521}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6ABDD52-F568-44CE-B072-1E843BB6E521}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6ABDD52-F568-44CE-B072-1E843BB6E521}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6ABDD52-F568-44CE-B072-1E843BB6E521}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\OyoAgro.Api.props" />
+</Project>

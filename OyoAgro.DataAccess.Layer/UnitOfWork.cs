@@ -1,0 +1,61 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using OyoAgro.DataAccess.Layer.Interfaces;
+using OyoAgro.DataAccess.Layer.Models;
+using OyoAgro.DataAccess.Layer.Repositories;
+
+namespace OyoAgro.DataAccess.Layer
+{
+    public class UnitOfWork: IUnitOfWork, IDisposable
+    {
+        private readonly AppDbContext _context;
+
+        private IUserRepository? _users;
+        private IProfileAdditionalActivityRepository? _profileadditionalactivity;
+        private IProfileActivityRepository? _profileactivity;
+        private IUserProfileRepository? _userprofile;
+        private IProfileActivityParentRepository? _profileactivityparent;
+        private IRegionRepository? _regionRepository;
+        private ILgaRepository? _lgaRepository;
+        
+        public UnitOfWork(AppDbContext context)
+        {
+            _context = context;
+        }
+      
+        public IUserRepository Users =>
+         _users ??= new UserRepository();
+
+         public IProfileAdditionalActivityRepository ProfileAdditionalActivities =>
+         _profileadditionalactivity ??= new ProfileAdditionalActivityRepository();
+
+           public IUserProfileRepository UserProfile =>
+         _userprofile ??= new UserProfileRepository();
+
+           public IProfileActivityRepository ProfileActivity =>
+         _profileactivity ??= new ProfileActivityRepository();
+
+          public IProfileActivityParentRepository ProfileActivityParent =>
+         _profileactivityparent ??= new ProfileActivityParentRepository();
+
+         public IRegionRepository RegionRepository =>
+         _regionRepository ??= new RegionRepository();
+
+         public ILgaRepository LgaRepository =>
+         _lgaRepository ??= new LgaRepository();
+
+
+        public int Complete()
+        {
+            return _context.SaveChanges();
+        }
+
+        public void Dispose()
+        {
+            _context.Dispose();
+        }
+    }
+}
