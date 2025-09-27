@@ -1,23 +1,17 @@
-# Visual Studio
+# Ignore Visual Studio temporary files
 .vs/
-*.user
-*.suo
-
-# Build results
 bin/
 obj/
-Debug/
-Release/
-
-# Rider / JetBrains
-.idea/
-
-# Logs
+*.user
+*.suo
+*.cache
 *.log
 
-# Database files
-*.db
-*.sqlite
+# Ignore publish artifacts
+/app/publish/
 
-# Secrets
-appsettings.Development.json
+# Ignore IDE settings
+*.dbmdl
+*.dbproj.schemaview
+*.dbmdl
+*.jfm

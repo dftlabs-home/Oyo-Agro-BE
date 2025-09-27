@@ -1,0 +1,1557 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3DCB11F4-6449-4F50-BA50-D0FB613885D1}|OyoAgro.Api\\OyoAgro.Api.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DCB11F4-6449-4F50-BA50-D0FB613885D1}|OyoAgro.Api\\OyoAgro.Api.csproj|solutionrelative:oyoagro.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DCB11F4-6449-4F50-BA50-D0FB613885D1}|OyoAgro.Api\\OyoAgro.Api.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.api\\oyoagro.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{3DCB11F4-6449-4F50-BA50-D0FB613885D1}|OyoAgro.Api\\OyoAgro.Api.csproj|solutionrelative:oyoagro.api\\oyoagro.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.businesslogic.layer\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|solutionrelative:oyoagro.businesslogic.layer\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DCB11F4-6449-4F50-BA50-D0FB613885D1}|OyoAgro.Api\\OyoAgro.Api.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DCB11F4-6449-4F50-BA50-D0FB613885D1}|OyoAgro.Api\\OyoAgro.Api.csproj|solutionrelative:oyoagro.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\repositories\\userprofilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\repositories\\userprofilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\entities\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\entities\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\repositories\\dbrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\repositories\\dbrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\entities\\base\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\entities\\base\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.businesslogic.layer\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|solutionrelative:oyoagro.businesslogic.layer\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\params\\userparam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\params\\userparam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\entities\\useraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\entities\\useraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\repositories\\regionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\repositories\\regionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DCB11F4-6449-4F50-BA50-D0FB613885D1}|OyoAgro.Api\\OyoAgro.Api.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.api\\controllers\\regioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DCB11F4-6449-4F50-BA50-D0FB613885D1}|OyoAgro.Api\\OyoAgro.Api.csproj|solutionrelative:oyoagro.api\\controllers\\regioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.businesslogic.layer\\services\\regionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|solutionrelative:oyoagro.businesslogic.layer\\services\\regionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\repositories\\base\\repositoryfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\repositories\\base\\repositoryfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\entities\\region.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\entities\\region.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\entities\\lga.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\entities\\lga.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\repositories\\lgarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\repositories\\lgarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\entities\\operator\\datarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\entities\\operator\\datarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DCB11F4-6449-4F50-BA50-D0FB613885D1}|OyoAgro.Api\\OyoAgro.Api.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.api\\controllers\\profileadditionalactivitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DCB11F4-6449-4F50-BA50-D0FB613885D1}|OyoAgro.Api\\OyoAgro.Api.csproj|solutionrelative:oyoagro.api\\controllers\\profileadditionalactivitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DCB11F4-6449-4F50-BA50-D0FB613885D1}|OyoAgro.Api\\OyoAgro.Api.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.api\\controllers\\profileactivityparentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DCB11F4-6449-4F50-BA50-D0FB613885D1}|OyoAgro.Api\\OyoAgro.Api.csproj|solutionrelative:oyoagro.api\\controllers\\profileactivityparentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DCB11F4-6449-4F50-BA50-D0FB613885D1}|OyoAgro.Api\\OyoAgro.Api.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.api\\controllers\\profileactivitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DCB11F4-6449-4F50-BA50-D0FB613885D1}|OyoAgro.Api\\OyoAgro.Api.csproj|solutionrelative:oyoagro.api\\controllers\\profileactivitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DCB11F4-6449-4F50-BA50-D0FB613885D1}|OyoAgro.Api\\OyoAgro.Api.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.api\\controllers\\lgacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DCB11F4-6449-4F50-BA50-D0FB613885D1}|OyoAgro.Api\\OyoAgro.Api.csproj|solutionrelative:oyoagro.api\\controllers\\lgacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.businesslogic.layer\\services\\lgaservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|solutionrelative:oyoagro.businesslogic.layer\\services\\lgaservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.businesslogic.layer\\interfaces\\iregionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|solutionrelative:oyoagro.businesslogic.layer\\interfaces\\iregionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.businesslogic.layer\\services\\profileactivityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|solutionrelative:oyoagro.businesslogic.layer\\services\\profileactivityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.businesslogic.layer\\interfaces\\iprofileactivityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|solutionrelative:oyoagro.businesslogic.layer\\interfaces\\iprofileactivityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DCB11F4-6449-4F50-BA50-D0FB613885D1}|OyoAgro.Api\\OyoAgro.Api.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.api\\authorizations\\servicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DCB11F4-6449-4F50-BA50-D0FB613885D1}|OyoAgro.Api\\OyoAgro.Api.csproj|solutionrelative:oyoagro.api\\authorizations\\servicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\systemconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\systemconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\exceptions\\configurationexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\exceptions\\configurationexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\configurations\\configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\configurations\\configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.businesslogic.layer\\interfaces\\ilgaservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|solutionrelative:oyoagro.businesslogic.layer\\interfaces\\ilgaservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\params\\profileadditionalactivityparam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\params\\profileadditionalactivityparam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\interfaces\\iregionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\interfaces\\iregionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\params\\regionparam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\params\\regionparam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\interfaces\\ilgarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\interfaces\\ilgarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\repositories\\profileactivityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\repositories\\profileactivityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\params\\lgaparam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\params\\lgaparam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.businesslogic.layer\\interfaces\\iprofileadditionalactivityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|solutionrelative:oyoagro.businesslogic.layer\\interfaces\\iprofileadditionalactivityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.businesslogic.layer\\services\\profileadditionalactivityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|solutionrelative:oyoagro.businesslogic.layer\\services\\profileadditionalactivityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\repositories\\profileadditionalactivityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\repositories\\profileadditionalactivityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\entities\\profileactivity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\entities\\profileactivity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\params\\profileactivityparam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\params\\profileactivityparam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.businesslogic.layer\\interfaces\\iprofileactivityparentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|solutionrelative:oyoagro.businesslogic.layer\\interfaces\\iprofileactivityparentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.businesslogic.layer\\services\\profileactivityparentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|solutionrelative:oyoagro.businesslogic.layer\\services\\profileactivityparentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\entities\\profileactivityparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\entities\\profileactivityparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.businesslogic.layer\\services\\userprofileservie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|solutionrelative:oyoagro.businesslogic.layer\\services\\userprofileservie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\interfaces\\iprofileactivityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\interfaces\\iprofileactivityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\entities\\profileadditionalactivity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\entities\\profileadditionalactivity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\configurations\\googleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\configurations\\googleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\params\\profileactivityparentparam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\params\\profileactivityparentparam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\repositories\\profileactivityparentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\repositories\\profileactivityparentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\interfaces\\iprofileactivityparentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\interfaces\\iprofileactivityparentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\helpers\\texthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\helpers\\texthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.businesslogic.layer\\oyoagro.businesslogic.layer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|solutionrelative:oyoagro.businesslogic.layer\\oyoagro.businesslogic.layer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\interfaces\\iprofileadditionalactivityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\interfaces\\iprofileadditionalactivityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\conversion\\conversion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\conversion\\conversion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\extensions\\extensionlinq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\extensions\\extensionlinq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\entities\\farmer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\entities\\farmer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\oyoagro.dataaccess.layer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\oyoagro.dataaccess.layer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.businesslogic.layer\\oyoagro.businesslogic.layer.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|solutionrelative:oyoagro.businesslogic.layer\\oyoagro.businesslogic.layer.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\entities\\association.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\entities\\association.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\entities\\userregion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\entities\\userregion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\entities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\entities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\entities\\notificationtarget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\entities\\notificationtarget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\entities\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\entities\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\entities\\livestockregistry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\entities\\livestockregistry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\entities\\livestock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\entities\\livestock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\entities\\farmtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\entities\\farmtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\entities\\farm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\entities\\farm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\entities\\cropregistry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\entities\\cropregistry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\entities\\crop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\entities\\crop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\entities\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\entities\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Model2\\AppDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:OyoAgro.DataAccess.Layer\\Model2\\AppDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\globalconstant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\globalconstant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\repositories\\base\\databasesextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\repositories\\base\\databasesextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\extensions\\extensionsqlquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\extensions\\extensionsqlquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DCB11F4-6449-4F50-BA50-D0FB613885D1}|OyoAgro.Api\\OyoAgro.Api.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3DCB11F4-6449-4F50-BA50-D0FB613885D1}|OyoAgro.Api\\OyoAgro.Api.csproj|solutionrelative:oyoagro.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\interfaces\\iuserprofilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\interfaces\\iuserprofilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\settings\\jwt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\settings\\jwt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\enums\\commonenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\enums\\commonenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\enums\\databaseprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\enums\\databaseprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\helpers\\encodinghelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\helpers\\encodinghelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.businesslogic.layer\\interfaces\\iuserprofileservie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6ABDD52-F568-44CE-B072-1E843BB6E521}|OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj|solutionrelative:oyoagro.businesslogic.layer\\interfaces\\iuserprofileservie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\exceptions\\connectionstringexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\exceptions\\connectionstringexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\helpers\\dbhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\helpers\\dbhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\viewmodels\\pagination.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\viewmodels\\pagination.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\extensions\\dbparameterextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\extensions\\dbparameterextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\interfaces\\idbrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\interfaces\\idbrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DCB11F4-6449-4F50-BA50-D0FB613885D1}|OyoAgro.Api\\OyoAgro.Api.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.api\\authorizations\\authorizeattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DCB11F4-6449-4F50-BA50-D0FB613885D1}|OyoAgro.Api\\OyoAgro.Api.csproj|solutionrelative:oyoagro.api\\authorizations\\authorizeattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|c:\\users\\malik\\source\\repos\\oyoagro\\oyoagro.dataaccess.layer\\models\\dtos\\tdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF8EAC1-25B3-4759-8D53-544BD7C547D5}|OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj|solutionrelative:oyoagro.dataaccess.layer\\models\\dtos\\tdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 80,
+              "Title": "DatabasesExtension.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Repositories\\Base\\DatabasesExtension.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Repositories\\Base\\DatabasesExtension.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Repositories\\Base\\DatabasesExtension.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Repositories\\Base\\DatabasesExtension.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T15:58:54.173Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\Interfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "OyoAgro.BusinessLogic.Layer\\Interfaces\\IUserService.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\Interfaces\\IUserService.cs",
+              "RelativeToolTip": "OyoAgro.BusinessLogic.Layer\\Interfaces\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBEAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T05:34:37.831Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "OyoAgro.BusinessLogic.Layer\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\Services\\UserService.cs",
+              "RelativeToolTip": "OyoAgro.BusinessLogic.Layer\\Services\\UserService.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAhwGUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T05:33:26.841Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Userprofile.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Userprofile.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Userprofile.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Userprofile.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Userprofile.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAYwB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T21:41:01.335Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Interfaces\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Interfaces\\IUserRepository.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Interfaces\\IUserRepository.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Interfaces\\IUserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA8AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T05:45:14.926Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OyoAgro.Api.csproj",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.Api\\OyoAgro.Api.csproj",
+              "RelativeDocumentMoniker": "OyoAgro.Api\\OyoAgro.Api.csproj",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.Api\\OyoAgro.Api.csproj",
+              "RelativeToolTip": "OyoAgro.Api\\OyoAgro.Api.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-23T07:16:59.61Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.Api\\Program.cs",
+              "RelativeDocumentMoniker": "OyoAgro.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.Api\\Program.cs",
+              "RelativeToolTip": "OyoAgro.Api\\Program.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAlwEcAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-20T21:32:29.773Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserProfileRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Repositories\\UserProfileRepository.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Repositories\\UserProfileRepository.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Repositories\\UserProfileRepository.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Repositories\\UserProfileRepository.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAhwC8AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T07:38:10.5Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DbRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Repositories\\DbRepository.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Repositories\\DbRepository.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Repositories\\DbRepository.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Repositories\\DbRepository.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAuwF0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T14:59:49.314Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UserParam.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Params\\UserParam.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\Params\\UserParam.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Params\\UserParam.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\Params\\UserParam.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T19:23:58.133Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.Api\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "OyoAgro.Api\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.Api\\Controllers\\UserController.cs",
+              "RelativeToolTip": "OyoAgro.Api\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAASwBoAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T09:32:53.833Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\AppDbContext.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\AppDbContext.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAArwDEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T18:17:57.819Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAhwDwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T05:44:48.983Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Useraccount.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Useraccount.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Useraccount.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Useraccount.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Useraccount.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAIAxwEEAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T08:16:23.725Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Base\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Base\\BaseEntity.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Base\\BaseEntity.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Base\\BaseEntity.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAiwBcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T16:47:40.879Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "RepositoryFactory.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Repositories\\Base\\RepositoryFactory.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Repositories\\Base\\RepositoryFactory.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Repositories\\Base\\RepositoryFactory.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Repositories\\Base\\RepositoryFactory.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAawA4AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T21:08:27.672Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "RegionController.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.Api\\Controllers\\RegionController.cs",
+              "RelativeDocumentMoniker": "OyoAgro.Api\\Controllers\\RegionController.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.Api\\Controllers\\RegionController.cs",
+              "RelativeToolTip": "OyoAgro.Api\\Controllers\\RegionController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T16:30:31.329Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "RegionRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Repositories\\RegionRepository.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Repositories\\RegionRepository.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Repositories\\RegionRepository.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Repositories\\RegionRepository.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T15:58:48.335Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "DataRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Operator\\DataRepository.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Operator\\DataRepository.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Operator\\DataRepository.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Operator\\DataRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T22:33:55.93Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "RegionService.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\Services\\RegionService.cs",
+              "RelativeDocumentMoniker": "OyoAgro.BusinessLogic.Layer\\Services\\RegionService.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\Services\\RegionService.cs",
+              "RelativeToolTip": "OyoAgro.BusinessLogic.Layer\\Services\\RegionService.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAASwCIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T16:21:21.513Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "LgaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Repositories\\LgaRepository.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Repositories\\LgaRepository.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Repositories\\LgaRepository.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Repositories\\LgaRepository.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAawC0AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T15:48:36.721Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Lga.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Lga.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Lga.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Lga.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Lga.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T16:02:37.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Region.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Region.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Region.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Region.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Region.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T16:04:27.982Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "IRegionService.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\Interfaces\\IRegionService.cs",
+              "RelativeDocumentMoniker": "OyoAgro.BusinessLogic.Layer\\Interfaces\\IRegionService.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\Interfaces\\IRegionService.cs",
+              "RelativeToolTip": "OyoAgro.BusinessLogic.Layer\\Interfaces\\IRegionService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T16:25:34.925Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ProfileActivityParentController.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.Api\\Controllers\\ProfileActivityParentController.cs",
+              "RelativeDocumentMoniker": "OyoAgro.Api\\Controllers\\ProfileActivityParentController.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.Api\\Controllers\\ProfileActivityParentController.cs",
+              "RelativeToolTip": "OyoAgro.Api\\Controllers\\ProfileActivityParentController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAhwDMAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T12:22:07.509Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ProfileActivityController.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.Api\\Controllers\\ProfileActivityController.cs",
+              "RelativeDocumentMoniker": "OyoAgro.Api\\Controllers\\ProfileActivityController.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.Api\\Controllers\\ProfileActivityController.cs",
+              "RelativeToolTip": "OyoAgro.Api\\Controllers\\ProfileActivityController.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAhwDMAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T12:35:25.202Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ProfileAdditionalActivityController.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.Api\\Controllers\\ProfileAdditionalActivityController.cs",
+              "RelativeDocumentMoniker": "OyoAgro.Api\\Controllers\\ProfileAdditionalActivityController.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.Api\\Controllers\\ProfileAdditionalActivityController.cs",
+              "RelativeToolTip": "OyoAgro.Api\\Controllers\\ProfileAdditionalActivityController.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAACIAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T12:40:39.04Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "LgaServices.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\Services\\LgaServices.cs",
+              "RelativeDocumentMoniker": "OyoAgro.BusinessLogic.Layer\\Services\\LgaServices.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\Services\\LgaServices.cs",
+              "RelativeToolTip": "OyoAgro.BusinessLogic.Layer\\Services\\LgaServices.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAswDkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T16:08:45.773Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "LgaController.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.Api\\Controllers\\LgaController.cs",
+              "RelativeDocumentMoniker": "OyoAgro.Api\\Controllers\\LgaController.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.Api\\Controllers\\LgaController.cs",
+              "RelativeToolTip": "OyoAgro.Api\\Controllers\\LgaController.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAIA3wCUAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T16:37:18.062Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "ProfileActivityService.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\Services\\ProfileActivityService.cs",
+              "RelativeDocumentMoniker": "OyoAgro.BusinessLogic.Layer\\Services\\ProfileActivityService.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\Services\\ProfileActivityService.cs",
+              "RelativeToolTip": "OyoAgro.BusinessLogic.Layer\\Services\\ProfileActivityService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAuwBIAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T06:39:08.347Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "IProfileActivityService.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\Interfaces\\IProfileActivityService.cs",
+              "RelativeDocumentMoniker": "OyoAgro.BusinessLogic.Layer\\Interfaces\\IProfileActivityService.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\Interfaces\\IProfileActivityService.cs",
+              "RelativeToolTip": "OyoAgro.BusinessLogic.Layer\\Interfaces\\IProfileActivityService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBAAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T06:48:24.942Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "ServiceCollectionExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.Api\\Authorizations\\ServiceCollectionExtensions.cs",
+              "RelativeDocumentMoniker": "OyoAgro.Api\\Authorizations\\ServiceCollectionExtensions.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.Api\\Authorizations\\ServiceCollectionExtensions.cs",
+              "RelativeToolTip": "OyoAgro.Api\\Authorizations\\ServiceCollectionExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T11:35:11.834Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "SystemConfig.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\SystemConfig.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\SystemConfig.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\SystemConfig.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\SystemConfig.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAuwCEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T18:17:03.476Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "ConfigurationException.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Exceptions\\ConfigurationException.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Exceptions\\ConfigurationException.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Exceptions\\ConfigurationException.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Exceptions\\ConfigurationException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T21:14:50.928Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Configuration.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Configurations\\Configuration.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Configurations\\Configuration.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Configurations\\Configuration.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Configurations\\Configuration.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAhwBcAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T21:11:16.361Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "ILgaServices.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\Interfaces\\ILgaServices.cs",
+              "RelativeDocumentMoniker": "OyoAgro.BusinessLogic.Layer\\Interfaces\\ILgaServices.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\Interfaces\\ILgaServices.cs",
+              "RelativeToolTip": "OyoAgro.BusinessLogic.Layer\\Interfaces\\ILgaServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T16:19:34.647Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Interfaces\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Interfaces\\IUnitOfWork.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Interfaces\\IUnitOfWork.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Interfaces\\IUnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA8AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-20T23:32:08.481Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\UnitOfWork.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\UnitOfWork.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\UnitOfWork.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAIAzwCsAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-20T23:31:23.927Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "ProfileadditionalactivityParam.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Params\\ProfileadditionalactivityParam.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\Params\\ProfileadditionalactivityParam.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Params\\ProfileadditionalactivityParam.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\Params\\ProfileadditionalactivityParam.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAkwAgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T22:34:29.696Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "IRegionRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Interfaces\\IRegionRepository.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Interfaces\\IRegionRepository.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Interfaces\\IRegionRepository.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Interfaces\\IRegionRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T16:03:40.549Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "RegionParam.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Params\\RegionParam.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\Params\\RegionParam.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Params\\RegionParam.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\Params\\RegionParam.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T15:59:46.935Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "ILgaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Interfaces\\ILgaRepository.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Interfaces\\ILgaRepository.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Interfaces\\ILgaRepository.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Interfaces\\ILgaRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T15:55:55.403Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "LgaParam.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Params\\LgaParam.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\Params\\LgaParam.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Params\\LgaParam.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\Params\\LgaParam.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T15:50:48.865Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "ProfileActivityRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Repositories\\ProfileActivityRepository.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Repositories\\ProfileActivityRepository.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Repositories\\ProfileActivityRepository.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Repositories\\ProfileActivityRepository.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAhwH0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T23:00:28.301Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "IProfileAdditionalActivityService.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\Interfaces\\IProfileAdditionalActivityService.cs",
+              "RelativeDocumentMoniker": "OyoAgro.BusinessLogic.Layer\\Interfaces\\IProfileAdditionalActivityService.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\Interfaces\\IProfileAdditionalActivityService.cs",
+              "RelativeToolTip": "OyoAgro.BusinessLogic.Layer\\Interfaces\\IProfileAdditionalActivityService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBEAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T16:09:03.399Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "ProfileAdditionalActivityService.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\Services\\ProfileAdditionalActivityService.cs",
+              "RelativeDocumentMoniker": "OyoAgro.BusinessLogic.Layer\\Services\\ProfileAdditionalActivityService.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\Services\\ProfileAdditionalActivityService.cs",
+              "RelativeToolTip": "OyoAgro.BusinessLogic.Layer\\Services\\ProfileAdditionalActivityService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T15:53:11.134Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "ProfileAdditionalActivityRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Repositories\\ProfileAdditionalActivityRepository.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Repositories\\ProfileAdditionalActivityRepository.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Repositories\\ProfileAdditionalActivityRepository.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Repositories\\ProfileAdditionalActivityRepository.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAawBcAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T07:27:16.524Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "ProfileActivityParam.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Params\\ProfileActivityParam.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\Params\\ProfileActivityParam.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Params\\ProfileActivityParam.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\Params\\ProfileActivityParam.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T23:01:59.066Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "Profileactivity.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Profileactivity.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Profileactivity.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Profileactivity.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Profileactivity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T18:26:55.253Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "IProfileActivityParentService.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\Interfaces\\IProfileActivityParentService.cs",
+              "RelativeDocumentMoniker": "OyoAgro.BusinessLogic.Layer\\Interfaces\\IProfileActivityParentService.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\Interfaces\\IProfileActivityParentService.cs",
+              "RelativeToolTip": "OyoAgro.BusinessLogic.Layer\\Interfaces\\IProfileActivityParentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBAAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T15:46:51.889Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "ProfileActivityParentService.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\Services\\ProfileActivityParentService.cs",
+              "RelativeDocumentMoniker": "OyoAgro.BusinessLogic.Layer\\Services\\ProfileActivityParentService.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\Services\\ProfileActivityParentService.cs",
+              "RelativeToolTip": "OyoAgro.BusinessLogic.Layer\\Services\\ProfileActivityParentService.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAAAD0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T14:12:54.917Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "Profileactivityparent.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Profileactivityparent.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Profileactivityparent.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Profileactivityparent.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Profileactivityparent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T18:25:31.17Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "UserProfileServie.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\Services\\UserProfileServie.cs",
+              "RelativeDocumentMoniker": "OyoAgro.BusinessLogic.Layer\\Services\\UserProfileServie.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\Services\\UserProfileServie.cs",
+              "RelativeToolTip": "OyoAgro.BusinessLogic.Layer\\Services\\UserProfileServie.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAswBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T21:46:13.192Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "IProfileActivityRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Interfaces\\IProfileActivityRepository.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Interfaces\\IProfileActivityRepository.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Interfaces\\IProfileActivityRepository.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Interfaces\\IProfileActivityRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T23:08:18.472Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "Profileadditionalactivity.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Profileadditionalactivity.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Profileadditionalactivity.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Profileadditionalactivity.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Profileadditionalactivity.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA/wBIAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T18:27:00.932Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "GoogleConfig.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Configurations\\GoogleConfig.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Configurations\\GoogleConfig.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Configurations\\GoogleConfig.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Configurations\\GoogleConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T21:11:55.179Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "ProfileActivityParentParam.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Params\\ProfileActivityParentParam.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\Params\\ProfileActivityParentParam.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Params\\ProfileActivityParentParam.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\Params\\ProfileActivityParentParam.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T14:01:46.993Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "ProfileActivityParentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Repositories\\ProfileActivityParentRepository.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Repositories\\ProfileActivityParentRepository.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Repositories\\ProfileActivityParentRepository.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Repositories\\ProfileActivityParentRepository.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAawBgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T13:59:33.912Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "IProfileActivityParentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Interfaces\\IProfileActivityParentRepository.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Interfaces\\IProfileActivityParentRepository.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Interfaces\\IProfileActivityParentRepository.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Interfaces\\IProfileActivityParentRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T14:07:55.615Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "TextHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Helpers\\TextHelper.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Helpers\\TextHelper.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Helpers\\TextHelper.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Helpers\\TextHelper.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAADYAAABvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T22:48:59.682Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "OyoAgro.BusinessLogic.Layer.csproj",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj",
+              "RelativeDocumentMoniker": "OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj",
+              "RelativeToolTip": "OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-20T23:30:12.781Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "IProfileAdditionalActivityRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Interfaces\\IProfileAdditionalActivityRepository.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Interfaces\\IProfileAdditionalActivityRepository.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Interfaces\\IProfileAdditionalActivityRepository.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Interfaces\\IProfileAdditionalActivityRepository.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAUwBAAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T07:29:49.684Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "Conversion.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Conversion\\Conversion.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Conversion\\Conversion.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Conversion\\Conversion.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Conversion\\Conversion.cs",
+              "ViewState": "AgIAACMCAAAAAAAAAAAQwDoCAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T22:50:28.296Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "ExtensionLinq.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Extensions\\ExtensionLinq.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Extensions\\ExtensionLinq.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Extensions\\ExtensionLinq.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Extensions\\ExtensionLinq.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAhwFMAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T22:32:59.935Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "Farmer.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Farmer.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Farmer.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Farmer.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Farmer.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T16:02:03.389Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "OyoAgro.BusinessLogic.Layer",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj",
+              "RelativeDocumentMoniker": "OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj",
+              "RelativeToolTip": "OyoAgro.BusinessLogic.Layer\\OyoAgro.BusinessLogic.Layer.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-24T16:38:39.961Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "OyoAgro.DataAccess.Layer.csproj",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\OyoAgro.DataAccess.Layer.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-23T21:09:57.185Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "Association.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Association.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Association.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Association.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Association.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T16:00:46.947Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 76,
+              "Title": "Crop.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Crop.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Crop.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Crop.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Crop.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T16:01:05.759Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 75,
+              "Title": "Cropregistry.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Cropregistry.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Cropregistry.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Cropregistry.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Cropregistry.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAswBsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T16:01:23.929Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
+              "Title": "Livestock.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Livestock.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Livestock.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Livestock.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Livestock.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T16:02:52.208Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "Livestockregistry.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Livestockregistry.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Livestockregistry.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Livestockregistry.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Livestockregistry.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAswBcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T16:03:09.351Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "Notification.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Notification.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Notification.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Notification.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Notification.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAwBoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T16:03:42.158Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "Role.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Role.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Role.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Role.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Role.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T14:57:42.761Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "Userregion.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Userregion.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Userregion.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Userregion.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Userregion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T16:05:40.045Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "Notificationtarget.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Notificationtarget.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Notificationtarget.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Notificationtarget.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Notificationtarget.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAADwvxEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T16:03:59.929Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 73,
+              "Title": "Farmtype.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Farmtype.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Farmtype.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Farmtype.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Farmtype.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T18:20:06.241Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
+              "Title": "Farm.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Farm.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Farm.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Farm.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Farm.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAzwB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T16:00:34.096Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 77,
+              "Title": "Address.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Address.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Address.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Entities\\Address.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\Entities\\Address.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAQwCAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T16:00:25.072Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 78,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Model2\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Model2\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Model2\\AppDbContext.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Model2\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T15:48:40.664Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 79,
+              "Title": "GlobalConstant.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\GlobalConstant.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\GlobalConstant.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\GlobalConstant.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\GlobalConstant.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T11:02:49.436Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 81,
+              "Title": "ExtensionSqlQuery.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Extensions\\ExtensionSqlQuery.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Extensions\\ExtensionSqlQuery.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Extensions\\ExtensionSqlQuery.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Extensions\\ExtensionSqlQuery.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAhwCYAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T16:05:40.477Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 82,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "OyoAgro.Api\\appsettings.json",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.Api\\appsettings.json",
+              "RelativeToolTip": "OyoAgro.Api\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-23T16:11:34.554Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 83,
+              "Title": "IUserProfileRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Interfaces\\IUserProfileRepository.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Interfaces\\IUserProfileRepository.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Interfaces\\IUserProfileRepository.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Interfaces\\IUserProfileRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T07:39:48.846Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 84,
+              "Title": "Jwt.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Settings\\Jwt.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Settings\\Jwt.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Settings\\Jwt.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Settings\\Jwt.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T11:24:58.321Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 85,
+              "Title": "CommonEnum.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Enums\\CommonEnum.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Enums\\CommonEnum.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Enums\\CommonEnum.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Enums\\CommonEnum.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T06:35:52.538Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 86,
+              "Title": "DatabaseProvider.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Enums\\DatabaseProvider.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Enums\\DatabaseProvider.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Enums\\DatabaseProvider.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Enums\\DatabaseProvider.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBQAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T15:22:55.298Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 87,
+              "Title": "EncodingHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Helpers\\EncodingHelper.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Helpers\\EncodingHelper.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Helpers\\EncodingHelper.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Helpers\\EncodingHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA8AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T21:59:55.504Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 88,
+              "Title": "IUserProfileServie.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\Interfaces\\IUserProfileServie.cs",
+              "RelativeDocumentMoniker": "OyoAgro.BusinessLogic.Layer\\Interfaces\\IUserProfileServie.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.BusinessLogic.Layer\\Interfaces\\IUserProfileServie.cs",
+              "RelativeToolTip": "OyoAgro.BusinessLogic.Layer\\Interfaces\\IUserProfileServie.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T21:46:38.127Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 89,
+              "Title": "ConnectionStringException.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Exceptions\\ConnectionStringException.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Exceptions\\ConnectionStringException.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Exceptions\\ConnectionStringException.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Exceptions\\ConnectionStringException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T21:18:02.977Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 90,
+              "Title": "DbHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Helpers\\DbHelper.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Helpers\\DbHelper.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Helpers\\DbHelper.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Helpers\\DbHelper.cs",
+              "ViewState": "AgIAAM4AAAAAAAAAAAAAwOQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T15:21:36.038Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 91,
+              "Title": "Pagination.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\ViewModels\\Pagination.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\ViewModels\\Pagination.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\ViewModels\\Pagination.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\ViewModels\\Pagination.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAswCMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T16:02:40.168Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 92,
+              "Title": "DbParameterExtension.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Extensions\\DbParameterExtension.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Extensions\\DbParameterExtension.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Extensions\\DbParameterExtension.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Extensions\\DbParameterExtension.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAIBJwAkAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T15:27:21.797Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 93,
+              "Title": "IDbRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Interfaces\\IDbRepository.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Interfaces\\IDbRepository.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Interfaces\\IDbRepository.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Interfaces\\IDbRepository.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAhwBEAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T15:01:13.992Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 94,
+              "Title": "AuthorizeAttribute.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.Api\\Authorizations\\AuthorizeAttribute.cs",
+              "RelativeDocumentMoniker": "OyoAgro.Api\\Authorizations\\AuthorizeAttribute.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.Api\\Authorizations\\AuthorizeAttribute.cs",
+              "RelativeToolTip": "OyoAgro.Api\\Authorizations\\AuthorizeAttribute.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAawCgAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T09:39:17.676Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 95,
+              "Title": "TData.cs",
+              "DocumentMoniker": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Dtos\\TData.cs",
+              "RelativeDocumentMoniker": "OyoAgro.DataAccess.Layer\\Models\\Dtos\\TData.cs",
+              "ToolTip": "C:\\Users\\Malik\\source\\repos\\OyoAgro\\OyoAgro.DataAccess.Layer\\Models\\Dtos\\TData.cs",
+              "RelativeToolTip": "OyoAgro.DataAccess.Layer\\Models\\Dtos\\TData.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAawA4AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T11:41:33.114Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
