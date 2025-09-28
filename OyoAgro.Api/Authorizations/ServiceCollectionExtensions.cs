@@ -13,6 +13,8 @@ namespace OyoAgro.Api.Authorizations
             services.AddScoped<IProfileActivityParentService, ProfileActivityParentService>();
             services.AddScoped<IRegionService, RegionService>();
             services.AddScoped<ILgaServices, LgaServices>();
+            services.AddScoped<IFarmerSevice, FarmerSevice>();
+            services.AddScoped<IFarmService, FarmService>();
 
             return services;
         }

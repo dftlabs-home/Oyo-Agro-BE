@@ -48,7 +48,7 @@ namespace OyoAgro.Api.Controllers
             }
         }
 
-        [HttpGet("GetListByParam")]
+        [HttpPost("GetListByParam")]
         public async Task<IActionResult> GetList([FromForm] ProfileadditionalactivityParam param)
         {
             var response = await _profileAdditionalActivityService.GetList(param);

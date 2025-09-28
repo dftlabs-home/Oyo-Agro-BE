@@ -20,6 +20,8 @@ namespace OyoAgro.DataAccess.Layer
         private IProfileActivityParentRepository? _profileactivityparent;
         private IRegionRepository? _regionRepository;
         private ILgaRepository? _lgaRepository;
+        private IFarmerRepository? _farmerRepository;
+        private IFarmRepository? _farmRepository;
         
         public UnitOfWork(AppDbContext context)
         {
@@ -46,6 +48,12 @@ namespace OyoAgro.DataAccess.Layer
 
          public ILgaRepository LgaRepository =>
          _lgaRepository ??= new LgaRepository();
+
+           public IFarmerRepository FarmerRepository =>
+         _farmerRepository ??= new FarmerRepository();
+
+          public IFarmRepository FarmRepository =>
+         _farmRepository ??= new FarmRepository();
 
 
         public int Complete()

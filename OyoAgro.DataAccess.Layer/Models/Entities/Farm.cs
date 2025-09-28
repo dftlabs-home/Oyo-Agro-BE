@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using OyoAgro.DataAccess.Layer.Models.Entities.Base;
 
 namespace OyoAgro.DataAccess.Layer.Models.Entities
 {
-    public partial class Farm
+    public partial class Farm : BaseEntity
     {
         public Farm()
         {
@@ -17,9 +18,7 @@ namespace OyoAgro.DataAccess.Layer.Models.Entities
         public int Farmtypeid { get; set; }
         public decimal? Farmsize { get; set; }
         public long? Farmaddressid { get; set; }
-        public DateTime? Createdat { get; set; }
-        public DateTime? Updatedat { get; set; }
-        public DateTime? Deletedat { get; set; }
+        
         public long? Version { get; set; }
 
         public virtual Address? Farmaddress { get; set; }

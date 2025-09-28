@@ -5,6 +5,223 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/v1/Farmer/Create": {
+      "post": {
+        "tags": [
+          "Farmer"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FarmerParam"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FarmerParam"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FarmerParam"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Farmer/GetFarmers": {
+      "get": {
+        "tags": [
+          "Farmer"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Farmer/GetFarmersByParam": {
+      "post": {
+        "tags": [
+          "Farmer"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Farmerid": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Firstname": {
+                    "type": "string"
+                  },
+                  "Middlename": {
+                    "type": "string"
+                  },
+                  "Lastname": {
+                    "type": "string"
+                  },
+                  "Gender": {
+                    "type": "string"
+                  },
+                  "Dateofbirth.Year": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Dateofbirth.Month": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Dateofbirth.Day": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Dateofbirth.DayOfWeek": {
+                    "$ref": "#/components/schemas/DayOfWeek"
+                  },
+                  "Dateofbirth.DayOfYear": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Dateofbirth.DayNumber": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Email": {
+                    "type": "string"
+                  },
+                  "Phonenumber": {
+                    "type": "string"
+                  },
+                  "Associationid": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Residentialaddressid": {
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "Householdsize": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Availablelabor": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Photourl": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "Farmerid": {
+                  "style": "form"
+                },
+                "Firstname": {
+                  "style": "form"
+                },
+                "Middlename": {
+                  "style": "form"
+                },
+                "Lastname": {
+                  "style": "form"
+                },
+                "Gender": {
+                  "style": "form"
+                },
+                "Dateofbirth.Year": {
+                  "style": "form"
+                },
+                "Dateofbirth.Month": {
+                  "style": "form"
+                },
+                "Dateofbirth.Day": {
+                  "style": "form"
+                },
+                "Dateofbirth.DayOfWeek": {
+                  "style": "form"
+                },
+                "Dateofbirth.DayOfYear": {
+                  "style": "form"
+                },
+                "Dateofbirth.DayNumber": {
+                  "style": "form"
+                },
+                "Email": {
+                  "style": "form"
+                },
+                "Phonenumber": {
+                  "style": "form"
+                },
+                "Associationid": {
+                  "style": "form"
+                },
+                "Residentialaddressid": {
+                  "style": "form"
+                },
+                "Householdsize": {
+                  "style": "form"
+                },
+                "Availablelabor": {
+                  "style": "form"
+                },
+                "Photourl": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Farmer/deleteFarmer/{farmerId}": {
+      "get": {
+        "tags": [
+          "Farmer"
+        ],
+        "parameters": [
+          {
+            "name": "regionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "farmerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/v1/Lga/Create": {
       "post": {
         "tags": [
@@ -49,7 +266,7 @@
       }
     },
     "/api/v1/Lga/GetLgasByParam": {
-      "get": {
+      "post": {
         "tags": [
           "Lga"
         ],
@@ -183,7 +400,7 @@
       }
     },
     "/api/v1/ProfileActivity/GetListByParam": {
-      "get": {
+      "post": {
         "tags": [
           "ProfileActivity"
         ],
@@ -294,7 +511,7 @@
       }
     },
     "/api/v1/ProfileActivityParent/GetListByParam": {
-      "get": {
+      "post": {
         "tags": [
           "ProfileActivityParent"
         ],
@@ -398,7 +615,7 @@
       }
     },
     "/api/v1/ProfileAdditionalActivity/GetListByParam": {
-      "get": {
+      "post": {
         "tags": [
           "ProfileAdditionalActivity"
         ],
@@ -578,7 +795,7 @@
       }
     },
     "/api/v1/Region/GetRegionsByParam": {
-      "get": {
+      "post": {
         "tags": [
           "Region"
         ],
@@ -735,6 +952,81 @@
   },
   "components": {
     "schemas": {
+      "DayOfWeek": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "FarmerParam": {
+        "type": "object",
+        "properties": {
+          "farmerid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "firstname": {
+            "type": "string",
+            "nullable": true
+          },
+          "middlename": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastname": {
+            "type": "string",
+            "nullable": true
+          },
+          "gender": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateofbirth": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "phonenumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "associationid": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "residentialaddressid": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "householdsize": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "availablelabor": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "photourl": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "LgaParam": {
         "type": "object",
         "properties": {

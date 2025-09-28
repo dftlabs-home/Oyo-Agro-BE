@@ -35,7 +35,7 @@ namespace OyoAgro.Api.Controllers
 
         }
 
-        [HttpGet("GetRegionsByParam")]
+        [HttpPost("GetRegionsByParam")]
         public async Task<IActionResult> GetList([FromForm] RegionParam param)
         {
             var response = await _regionService.GetList(param);

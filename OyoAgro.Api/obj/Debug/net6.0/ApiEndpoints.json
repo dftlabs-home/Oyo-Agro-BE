@@ -1,5 +1,153 @@
 [
   {
+    "ContainingType": "OyoAgro.Api.Controllers.FarmerController",
+    "Method": "Create",
+    "RelativePath": "api/v1/Farmer/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "OyoAgro.DataAccess.Layer.Models.Params.FarmerParam",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.FarmerController",
+    "Method": "DeleteEntity",
+    "RelativePath": "api/v1/Farmer/deleteFarmer/{farmerId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "regionId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "farmerId",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.FarmerController",
+    "Method": "GetList",
+    "RelativePath": "api/v1/Farmer/GetFarmers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.FarmerController",
+    "Method": "GetList",
+    "RelativePath": "api/v1/Farmer/GetFarmersByParam",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Farmerid",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Firstname",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Middlename",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Lastname",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Gender",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Dateofbirth.Year",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Dateofbirth.Month",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Dateofbirth.Day",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Dateofbirth.DayOfWeek",
+        "Type": "System.DayOfWeek",
+        "IsRequired": false
+      },
+      {
+        "Name": "Dateofbirth.DayOfYear",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Dateofbirth.DayNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Phonenumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Associationid",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Residentialaddressid",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "Householdsize",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Availablelabor",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Photourl",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "OyoAgro.Api.Controllers.LgaController",
     "Method": "Create",
     "RelativePath": "api/v1/Lga/Create",
@@ -61,7 +209,7 @@
     "ContainingType": "OyoAgro.Api.Controllers.LgaController",
     "Method": "GetList",
     "RelativePath": "api/v1/Lga/GetLgasByParam",
-    "HttpMethod": "GET",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -129,7 +277,7 @@
     "ContainingType": "OyoAgro.Api.Controllers.ProfileActivityController",
     "Method": "GetList",
     "RelativePath": "api/v1/ProfileActivity/GetListByParam",
-    "HttpMethod": "GET",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -197,7 +345,7 @@
     "ContainingType": "OyoAgro.Api.Controllers.ProfileActivityParentController",
     "Method": "GetList",
     "RelativePath": "api/v1/ProfileActivityParent/GetListByParam",
-    "HttpMethod": "GET",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -281,7 +429,7 @@
     "ContainingType": "OyoAgro.Api.Controllers.ProfileAdditionalActivityController",
     "Method": "GetList",
     "RelativePath": "api/v1/ProfileAdditionalActivity/GetListByParam",
-    "HttpMethod": "GET",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -395,7 +543,7 @@
     "ContainingType": "OyoAgro.Api.Controllers.RegionController",
     "Method": "GetList",
     "RelativePath": "api/v1/Region/GetRegionsByParam",
-    "HttpMethod": "GET",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [

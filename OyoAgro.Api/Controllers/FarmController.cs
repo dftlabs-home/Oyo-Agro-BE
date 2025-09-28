@@ -1,0 +1,67 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using OyoAgro.BusinessLogic.Layer.Interfaces;
+using OyoAgro.DataAccess.Layer.Models.Params;
+
+namespace OyoAgro.Api.Controllers
+{
+    public class FarmController : ControllerBase
+    {
+        private readonly IFarmService _farmService;
+        public FarmController(IFarmService farmSevice)
+        {
+            _farmService = farmSevice;
+        }
+
+        [HttpPost("Create")]
+        public async Task<IActionResult> Create([FromBody] FarmParam model)
+        {
+            var response = await _farmService.SaveEntity(model);
+
+
+            return Ok(new { success = true, Data = response });
+
+        }
+
+        [HttpGet("GetFarms")]
+        public async Task<IActionResult> GetList()
+        {
+            var response = await _farmService.GetList();
+
+
+            return Ok(new { success = true, Data = response });
+
+        }
+
+          [HttpGet("GetFarmsByFarmerId/{farmerId}")]
+        public async Task<IActionResult> GetList(int farmerId)
+        {
+            var response = await _farmService.GetListByFarmerId(farmerId);
+
+
+            return Ok(new { success = true, Data = response });
+
+        }
+
+        [HttpPost("GetFarmsByParam")]
+        public async Task<IActionResult> GetList([FromForm] FarmParam param)
+        {
+            var response = await _farmService.GetList(param);
+
+            return Ok(new { success = true, Data = response });
+
+        }
+
+
+        [HttpGet("deleteFarm/{farmId}")]
+        public async Task<IActionResult> DeleteEntity([FromRoute] int farmId)
+        {
+            var response = await _farmService.DeleteEntity(farmId);
+
+
+            return Ok(new { success = true, Data = response });
+
+        }
+
+
+    }
+}

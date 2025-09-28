@@ -12,3 +12,4 @@ C:\Users\Malik\source\repos\OyoAgro\OyoAgro.DataAccess.Layer\obj\Debug\net6.0\re
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.DataAccess.Layer\obj\Debug\net6.0\OyoAgro.DataAccess.Layer.pdb
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.DataAccess.Layer\obj\Debug\net6.0\OyoAgro.DataAccess.Layer.genruntimeconfig.cache
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.DataAccess.Layer\obj\Debug\net6.0\ref\OyoAgro.DataAccess.Layer.dll
+C:\Users\Malik\source\repos\OyoAgro\OyoAgro.DataAccess.Layer\obj\Debug\net6.0\OyoAgro.DataAccess.Layer.sourcelink.json

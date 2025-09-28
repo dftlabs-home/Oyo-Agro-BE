@@ -15,6 +15,8 @@ namespace OyoAgro.DataAccess.Layer.Interfaces
         IProfileActivityParentRepository ProfileActivityParent { get; }
         IRegionRepository RegionRepository { get; }
         ILgaRepository LgaRepository { get; }
+        IFarmerRepository FarmerRepository { get; }
+        IFarmRepository FarmRepository { get; }
         
         int Complete();
 

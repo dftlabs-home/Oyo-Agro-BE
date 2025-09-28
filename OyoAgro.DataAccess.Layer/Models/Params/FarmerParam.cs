@@ -1,18 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using OyoAgro.DataAccess.Layer.Models.Entities.Base;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace OyoAgro.DataAccess.Layer.Models.Entities
+namespace OyoAgro.DataAccess.Layer.Models.Params
 {
-    public partial class Farmer : BaseEntity
+    public class FarmerParam
     {
-        public Farmer()
-        {
-            Farms = new HashSet<Farm>();
-        }
-
         public int Farmerid { get; set; }
-        public Guid? Tempclientid { get; set; }
         public string Firstname { get; set; } = null!;
         public string? Middlename { get; set; }
         public string Lastname { get; set; } = null!;
@@ -25,11 +21,5 @@ namespace OyoAgro.DataAccess.Layer.Models.Entities
         public int? Householdsize { get; set; }
         public int? Availablelabor { get; set; }
         public string? Photourl { get; set; }
-     
-        public long? Version { get; set; }
-
-        public virtual Association? Association { get; set; }
-        public virtual Address Residentialaddress { get; set; } = null!;
-        public virtual ICollection<Farm> Farms { get; set; }
     }
 }

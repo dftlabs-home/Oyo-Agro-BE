@@ -13,3 +13,4 @@ C:\Users\Malik\source\repos\OyoAgro\OyoAgro.BusinessLogic.Layer\obj\Debug\net6.0
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.BusinessLogic.Layer\obj\Debug\net6.0\refint\OyoAgro.BusinessLogic.Layer.dll
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.BusinessLogic.Layer\obj\Debug\net6.0\OyoAgro.BusinessLogic.Layer.pdb
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.BusinessLogic.Layer\obj\Debug\net6.0\ref\OyoAgro.BusinessLogic.Layer.dll
+C:\Users\Malik\source\repos\OyoAgro\OyoAgro.BusinessLogic.Layer\obj\Debug\net6.0\OyoAgro.BusinessLogic.Layer.sourcelink.json

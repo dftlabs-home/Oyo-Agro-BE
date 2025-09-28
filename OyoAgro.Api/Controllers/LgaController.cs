@@ -35,7 +35,7 @@ namespace OyoAgro.Api.Controllers
 
         }
 
-        [HttpGet("GetLgasByParam")]
+        [HttpPost("GetLgasByParam")]
         public async Task<IActionResult> GetList([FromForm] LgaParam param)
         {
             var response = await _lgaServices.GetList(param);
