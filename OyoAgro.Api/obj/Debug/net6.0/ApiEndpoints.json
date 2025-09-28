@@ -1,5 +1,99 @@
 [
   {
+    "ContainingType": "OyoAgro.Api.Controllers.FarmController",
+    "Method": "Create",
+    "RelativePath": "api/v1/Farm/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "OyoAgro.DataAccess.Layer.Models.Params.FarmParam",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.FarmController",
+    "Method": "DeleteEntity",
+    "RelativePath": "api/v1/Farm/deleteFarm/{farmId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "farmId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.FarmController",
+    "Method": "GetList",
+    "RelativePath": "api/v1/Farm/GetFarms",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.FarmController",
+    "Method": "GetList",
+    "RelativePath": "api/v1/Farm/GetFarmsByFarmerId/{farmerId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "farmerId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.FarmController",
+    "Method": "GetList",
+    "RelativePath": "api/v1/Farm/GetFarmsByParam",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Farmid",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "Farmerid",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Farmtypeid",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Farmsize",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Farmaddressid",
+        "Type": "System.Nullable\u00601[[System.Int64, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "OyoAgro.Api.Controllers.FarmerController",
     "Method": "Create",
     "RelativePath": "api/v1/Farmer/Create",

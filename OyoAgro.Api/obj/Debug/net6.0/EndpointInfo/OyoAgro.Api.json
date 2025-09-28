@@ -5,6 +5,155 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/v1/Farm/Create": {
+      "post": {
+        "tags": [
+          "Farm"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FarmParam"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FarmParam"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FarmParam"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Farm/GetFarms": {
+      "get": {
+        "tags": [
+          "Farm"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Farm/GetFarmsByFarmerId/{farmerId}": {
+      "get": {
+        "tags": [
+          "Farm"
+        ],
+        "parameters": [
+          {
+            "name": "farmerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Farm/GetFarmsByParam": {
+      "post": {
+        "tags": [
+          "Farm"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Farmid": {
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "Farmerid": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Farmtypeid": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Farmsize": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "Farmaddressid": {
+                    "type": "integer",
+                    "format": "int64"
+                  }
+                }
+              },
+              "encoding": {
+                "Farmid": {
+                  "style": "form"
+                },
+                "Farmerid": {
+                  "style": "form"
+                },
+                "Farmtypeid": {
+                  "style": "form"
+                },
+                "Farmsize": {
+                  "style": "form"
+                },
+                "Farmaddressid": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Farm/deleteFarm/{farmId}": {
+      "get": {
+        "tags": [
+          "Farm"
+        ],
+        "parameters": [
+          {
+            "name": "farmId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/v1/Farmer/Create": {
       "post": {
         "tags": [
@@ -964,6 +1113,34 @@
         ],
         "type": "integer",
         "format": "int32"
+      },
+      "FarmParam": {
+        "type": "object",
+        "properties": {
+          "farmid": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "farmerid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "farmtypeid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "farmsize": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "farmaddressid": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       },
       "FarmerParam": {
         "type": "object",
