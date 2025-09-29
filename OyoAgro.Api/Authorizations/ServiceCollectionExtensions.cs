@@ -15,6 +15,12 @@ namespace OyoAgro.Api.Authorizations
             services.AddScoped<ILgaServices, LgaServices>();
             services.AddScoped<IFarmerSevice, FarmerSevice>();
             services.AddScoped<IFarmService, FarmService>();
+            services.AddScoped<IAssociationService, AssociationService>();
+            services.AddScoped<ICropRegistryService, CropRegistryService>();
+            services.AddScoped<ILiveStockRegistryService, LiveStockRegistryService>();
+            services.AddScoped<ICropService, CropService>();
+            services.AddScoped<IFarmTypeService, FarmTypeService>();
+            services.AddScoped<ILiveStockService, LiveStockService>();
 
             return services;
         }

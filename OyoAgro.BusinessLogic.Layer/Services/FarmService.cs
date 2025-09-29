@@ -53,9 +53,29 @@ namespace OyoAgro.BusinessLogic.Layer.Services
                 return obj;
             }
 
-            if (param.Farmaddressid == 0)
+            if (string.IsNullOrEmpty(param.Postalcode))
             {
-                obj.Message = "Farm Address is required";
+                obj.Message = "Postal Code is required";
+                obj.Tag = 0;
+                return obj;
+            }
+
+            if (string.IsNullOrEmpty(param.Streetaddress))
+            {
+                obj.Message = "Address is required";
+                obj.Tag = 0;
+                return obj;
+            }
+            if (string.IsNullOrEmpty(param.Town))
+            {
+                obj.Message = "Town is required";
+                obj.Tag = 0;
+                return obj;
+            }
+
+           if (param.Lgaid == 0)
+            {
+                obj.Message = "LGA is required";
                 obj.Tag = 0;
                 return obj;
             }
@@ -63,7 +83,6 @@ namespace OyoAgro.BusinessLogic.Layer.Services
          
             var farmSave = new Farm
             {
-                Farmaddressid = param.Farmaddressid,
                 Farmerid = param.Farmerid,
                 Farmsize = param.Farmsize,
                 Farmtypeid = param.Farmtypeid,                
@@ -71,6 +90,19 @@ namespace OyoAgro.BusinessLogic.Layer.Services
             };
 
             await _unitOfWork.FarmRepository.SaveForm(farmSave);
+
+            var farmAddress = new Address
+            {
+                Farmerid = Convert.ToInt32(farmSave.Farmid),
+                Lgaid = param.Lgaid,
+                Postalcode = param.Postalcode,
+                Streetaddress = param.Streetaddress,
+                Latitude = param.Latitude,
+                Longitude = param.Longitude,
+                Town = param.Town,
+            };
+            await _unitOfWork.AddressRepository.SaveForm(farmAddress);
+
             obj.Tag = 1;
             obj.Data = farmSave;
             return obj;

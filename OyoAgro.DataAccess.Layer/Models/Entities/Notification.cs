@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using OyoAgro.DataAccess.Layer.Models.Entities.Base;
 
 namespace OyoAgro.DataAccess.Layer.Models.Entities
 {
-    public partial class Notification
+    public partial class Notification : BaseEntity
     {
         public Notification()
         {
@@ -16,9 +17,7 @@ namespace OyoAgro.DataAccess.Layer.Models.Entities
         public string? Title { get; set; }
         public string? Message { get; set; }
         public bool? Isread { get; set; }
-        public DateTime? Createdat { get; set; }
-        public DateTime? Updatedat { get; set; }
-        public DateTime? Deletedat { get; set; }
+      
         public long? Version { get; set; }
 
         public virtual Useraccount? CreatedbyNavigation { get; set; }

@@ -45,10 +45,11 @@ namespace OyoAgro.DataAccess.Layer.Models
             if (!optionsBuilder.IsConfigured)
             {
                 //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                //                //optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=OyoAgro;Username=postgres;Password=Admin");
+                //optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=OyoAgro;Username=postgres;Password=Admin");
                 optionsBuilder.UseNpgsql("Host=turntable.proxy.rlwy.net; Port=34939; Database=oyoagrodb; Username=postgres; Password=GsinVqwnnTiyadmTWlHipqxtTjrmsZQF");
             }
         }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -71,6 +72,10 @@ namespace OyoAgro.DataAccess.Layer.Models
                     .HasDefaultValueSql("now()");
 
                 entity.Property(e => e.Deletedat).HasColumnName("deletedat");
+
+                entity.Property(e => e.Farmerid).HasColumnName("farmerid");
+
+                entity.Property(e => e.Farmid).HasColumnName("farmid");
 
                 entity.Property(e => e.Latitude)
                     .HasPrecision(9, 6)
@@ -99,6 +104,8 @@ namespace OyoAgro.DataAccess.Layer.Models
                 entity.Property(e => e.Updatedat)
                     .HasColumnName("updatedat")
                     .HasDefaultValueSql("now()");
+
+                entity.Property(e => e.Userid).HasColumnName("userid");
 
                 entity.Property(e => e.Version)
                     .HasColumnName("version")
@@ -150,8 +157,17 @@ namespace OyoAgro.DataAccess.Layer.Models
                     .HasName("crop_pkey");
 
                 entity.ToTable("crop");
+                entity.Property(e => e.Updatedat)
+                    .HasColumnName("updatedat")
+                    .HasDefaultValueSql("now()");
 
                 entity.Property(e => e.Croptypeid).HasColumnName("croptypeid");
+                entity.Property(e => e.Createdat)
+                    .HasColumnName("createdat")
+                    .HasDefaultValueSql("now()");
+
+                entity.Property(e => e.Deletedat).HasColumnName("deletedat");
+
 
                 entity.Property(e => e.Name)
                     .HasMaxLength(100)
@@ -239,8 +255,6 @@ namespace OyoAgro.DataAccess.Layer.Models
 
                 entity.Property(e => e.Deletedat).HasColumnName("deletedat");
 
-                entity.Property(e => e.Farmaddressid).HasColumnName("farmaddressid");
-
                 entity.Property(e => e.Farmerid).HasColumnName("farmerid");
 
                 entity.Property(e => e.Farmsize).HasColumnName("farmsize");
@@ -256,11 +270,6 @@ namespace OyoAgro.DataAccess.Layer.Models
                 entity.Property(e => e.Version)
                     .HasColumnName("version")
                     .HasDefaultValueSql("1");
-
-                entity.HasOne(d => d.Farmaddress)
-                    .WithMany(p => p.Farms)
-                    .HasForeignKey(d => d.Farmaddressid)
-                    .HasConstraintName("farm_farmaddressid_fkey");
 
                 entity.HasOne(d => d.Farmer)
                     .WithMany(p => p.Farms)
@@ -323,8 +332,6 @@ namespace OyoAgro.DataAccess.Layer.Models
 
                 entity.Property(e => e.Photourl).HasColumnName("photourl");
 
-                entity.Property(e => e.Residentialaddressid).HasColumnName("residentialaddressid");
-
                 entity.Property(e => e.Tempclientid).HasColumnName("tempclientid");
 
                 entity.Property(e => e.Updatedat)
@@ -339,12 +346,6 @@ namespace OyoAgro.DataAccess.Layer.Models
                     .WithMany(p => p.Farmers)
                     .HasForeignKey(d => d.Associationid)
                     .HasConstraintName("farmer_associationid_fkey");
-
-                entity.HasOne(d => d.Residentialaddress)
-                    .WithMany(p => p.Farmers)
-                    .HasForeignKey(d => d.Residentialaddressid)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("farmer_residentialaddressid_fkey");
             });
 
             modelBuilder.Entity<Farmtype>(entity =>
@@ -356,6 +357,15 @@ namespace OyoAgro.DataAccess.Layer.Models
                 entity.Property(e => e.Typename)
                     .HasMaxLength(50)
                     .HasColumnName("typename");
+                entity.Property(e => e.Updatedat)
+                 .HasColumnName("updatedat")
+                 .HasDefaultValueSql("now()");
+                entity.Property(e => e.Createdat)
+                 .HasColumnName("createdat")
+                 .HasDefaultValueSql("now()");
+                entity.Property(e => e.Deletedat).HasColumnName("deletedat");
+
+
             });
 
             modelBuilder.Entity<Lga>(entity =>
@@ -404,6 +414,13 @@ namespace OyoAgro.DataAccess.Layer.Models
                 entity.ToTable("livestock");
 
                 entity.Property(e => e.Livestocktypeid).HasColumnName("livestocktypeid");
+                entity.Property(e => e.Updatedat)
+              .HasColumnName("updatedat")
+              .HasDefaultValueSql("now()");
+                entity.Property(e => e.Createdat)
+                 .HasColumnName("createdat")
+                 .HasDefaultValueSql("now()");
+                entity.Property(e => e.Deletedat).HasColumnName("deletedat");
 
                 entity.Property(e => e.Name)
                     .HasMaxLength(100)
@@ -560,12 +577,12 @@ namespace OyoAgro.DataAccess.Layer.Models
                 entity.Property(e => e.Activityname).HasColumnName("activityname");
 
                 entity.Property(e => e.Activityparentid).HasColumnName("activityparentid");
-                entity.Property(e => e.Createdat)
-                  .HasColumnName("Createdat");
-                entity.Property(e => e.Updatedat)
-                   .HasColumnName("Updatedat");
-                entity.Property(e => e.Deletedat)
-                    .HasColumnName("Deletedat");
+
+                entity.Property(e => e.Createdat).HasColumnType("timestamp without time zone");
+
+                entity.Property(e => e.Deletedat).HasColumnType("timestamp without time zone");
+
+                entity.Property(e => e.Updatedat).HasColumnType("timestamp without time zone");
 
                 entity.HasOne(d => d.Activityparent)
                     .WithMany(p => p.Profileactivities)
@@ -585,14 +602,19 @@ namespace OyoAgro.DataAccess.Layer.Models
                 entity.Property(e => e.Activityparentid).HasColumnName("activityparentid");
 
                 entity.Property(e => e.Activityparentname).HasColumnName("activityparentname");
+
                 entity.Property(e => e.Createdat)
-                   .HasColumnName("Createdat");
+                    .HasColumnName("Createdat")
+                    .HasDefaultValueSql("now()");
+
+               
                 entity.Property(e => e.Updatedat)
-                   .HasColumnName("Updatedat");
+                    .HasColumnName("Updatedat")
+                    .HasDefaultValueSql("now()");
+
                 entity.Property(e => e.Deletedat)
-                    .HasColumnName("Deletedat");
-
-
+                    .HasColumnName("Deletedat")
+                    .HasDefaultValueSql("now()");
             });
 
             modelBuilder.Entity<Profileadditionalactivity>(entity =>
@@ -610,13 +632,6 @@ namespace OyoAgro.DataAccess.Layer.Models
 
                 entity.Property(e => e.Activityid).HasColumnName("activityid");
 
-                entity.Property(e => e.Createdat)
-                    .HasColumnName("Createdat");
-                entity.Property(e => e.Updatedat)
-                   .HasColumnName("Updatedat");
-                entity.Property(e => e.Deletedat)
-                    .HasColumnName("Deletedat");
-
                 entity.Property(e => e.Canadd).HasColumnName("canadd");
 
                 entity.Property(e => e.Canapprove).HasColumnName("canapprove");
@@ -627,7 +642,11 @@ namespace OyoAgro.DataAccess.Layer.Models
 
                 entity.Property(e => e.Canview).HasColumnName("canview");
 
+                entity.Property(e => e.Deletedat).HasColumnType("timestamp without time zone");
+
                 entity.Property(e => e.Expireon).HasColumnName("expireon");
+
+                entity.Property(e => e.Updatedat).HasColumnType("timestamp without time zone");
 
                 entity.Property(e => e.Userid).HasColumnName("userid");
 
@@ -652,14 +671,10 @@ namespace OyoAgro.DataAccess.Layer.Models
                 entity.Property(e => e.Regionid).HasColumnName("regionid");
 
                 entity.Property(e => e.Createdat)
-                .HasColumnName("createdat")
-                    .HasColumnType("timestamptz");
+                    .HasColumnName("createdat")
+                    .HasDefaultValueSql("now()");
 
-
-                entity.Property(e => e.Deletedat).HasColumnName("deletedat")
-                    .HasColumnType("timestamptz");
-
-
+                entity.Property(e => e.Deletedat).HasColumnName("deletedat");
 
                 entity.Property(e => e.Regionname)
                     .HasMaxLength(100)
@@ -669,8 +684,7 @@ namespace OyoAgro.DataAccess.Layer.Models
 
                 entity.Property(e => e.Updatedat)
                     .HasColumnName("updatedat")
-                        .HasColumnType("timestamptz");
-
+                    .HasDefaultValueSql("now()");
 
                 entity.Property(e => e.Version)
                     .HasColumnName("version")
@@ -783,11 +797,9 @@ namespace OyoAgro.DataAccess.Layer.Models
 
                 entity.Property(e => e.Failedloginattempt).HasColumnName("failedloginattempt");
 
-                entity.Property(e => e.Isactive)
-                    .HasColumnName("isactive");
+                entity.Property(e => e.Isactive).HasColumnName("isactive");
 
-                entity.Property(e => e.Islocked)
-                    .HasColumnName("islocked");
+                entity.Property(e => e.Islocked).HasColumnName("islocked");
 
                 entity.Property(e => e.Lastlogindate).HasColumnName("lastlogindate");
 
@@ -836,34 +848,36 @@ namespace OyoAgro.DataAccess.Layer.Models
                 entity.Property(e => e.Deletedat).HasColumnName("deletedat");
 
                 entity.Property(e => e.Designation)
+                    .HasMaxLength(100)
                     .HasColumnName("designation");
 
                 entity.Property(e => e.Email)
+                    .HasMaxLength(150)
                     .HasColumnName("email");
 
-                entity.Property(e => e.Address)
-                  .HasColumnName("Address");
-
                 entity.Property(e => e.Firstname)
+                    .HasMaxLength(100)
                     .HasColumnName("firstname");
 
                 entity.Property(e => e.Gender)
+                    .HasMaxLength(20)
                     .HasColumnName("gender");
 
                 entity.Property(e => e.Lastname)
+                    .HasMaxLength(100)
                     .HasColumnName("lastname");
 
                 entity.Property(e => e.Lgaid).HasColumnName("lgaid");
 
                 entity.Property(e => e.Middlename)
+                    .HasMaxLength(100)
                     .HasColumnName("middlename");
 
                 entity.Property(e => e.Phonenumber)
+                    .HasMaxLength(20)
                     .HasColumnName("phonenumber");
 
                 entity.Property(e => e.Photo).HasColumnName("photo");
-
-                entity.Property(e => e.Residentialaddressid).HasColumnName("residentialaddressid");
 
                 entity.Property(e => e.Roleid).HasColumnName("roleid");
 
@@ -878,11 +892,6 @@ namespace OyoAgro.DataAccess.Layer.Models
                 entity.Property(e => e.Version)
                     .HasColumnName("version")
                     .HasDefaultValueSql("1");
-
-                entity.HasOne(d => d.Residentialaddress)
-                    .WithMany(p => p.Userprofiles)
-                    .HasForeignKey(d => d.Residentialaddressid)
-                    .HasConstraintName("userprofile_residentialaddressid_fkey");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Userprofiles)
@@ -934,8 +943,8 @@ namespace OyoAgro.DataAccess.Layer.Models
 
             OnModelCreatingPartial(modelBuilder);
         }
-        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 
+        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 
     }
 }

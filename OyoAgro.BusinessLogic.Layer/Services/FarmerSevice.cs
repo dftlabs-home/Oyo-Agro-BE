@@ -92,12 +92,37 @@ namespace OyoAgro.BusinessLogic.Layer.Services
                 return obj;
             }
 
-            if (param.Residentialaddressid == 0)
+            if (string.IsNullOrEmpty(param.Streetaddress))
             {
-                obj.Message = "Residential Address is required";
+                obj.Message = "Street Address is required";
                 obj.Tag = 0;
                 return obj;
             }
+
+            if (string.IsNullOrEmpty(param.Town))
+            {
+                obj.Message = "Town is required";
+                obj.Tag = 0;
+                return obj;
+            } 
+            
+            if (string.IsNullOrEmpty(param.Postalcode))
+            {
+                obj.Message = "Postal Code is required";
+                obj.Tag = 0;
+                return obj;
+            }
+
+             
+            if (param.Lgaid == 0)
+            {
+                obj.Message = "LGA is required";
+                obj.Tag = 0;
+                return obj;
+            }
+
+
+
             var emailExist = await _unitOfWork.FarmerRepository.GetEntitybyEmail(param.Email);
             if (emailExist != null)
             {
@@ -118,7 +143,6 @@ namespace OyoAgro.BusinessLogic.Layer.Services
             {
                 Email = param.Email,
                 Firstname = param.Firstname,
-                Residentialaddressid = param.Residentialaddressid,
                 Associationid = param.Associationid,
                 Availablelabor = param.Availablelabor,
                 Dateofbirth = param.Dateofbirth,
@@ -132,6 +156,20 @@ namespace OyoAgro.BusinessLogic.Layer.Services
             };
 
             await _unitOfWork.FarmerRepository.SaveForm(farmerSave);
+
+            var farmerAddress = new Address
+            {
+                Farmerid = farmerSave.Farmerid,
+                Lgaid = param.Lgaid,
+                Postalcode = param.Postalcode,
+                Streetaddress = param.Streetaddress,
+                Latitude = param.Latitude,
+                Longitude = param.Longitude,
+                Town = param.Town,
+            };
+            await _unitOfWork.AddressRepository.SaveForm(farmerAddress);
+
+
             obj.Tag = 1;
             obj.Data = farmerSave;
             return obj;

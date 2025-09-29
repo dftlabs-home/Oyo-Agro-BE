@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OyoAgro.BusinessLogic.Layer.Interfaces;
+using OyoAgro.BusinessLogic.Layer.Services;
 using OyoAgro.DataAccess.Layer.Models.Params;
 
 namespace OyoAgro.Api.Controllers
@@ -62,6 +63,16 @@ namespace OyoAgro.Api.Controllers
 
 
             return Ok(new { success = true, Data = response });
+
+        }
+
+        [HttpGet("getFarm/{farmId}")]
+        public async Task<IActionResult> GetEntity([FromRoute] int farmId)
+        {
+            var response = await _farmService.GetEntity(farmId);
+
+            return Ok(new { success = true, Data = response });
+
 
         }
 

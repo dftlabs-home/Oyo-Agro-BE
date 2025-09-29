@@ -18,6 +18,7 @@ using OyoAgro.DataAccess.Layer.Models;
 using OyoAgro.DataAccess.Layer.Models.Dtos;
 using OyoAgro.DataAccess.Layer.Models.Entities;
 using OyoAgro.DataAccess.Layer.Models.Params;
+using OyoAgro.DataAccess.Layer.Request;
 
 namespace OyoAgro.BusinessLogic.Layer.Services
 {
@@ -81,6 +82,12 @@ namespace OyoAgro.BusinessLogic.Layer.Services
                 if (user.Status != (int)StatusEnum.Yes)
                 {
                     response.Message = "The account is disabled, please contact the administrator.";
+                    response.Tag = 0;
+                    return response;
+                }
+                 if (user.Isactive == true)
+                {
+                    response.Message = "User already active, please logout from other session";
                     response.Tag = 0;
                     return response;
                 }
@@ -177,12 +184,39 @@ namespace OyoAgro.BusinessLogic.Layer.Services
                 return obj;
             }
 
-            if (string.IsNullOrEmpty(entity.Address))
+            if (string.IsNullOrEmpty(entity.Streetaddress))
             {
-                obj.Message = "Address must be provided!";
+                obj.Message = "Street Address must be provided!";
                 obj.Tag = 0;
                 return obj;
             }
+            if (string.IsNullOrEmpty(entity.Town))
+            {
+                obj.Message = "Town must be provided!";
+                obj.Tag = 0;
+                return obj;
+            }
+            if (string.IsNullOrEmpty(entity.Postalcode))
+            {
+                obj.Message = "Postal Code must be provided!";
+                obj.Tag = 0;
+                return obj;
+            }
+
+            if (entity.Latitude == 0)
+            {
+                obj.Message = "Latitude must be provided!";
+                obj.Tag = 0;
+                return obj;
+            }
+            if (entity.Longitude == 0)
+            {
+                obj.Message = "Longitude must be provided!";
+                obj.Tag = 0;
+                return obj;
+            }
+
+
             if (entity.Lgaid == 0)
             {
                 obj.Message = "LGA must be provided!";
@@ -190,9 +224,9 @@ namespace OyoAgro.BusinessLogic.Layer.Services
                 return obj;
             }
 
-            if (entity.Lgaid == 0)
+            if (entity.Regionid == 0)
             {
-                obj.Message = "LGA must be provided!";
+                obj.Message = "Region must be provided!";
                 obj.Tag = 0;
                 return obj;
             }
@@ -236,7 +270,6 @@ namespace OyoAgro.BusinessLogic.Layer.Services
             var UserEntity = new Useraccount
             {
                 Email = entity.EmailAddress,
-                Address = entity.Address,
                 DecryptedPassword = entity.DecryptedPassword,
                 Salt = entity.Salt,
                 Passwordhash = entity.Password,
@@ -252,15 +285,44 @@ namespace OyoAgro.BusinessLogic.Layer.Services
                 Firstname = entity.Firstname,
                 Lastname = entity.Lastname,
                 Phonenumber = entity.Phonenumber,
-                Roleid = 1,
+                Roleid = (int)RoleEnum.User,
                 Lgaid = entity.Lgaid,
-                Address = entity.Address,
                 Middlename = entity.Middlename,
                 Email = entity.EmailAddress,
                 Version = 1,
-                Residentialaddressid = 2
             };
             await _unitOfWork.UserProfile.SaveForm(userprofile);
+            var userAddress = new Address
+            {
+                Userid = userInfp.Userid,
+                Streetaddress = entity.Streetaddress,
+                Longitude = entity.Longitude,
+                Latitude = entity.Latitude,
+                Postalcode = entity.Postalcode,
+                Lgaid = entity.Lgaid
+            };
+            await _unitOfWork.AddressRepository.SaveForm(userAddress);
+            var region = new Userregion
+            {
+                Userid = userInfp.Userid,
+                Regionid = Convert.ToInt32(entity.Regionid),
+
+            };
+
+            await _unitOfWork.UserRegionRepository.SaveForm(region);
+
+            MailParameter mailParameter = new()
+            {
+                UserEmail = userprofile.Email,
+                RealName = entity.Firstname+ " " + entity.Lastname,
+                UserName = entity.EmailAddress,
+                UserPassword = entity.DecryptedPassword,
+                UserCompany = GlobalConstant.COMPANY
+            };
+            string message = "";
+
+            var sendMail = EmailHelper.IsPasswordEmailSent(mailParameter, out message);
+
 
             obj.Data = UserEntity.Userid.ToString();
             obj.Message = "User Created Successfully";

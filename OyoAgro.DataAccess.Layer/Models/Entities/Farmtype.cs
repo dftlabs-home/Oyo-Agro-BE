@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using OyoAgro.DataAccess.Layer.Models.Entities.Base;
 
 namespace OyoAgro.DataAccess.Layer.Models.Entities
 {
-    public partial class Farmtype
+    public partial class Farmtype : BaseEntity
     {
         public Farmtype()
         {

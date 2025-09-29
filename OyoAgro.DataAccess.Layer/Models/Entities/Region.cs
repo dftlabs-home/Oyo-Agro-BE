@@ -15,7 +15,7 @@ namespace OyoAgro.DataAccess.Layer.Models.Entities
 
         public int Regionid { get; set; }
         public Guid? Tempclientid { get; set; }
-        public string Regionname { get; set; } = null!;
+        public string Regionname { get; set; } = null!;      
         public long? Version { get; set; }
 
         public virtual ICollection<Lga> Lgas { get; set; }

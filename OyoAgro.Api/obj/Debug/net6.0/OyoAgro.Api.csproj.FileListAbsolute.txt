@@ -88,4 +88,5 @@ C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\OyoAgro.Api.pdb
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\OyoAgro.Api.genruntimeconfig.cache
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\ref\OyoAgro.Api.dll
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\OyoAgro.Api.sourcelink.json
-C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\staticwebassets.upToDateCheck.txt
+C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\OyoAgro.Api.RazorAssemblyInfo.cache
+C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\OyoAgro.Api.RazorAssemblyInfo.cs

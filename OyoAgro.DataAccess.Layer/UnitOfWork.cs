@@ -22,6 +22,15 @@ namespace OyoAgro.DataAccess.Layer
         private ILgaRepository? _lgaRepository;
         private IFarmerRepository? _farmerRepository;
         private IFarmRepository? _farmRepository;
+        private IAddressRepository? _addressRepository;
+        private IUserRegionRepository? _userRegionRepository;
+        private IAssociationRepository? _associationRepository;
+        private ICropRepository? _cropRepository;
+        private IFarmTypeRepository? _farmTypeRepository;
+        private ISeasonRepository? _seasonRepository;
+        private ICropRegistryRepository? _cropRegistryRepository;
+        private ILiveStockRegistryRepository? _liveStockRegistryRepository;
+        private ILivestockRepository? _livestockRepository;
         
         public UnitOfWork(AppDbContext context)
         {
@@ -54,6 +63,32 @@ namespace OyoAgro.DataAccess.Layer
 
           public IFarmRepository FarmRepository =>
          _farmRepository ??= new FarmRepository();
+            public IAddressRepository AddressRepository =>
+         _addressRepository ??= new AddressRepository();
+
+         public IUserRegionRepository UserRegionRepository =>
+         _userRegionRepository ??= new UserRegionRepository();
+
+           public IAssociationRepository AssociationRepository=>
+         _associationRepository ??= new AssociationRepository();
+
+          public ICropRepository CropRepository=>
+         _cropRepository ??= new CropRepository();
+
+         public IFarmTypeRepository FarmTypeRepository=>
+         _farmTypeRepository ??= new FarmTypeRepository();
+
+         public ISeasonRepository SeasonRepository=>
+         _seasonRepository ??= new SeasonRepository();
+
+        public ICropRegistryRepository CropRegistryRepository=>
+         _cropRegistryRepository ??= new CropRegistryRepository();
+
+          public ILiveStockRegistryRepository LiveStockRegistryRepository=>
+         _liveStockRegistryRepository ??= new LiveStockRegistryRepository();
+
+          public ILivestockRepository LivestockRepository=>
+         _livestockRepository ??= new LivestockRepository();
 
 
         public int Complete()

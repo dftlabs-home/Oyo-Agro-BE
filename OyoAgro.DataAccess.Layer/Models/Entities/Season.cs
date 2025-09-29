@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using OyoAgro.DataAccess.Layer.Models.Entities.Base;
 
 namespace OyoAgro.DataAccess.Layer.Models.Entities
 {
-    public partial class Season
+    public partial class Season : BaseEntity
     {
         public Season()
         {
@@ -17,9 +18,7 @@ namespace OyoAgro.DataAccess.Layer.Models.Entities
         public int? Year { get; set; }
         public DateOnly? Startdate { get; set; }
         public DateOnly? Enddate { get; set; }
-        public DateTime? Createdat { get; set; }
-        public DateTime? Updatedat { get; set; }
-        public DateTime? Deletedat { get; set; }
+     
         public long? Version { get; set; }
 
         public virtual ICollection<Cropregistry> Cropregistries { get; set; }

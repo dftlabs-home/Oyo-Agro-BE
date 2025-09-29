@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using OyoAgro.DataAccess.Layer.Models.Entities.Base;
 
 namespace OyoAgro.DataAccess.Layer.Models.Entities
 {
-    public partial class Farm : BaseEntity
+    public class Farm : BaseEntity
     {
         public Farm()
         {
@@ -17,14 +20,13 @@ namespace OyoAgro.DataAccess.Layer.Models.Entities
         public int Farmerid { get; set; }
         public int Farmtypeid { get; set; }
         public decimal? Farmsize { get; set; }
-        public long? Farmaddressid { get; set; }
         
         public long? Version { get; set; }
 
-        public virtual Address? Farmaddress { get; set; }
         public virtual Farmer Farmer { get; set; } = null!;
         public virtual Farmtype Farmtype { get; set; } = null!;
         public virtual ICollection<Cropregistry> Cropregistries { get; set; }
         public virtual ICollection<Livestockregistry> Livestockregistries { get; set; }
+
     }
 }

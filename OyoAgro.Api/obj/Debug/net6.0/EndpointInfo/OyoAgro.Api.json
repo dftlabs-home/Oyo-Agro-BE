@@ -5,6 +5,282 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/v1/Association/Create": {
+      "post": {
+        "tags": [
+          "Association"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssociationParam"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssociationParam"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssociationParam"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Association/GetAssociations": {
+      "get": {
+        "tags": [
+          "Association"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Association/GetAssociaitonsByParam": {
+      "post": {
+        "tags": [
+          "Association"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Associationid": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Name": {
+                    "type": "string"
+                  },
+                  "Registrationno": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "Associationid": {
+                  "style": "form"
+                },
+                "Name": {
+                  "style": "form"
+                },
+                "Registrationno": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Association/deleteAssociation/{associationId}": {
+      "get": {
+        "tags": [
+          "Association"
+        ],
+        "parameters": [
+          {
+            "name": "assId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "associationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Association/getAssociation/{associationId}": {
+      "get": {
+        "tags": [
+          "Association"
+        ],
+        "parameters": [
+          {
+            "name": "assId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "associationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Crop/Create": {
+      "post": {
+        "tags": [
+          "Crop"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CropParam"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CropParam"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CropParam"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Crop/GetCrops": {
+      "get": {
+        "tags": [
+          "Crop"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Crop/GetCropsByParam": {
+      "post": {
+        "tags": [
+          "Crop"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Croptypeid": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Name": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "Croptypeid": {
+                  "style": "form"
+                },
+                "Name": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Crop/deleteCrop/{cropId}": {
+      "get": {
+        "tags": [
+          "Crop"
+        ],
+        "parameters": [
+          {
+            "name": "cropId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Crop/getCrop/{cropId}": {
+      "get": {
+        "tags": [
+          "Crop"
+        ],
+        "parameters": [
+          {
+            "name": "cropId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/v1/Farm/Create": {
       "post": {
         "tags": [
@@ -98,9 +374,26 @@
                     "type": "number",
                     "format": "double"
                   },
-                  "Farmaddressid": {
+                  "Streetaddress": {
+                    "type": "string"
+                  },
+                  "Town": {
+                    "type": "string"
+                  },
+                  "Postalcode": {
+                    "type": "string"
+                  },
+                  "Lgaid": {
                     "type": "integer",
-                    "format": "int64"
+                    "format": "int32"
+                  },
+                  "Latitude": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "Longitude": {
+                    "type": "number",
+                    "format": "double"
                   }
                 }
               },
@@ -117,7 +410,22 @@
                 "Farmsize": {
                   "style": "form"
                 },
-                "Farmaddressid": {
+                "Streetaddress": {
+                  "style": "form"
+                },
+                "Town": {
+                  "style": "form"
+                },
+                "Postalcode": {
+                  "style": "form"
+                },
+                "Lgaid": {
+                  "style": "form"
+                },
+                "Latitude": {
+                  "style": "form"
+                },
+                "Longitude": {
                   "style": "form"
                 }
               }
@@ -132,6 +440,29 @@
       }
     },
     "/api/v1/Farm/deleteFarm/{farmId}": {
+      "get": {
+        "tags": [
+          "Farm"
+        ],
+        "parameters": [
+          {
+            "name": "farmId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Farm/getFarm/{farmId}": {
       "get": {
         "tags": [
           "Farm"
@@ -257,10 +588,6 @@
                     "type": "integer",
                     "format": "int32"
                   },
-                  "Residentialaddressid": {
-                    "type": "integer",
-                    "format": "int64"
-                  },
                   "Householdsize": {
                     "type": "integer",
                     "format": "int32"
@@ -271,6 +598,31 @@
                   },
                   "Photourl": {
                     "type": "string"
+                  },
+                  "Streetaddress": {
+                    "type": "string"
+                  },
+                  "Town": {
+                    "type": "string"
+                  },
+                  "Postalcode": {
+                    "type": "string"
+                  },
+                  "Lgaid": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Latitude": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "Longitude": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "Version": {
+                    "type": "integer",
+                    "format": "int64"
                   }
                 }
               },
@@ -317,9 +669,6 @@
                 "Associationid": {
                   "style": "form"
                 },
-                "Residentialaddressid": {
-                  "style": "form"
-                },
                 "Householdsize": {
                   "style": "form"
                 },
@@ -327,6 +676,27 @@
                   "style": "form"
                 },
                 "Photourl": {
+                  "style": "form"
+                },
+                "Streetaddress": {
+                  "style": "form"
+                },
+                "Town": {
+                  "style": "form"
+                },
+                "Postalcode": {
+                  "style": "form"
+                },
+                "Lgaid": {
+                  "style": "form"
+                },
+                "Latitude": {
+                  "style": "form"
+                },
+                "Longitude": {
+                  "style": "form"
+                },
+                "Version": {
                   "style": "form"
                 }
               }
@@ -361,6 +731,156 @@
             "required": true,
             "schema": {
               "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Farmer/getFarmer/{farmerId}": {
+      "get": {
+        "tags": [
+          "Farmer"
+        ],
+        "parameters": [
+          {
+            "name": "farmerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/FarmType/Create": {
+      "post": {
+        "tags": [
+          "FarmType"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FarmTypeParam"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FarmTypeParam"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FarmTypeParam"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/FarmType/GetFarmTypes": {
+      "get": {
+        "tags": [
+          "FarmType"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/FarmType/getFarmType/{farmTypeId}": {
+      "get": {
+        "tags": [
+          "FarmType"
+        ],
+        "parameters": [
+          {
+            "name": "farmTypeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/FarmType/GetFarmTypesByParam": {
+      "post": {
+        "tags": [
+          "FarmType"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Farmtypeid": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Typename": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "Farmtypeid": {
+                  "style": "form"
+                },
+                "Typename": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/FarmType/deleteFarmType/{farmTypeId}": {
+      "get": {
+        "tags": [
+          "FarmType"
+        ],
+        "parameters": [
+          {
+            "name": "farmTypeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
             }
           }
         ],
@@ -1101,6 +1621,38 @@
   },
   "components": {
     "schemas": {
+      "AssociationParam": {
+        "type": "object",
+        "properties": {
+          "associationid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "registrationno": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CropParam": {
+        "type": "object",
+        "properties": {
+          "croptypeid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "DayOfWeek": {
         "enum": [
           0,
@@ -1134,9 +1686,45 @@
             "format": "double",
             "nullable": true
           },
-          "farmaddressid": {
+          "streetaddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "town": {
+            "type": "string",
+            "nullable": true
+          },
+          "postalcode": {
+            "type": "string",
+            "nullable": true
+          },
+          "lgaid": {
             "type": "integer",
-            "format": "int64",
+            "format": "int32",
+            "nullable": true
+          },
+          "latitude": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "longitude": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FarmTypeParam": {
+        "type": "object",
+        "properties": {
+          "farmtypeid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "typename": {
+            "type": "string",
             "nullable": true
           }
         },
@@ -1183,10 +1771,6 @@
             "format": "int32",
             "nullable": true
           },
-          "residentialaddressid": {
-            "type": "integer",
-            "format": "int64"
-          },
           "householdsize": {
             "type": "integer",
             "format": "int32",
@@ -1199,6 +1783,38 @@
           },
           "photourl": {
             "type": "string",
+            "nullable": true
+          },
+          "streetaddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "town": {
+            "type": "string",
+            "nullable": true
+          },
+          "postalcode": {
+            "type": "string",
+            "nullable": true
+          },
+          "lgaid": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "latitude": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "longitude": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "version": {
+            "type": "integer",
+            "format": "int64",
             "nullable": true
           }
         },
@@ -1341,10 +1957,6 @@
             "type": "string",
             "nullable": true
           },
-          "address": {
-            "type": "string",
-            "nullable": true
-          },
           "salt": {
             "type": "string",
             "nullable": true
@@ -1356,6 +1968,33 @@
           "lgaid": {
             "type": "integer",
             "format": "int32",
+            "nullable": true
+          },
+          "regionid": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "streetaddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "town": {
+            "type": "string",
+            "nullable": true
+          },
+          "postalcode": {
+            "type": "string",
+            "nullable": true
+          },
+          "latitude": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "longitude": {
+            "type": "number",
+            "format": "double",
             "nullable": true
           }
         },

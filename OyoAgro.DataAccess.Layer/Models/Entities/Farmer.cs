@@ -21,15 +21,12 @@ namespace OyoAgro.DataAccess.Layer.Models.Entities
         public string? Email { get; set; }
         public string? Phonenumber { get; set; }
         public int? Associationid { get; set; }
-        public long Residentialaddressid { get; set; }
         public int? Householdsize { get; set; }
         public int? Availablelabor { get; set; }
-        public string? Photourl { get; set; }
-     
+        public string? Photourl { get; set; }      
         public long? Version { get; set; }
 
         public virtual Association? Association { get; set; }
-        public virtual Address Residentialaddress { get; set; } = null!;
         public virtual ICollection<Farm> Farms { get; set; }
     }
 }

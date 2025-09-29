@@ -17,9 +17,16 @@ namespace OyoAgro.DataAccess.Layer.Models.Params
         public string? Email { get; set; }
         public string? Phonenumber { get; set; }
         public int? Associationid { get; set; }
-        public long Residentialaddressid { get; set; }
         public int? Householdsize { get; set; }
         public int? Availablelabor { get; set; }
         public string? Photourl { get; set; }
+        public string? Streetaddress { get; set; }
+        public string? Town { get; set; }
+        public string? Postalcode { get; set; }
+        public int? Lgaid { get; set; }
+        public decimal? Latitude { get; set; }
+        public decimal? Longitude { get; set; }
+        public long? Version { get; set; }
+
     }
 }

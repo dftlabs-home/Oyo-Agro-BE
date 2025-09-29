@@ -17,6 +17,15 @@ namespace OyoAgro.DataAccess.Layer.Interfaces
         ILgaRepository LgaRepository { get; }
         IFarmerRepository FarmerRepository { get; }
         IFarmRepository FarmRepository { get; }
+        IAddressRepository AddressRepository { get; }
+        IUserRegionRepository UserRegionRepository { get; }
+        IAssociationRepository AssociationRepository { get; }
+        ICropRepository CropRepository{ get; }
+        IFarmTypeRepository FarmTypeRepository { get; }
+        ISeasonRepository SeasonRepository{ get; }
+        ICropRegistryRepository CropRegistryRepository{ get; }
+        ILiveStockRegistryRepository LiveStockRegistryRepository{ get; }
+        ILivestockRepository LivestockRepository{ get; }
         
         int Complete();
 

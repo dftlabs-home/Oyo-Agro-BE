@@ -8,6 +8,7 @@ namespace OyoAgro.DataAccess.Layer.Models.Entities
 {
     public partial class Useraccount : BaseEntity
     {
+
         public Useraccount()
         {
             Notifications = new HashSet<Notification>();
@@ -21,20 +22,20 @@ namespace OyoAgro.DataAccess.Layer.Models.Entities
         public Guid? Tempclientid { get; set; }
         public string Username { get; set; } = null!;
         public string Passwordhash { get; set; } = null!;
-        public string? Password { get; set; }      
+        public string? Password { get; set; }       
         public long? Version { get; set; }
         public string? Salt { get; set; }
         public string? Email { get; set; }
         public int? Status { get; set; }
         public string? Apitoken { get; set; }
-        public bool? Isactive { get; set; }
-        public bool? Islocked { get; set; }
         public int? Logincount { get; set; }
         public DateOnly? Lastlogindate { get; set; }
         public DateOnly? Deactivateddate { get; set; }
         public int? Failedloginattempt { get; set; }
         public string? Securityquestion { get; set; }
         public string? Securityanswer { get; set; }
+        public bool? Isactive { get; set; }
+        public bool? Islocked { get; set; }
 
         public virtual ICollection<Notification> Notifications { get; set; }
         public virtual ICollection<Notificationtarget> Notificationtargets { get; set; }
@@ -65,6 +66,8 @@ namespace OyoAgro.DataAccess.Layer.Models.Entities
 
         [NotMapped]
         public int? Roleid { get; set; }
+         [NotMapped]
+        public int? RegionId { get; set; }
 
     }
 }
