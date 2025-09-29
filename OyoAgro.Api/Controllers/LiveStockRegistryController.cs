@@ -4,6 +4,10 @@ using OyoAgro.DataAccess.Layer.Models.Params;
 
 namespace OyoAgro.Api.Controllers
 {
+    [ApiController]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
+
     public class LiveStockRegistryController : ControllerBase
     {
         private readonly ILiveStockRegistryService _liveStockRegistryService;

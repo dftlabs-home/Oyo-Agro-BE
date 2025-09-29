@@ -23,6 +23,8 @@ namespace OyoAgro.DataAccess.Layer.Helpers
 
             builder.Replace("[realname]", user.RealName);
             builder.Replace("[username]", user.UserName);
+            builder.Replace("[password]", user.UserPassword);
+            builder.Replace("[password]", user.UserCompany);
             builder.Replace("[link]", $"");
             builder.Replace("[year]", DateTime.Now.Year.ToString());
             builder.Replace("[reserved]", GlobalConstant.RESERVED);
