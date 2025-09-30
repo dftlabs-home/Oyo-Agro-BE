@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using OyoAgro.Api.Authorizations;
 using OyoAgro.BusinessLogic.Layer.Interfaces;
 using OyoAgro.DataAccess.Layer.Models.Dtos;
 using OyoAgro.DataAccess.Layer.Models.Entities;
@@ -60,6 +60,7 @@ namespace OyoAgro.Api.Controllers
             }
         }
 
+        [Authorize]
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] UserParam model)
         {

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OyoAgro.Api.Authorizations;
 using OyoAgro.BusinessLogic.Layer.Interfaces;
 using OyoAgro.BusinessLogic.Layer.Services;
 using OyoAgro.DataAccess.Layer.Models.Params;

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OyoAgro.Api.Authorizations;
 using OyoAgro.BusinessLogic.Layer.Interfaces;
 using OyoAgro.BusinessLogic.Layer.Services;
 using OyoAgro.DataAccess.Layer.Models.Entities;
@@ -9,6 +10,8 @@ namespace OyoAgro.Api.Controllers
     [ApiController]
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
+    [Authorize]
+
     public class ProfileActivityParentController : ControllerBase
     {
         private readonly IProfileActivityParentService _profileActivityParentService;

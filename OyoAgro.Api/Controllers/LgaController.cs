@@ -5,10 +5,11 @@ using OyoAgro.DataAccess.Layer.Models.Params;
 
 namespace OyoAgro.Api.Controllers
 {
-    [Authorize]
     [ApiController]
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
+    [Authorize]
+
     public class LgaController : ControllerBase
     {
         private readonly ILgaServices _lgaServices;
