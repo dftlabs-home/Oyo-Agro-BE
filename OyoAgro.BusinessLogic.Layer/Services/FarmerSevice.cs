@@ -39,26 +39,14 @@ namespace OyoAgro.BusinessLogic.Layer.Services
                 return obj;
             }
 
-            if (string.IsNullOrEmpty(param.Firstname))
-            {
-                obj.Message = "First Name is required";
-                obj.Tag = 0;
-                return obj;
-            }
-
-            if (string.IsNullOrEmpty(param.Firstname))
-            {
-                obj.Message = "First Name is required";
-                obj.Tag = 0;
-                return obj;
-            }
-
             if (string.IsNullOrEmpty(param.Lastname))
             {
-                obj.Message = "Last Name is required";
+                obj.Message = "First Name is required";
                 obj.Tag = 0;
                 return obj;
             }
+
+           
 
             if (string.IsNullOrEmpty(param.Email))
             {
@@ -152,7 +140,7 @@ namespace OyoAgro.BusinessLogic.Layer.Services
                 Middlename = param.Middlename,
                 Phonenumber = param.Phonenumber,
                 Photourl = param.Photourl,
-                
+                UserId = param.UserId,
             };
 
             await _unitOfWork.FarmerRepository.SaveForm(farmerSave);

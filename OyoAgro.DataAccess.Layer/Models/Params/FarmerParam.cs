@@ -27,6 +27,7 @@ namespace OyoAgro.DataAccess.Layer.Models.Params
         public decimal? Latitude { get; set; }
         public decimal? Longitude { get; set; }
         public long? Version { get; set; }
+        public int UserId{ get; set; }
 
     }
 }

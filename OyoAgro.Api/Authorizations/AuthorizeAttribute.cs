@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using OyoAgro.DataAccess.Layer.Models;
 
 namespace OyoAgro.Api.Authorizations
 {
@@ -23,26 +24,35 @@ namespace OyoAgro.Api.Authorizations
             // authorization
           
 
-            var authorizationToken = context.HttpContext.Request.Headers["Authorization"].ToString();
+            var authorizationHeader = context.HttpContext.Request.Headers["Authorization"].ToString();
             string token = string.Empty;
-            if (!string.IsNullOrEmpty(authorizationToken) && authorizationToken.StartsWith("Bearer ", StringComparison.OrdinalIgnoreCase) && authorizationToken.Length > 7)
+            if (string.IsNullOrEmpty(authorizationHeader) || !authorizationHeader.StartsWith("Bearer ", StringComparison.OrdinalIgnoreCase))
             {
-                token = authorizationToken.Substring(7);
+                //token = authorizationToken.Substring(7);
+                context.Result = new UnauthorizedResult();
+                return;
             }
-            if (!string.IsNullOrEmpty(token))
+            token = authorizationHeader.Substring("Bearer ".Length).Trim();
+            if (string.IsNullOrEmpty(token))
             {
-                //try
-                //{
-                //    GlobalContext.OperatorInfo = Operator.Instance.Current(token).Result;
-                //    if (GlobalContext.OperatorInfo != null)
-                //    {
-                //        GlobalContext.OperatorInfo.CompanyId = GlobalContext.CompanyId;
-                //    }
-                //}
-                //catch
-                //{
-                //}
+                context.Result = new UnauthorizedResult();
+                return;
             }
+
+            using (var db = new AppDbContext())
+            {
+                var session = db.Useraccounts
+                    .FirstOrDefault(s => s.Apitoken == token && s.Isactive == true);
+
+                if (session == null)
+                {
+                    context.Result = new UnauthorizedResult(); // token not found or invalid
+                    return;
+                }
+
+            }
+
+
         }
 
     }

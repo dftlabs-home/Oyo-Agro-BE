@@ -281,6 +281,264 @@
         }
       }
     },
+    "/api/v1/CropRegistry/Create": {
+      "post": {
+        "tags": [
+          "CropRegistry"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CropRegistryParam"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CropRegistryParam"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CropRegistryParam"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/CropRegistry/GetCropRegistries": {
+      "get": {
+        "tags": [
+          "CropRegistry"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/CropRegistry/getCropRegistriesbyParam": {
+      "post": {
+        "tags": [
+          "CropRegistry"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Cropregistryid": {
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "Farmid": {
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "Seasonid": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Croptypeid": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Cropvariety": {
+                    "type": "string"
+                  },
+                  "Areaplanted": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "Plantedquantity": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "Plantingdate.Year": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Plantingdate.Month": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Plantingdate.Day": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Plantingdate.DayOfWeek": {
+                    "$ref": "#/components/schemas/DayOfWeek"
+                  },
+                  "Plantingdate.DayOfYear": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Plantingdate.DayNumber": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Harvestdate.Year": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Harvestdate.Month": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Harvestdate.Day": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Harvestdate.DayOfWeek": {
+                    "$ref": "#/components/schemas/DayOfWeek"
+                  },
+                  "Harvestdate.DayOfYear": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Harvestdate.DayNumber": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Areaharvested": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "Yieldquantity": {
+                    "type": "number",
+                    "format": "double"
+                  }
+                }
+              },
+              "encoding": {
+                "Cropregistryid": {
+                  "style": "form"
+                },
+                "Farmid": {
+                  "style": "form"
+                },
+                "Seasonid": {
+                  "style": "form"
+                },
+                "Croptypeid": {
+                  "style": "form"
+                },
+                "Cropvariety": {
+                  "style": "form"
+                },
+                "Areaplanted": {
+                  "style": "form"
+                },
+                "Plantedquantity": {
+                  "style": "form"
+                },
+                "Plantingdate.Year": {
+                  "style": "form"
+                },
+                "Plantingdate.Month": {
+                  "style": "form"
+                },
+                "Plantingdate.Day": {
+                  "style": "form"
+                },
+                "Plantingdate.DayOfWeek": {
+                  "style": "form"
+                },
+                "Plantingdate.DayOfYear": {
+                  "style": "form"
+                },
+                "Plantingdate.DayNumber": {
+                  "style": "form"
+                },
+                "Harvestdate.Year": {
+                  "style": "form"
+                },
+                "Harvestdate.Month": {
+                  "style": "form"
+                },
+                "Harvestdate.Day": {
+                  "style": "form"
+                },
+                "Harvestdate.DayOfWeek": {
+                  "style": "form"
+                },
+                "Harvestdate.DayOfYear": {
+                  "style": "form"
+                },
+                "Harvestdate.DayNumber": {
+                  "style": "form"
+                },
+                "Areaharvested": {
+                  "style": "form"
+                },
+                "Yieldquantity": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/CropRegistry/deleteCropRegistry/{registryId}": {
+      "get": {
+        "tags": [
+          "CropRegistry"
+        ],
+        "parameters": [
+          {
+            "name": "registryId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/CropRegistry/getCropRegistry/{registryId}": {
+      "get": {
+        "tags": [
+          "CropRegistry"
+        ],
+        "parameters": [
+          {
+            "name": "registryId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/v1/Farm/Create": {
       "post": {
         "tags": [
@@ -623,6 +881,10 @@
                   "Version": {
                     "type": "integer",
                     "format": "int64"
+                  },
+                  "UserId": {
+                    "type": "integer",
+                    "format": "int32"
                   }
                 }
               },
@@ -697,6 +959,9 @@
                   "style": "form"
                 },
                 "Version": {
+                  "style": "form"
+                },
+                "UserId": {
                   "style": "form"
                 }
               }
@@ -1010,6 +1275,364 @@
         "parameters": [
           {
             "name": "lgaId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/LiveStock/Create": {
+      "post": {
+        "tags": [
+          "LiveStock"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LivestockParam"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LivestockParam"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LivestockParam"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/LiveStock/GetLiveStocks": {
+      "get": {
+        "tags": [
+          "LiveStock"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/LiveStock/getLiveStockbyParam": {
+      "post": {
+        "tags": [
+          "LiveStock"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Livestocktypeid": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Name": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "Livestocktypeid": {
+                  "style": "form"
+                },
+                "Name": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/LiveStock/deleteLiveStock/{livestockId}": {
+      "get": {
+        "tags": [
+          "LiveStock"
+        ],
+        "parameters": [
+          {
+            "name": "livestockId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/LiveStock/getLiveStock/{livestockId}": {
+      "get": {
+        "tags": [
+          "LiveStock"
+        ],
+        "parameters": [
+          {
+            "name": "livestockId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/LiveStockRegistry/Create": {
+      "post": {
+        "tags": [
+          "LiveStockRegistry"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LiveStockRegistryParam"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LiveStockRegistryParam"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LiveStockRegistryParam"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/LiveStockRegistry/GetLiveStockRegistries": {
+      "get": {
+        "tags": [
+          "LiveStockRegistry"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/LiveStockRegistry/getLiveStockRegistriesbyParam": {
+      "post": {
+        "tags": [
+          "LiveStockRegistry"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Livestockregistryid": {
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "Farmid": {
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "Seasonid": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Livestocktypeid": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Quantity": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Startdate.Year": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Startdate.Month": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Startdate.Day": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Startdate.DayOfWeek": {
+                    "$ref": "#/components/schemas/DayOfWeek"
+                  },
+                  "Startdate.DayOfYear": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Startdate.DayNumber": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Enddate.Year": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Enddate.Month": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Enddate.Day": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Enddate.DayOfWeek": {
+                    "$ref": "#/components/schemas/DayOfWeek"
+                  },
+                  "Enddate.DayOfYear": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Enddate.DayNumber": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              },
+              "encoding": {
+                "Livestockregistryid": {
+                  "style": "form"
+                },
+                "Farmid": {
+                  "style": "form"
+                },
+                "Seasonid": {
+                  "style": "form"
+                },
+                "Livestocktypeid": {
+                  "style": "form"
+                },
+                "Quantity": {
+                  "style": "form"
+                },
+                "Startdate.Year": {
+                  "style": "form"
+                },
+                "Startdate.Month": {
+                  "style": "form"
+                },
+                "Startdate.Day": {
+                  "style": "form"
+                },
+                "Startdate.DayOfWeek": {
+                  "style": "form"
+                },
+                "Startdate.DayOfYear": {
+                  "style": "form"
+                },
+                "Startdate.DayNumber": {
+                  "style": "form"
+                },
+                "Enddate.Year": {
+                  "style": "form"
+                },
+                "Enddate.Month": {
+                  "style": "form"
+                },
+                "Enddate.Day": {
+                  "style": "form"
+                },
+                "Enddate.DayOfWeek": {
+                  "style": "form"
+                },
+                "Enddate.DayOfYear": {
+                  "style": "form"
+                },
+                "Enddate.DayNumber": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/LiveStockRegistry/deleteLiveStockRegistry/{registryId}": {
+      "get": {
+        "tags": [
+          "LiveStockRegistry"
+        ],
+        "parameters": [
+          {
+            "name": "registryId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/LiveStockRegistry/getLiveStockRegistry/{registryId}": {
+      "get": {
+        "tags": [
+          "LiveStockRegistry"
+        ],
+        "parameters": [
+          {
+            "name": "registryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1653,6 +2276,62 @@
         },
         "additionalProperties": false
       },
+      "CropRegistryParam": {
+        "type": "object",
+        "properties": {
+          "cropregistryid": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "farmid": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "seasonid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "croptypeid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cropvariety": {
+            "type": "string",
+            "nullable": true
+          },
+          "areaplanted": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "plantedquantity": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "plantingdate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "harvestdate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "areaharvested": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "yieldquantity": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "DayOfWeek": {
         "enum": [
           0,
@@ -1816,6 +2495,10 @@
             "type": "integer",
             "format": "int64",
             "nullable": true
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -1834,6 +2517,57 @@
           "regionid": {
             "type": "integer",
             "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LiveStockRegistryParam": {
+        "type": "object",
+        "properties": {
+          "livestockregistryid": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "farmid": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "seasonid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "livestocktypeid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "startdate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "enddate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LivestockParam": {
+        "type": "object",
+        "properties": {
+          "livestocktypeid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

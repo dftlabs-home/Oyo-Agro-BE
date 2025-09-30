@@ -173,6 +173,180 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "OyoAgro.Api.Controllers.CropRegistryController",
+    "Method": "Create",
+    "RelativePath": "api/v1/CropRegistry/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "OyoAgro.DataAccess.Layer.Models.Params.CropRegistryParam",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.CropRegistryController",
+    "Method": "DeleteEntity",
+    "RelativePath": "api/v1/CropRegistry/deleteCropRegistry/{registryId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registryId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.CropRegistryController",
+    "Method": "GetList",
+    "RelativePath": "api/v1/CropRegistry/GetCropRegistries",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.CropRegistryController",
+    "Method": "GetList",
+    "RelativePath": "api/v1/CropRegistry/getCropRegistriesbyParam",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Cropregistryid",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "Farmid",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "Seasonid",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Croptypeid",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Cropvariety",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Areaplanted",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Plantedquantity",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Plantingdate.Year",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Plantingdate.Month",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Plantingdate.Day",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Plantingdate.DayOfWeek",
+        "Type": "System.DayOfWeek",
+        "IsRequired": false
+      },
+      {
+        "Name": "Plantingdate.DayOfYear",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Plantingdate.DayNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Harvestdate.Year",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Harvestdate.Month",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Harvestdate.Day",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Harvestdate.DayOfWeek",
+        "Type": "System.DayOfWeek",
+        "IsRequired": false
+      },
+      {
+        "Name": "Harvestdate.DayOfYear",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Harvestdate.DayNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Areaharvested",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Yieldquantity",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.CropRegistryController",
+    "Method": "GetEntity",
+    "RelativePath": "api/v1/CropRegistry/getCropRegistry/{registryId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registryId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "OyoAgro.Api.Controllers.FarmController",
     "Method": "Create",
     "RelativePath": "api/v1/Farm/Create",
@@ -497,6 +671,11 @@
         "Name": "Version",
         "Type": "System.Nullable\u00601[[System.Int64, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
+      },
+      {
+        "Name": "UserId",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -660,6 +839,239 @@
         "Name": "Regionid",
         "Type": "System.Int32",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.LiveStockController",
+    "Method": "Create",
+    "RelativePath": "api/v1/LiveStock/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "OyoAgro.DataAccess.Layer.Models.Params.LivestockParam",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.LiveStockController",
+    "Method": "DeleteEntity",
+    "RelativePath": "api/v1/LiveStock/deleteLiveStock/{livestockId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "livestockId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.LiveStockController",
+    "Method": "GetEntity",
+    "RelativePath": "api/v1/LiveStock/getLiveStock/{livestockId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "livestockId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.LiveStockController",
+    "Method": "GetList",
+    "RelativePath": "api/v1/LiveStock/getLiveStockbyParam",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Livestocktypeid",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.LiveStockController",
+    "Method": "GetList",
+    "RelativePath": "api/v1/LiveStock/GetLiveStocks",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.LiveStockRegistryController",
+    "Method": "Create",
+    "RelativePath": "api/v1/LiveStockRegistry/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "OyoAgro.DataAccess.Layer.Models.Params.LiveStockRegistryParam",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.LiveStockRegistryController",
+    "Method": "DeleteEntity",
+    "RelativePath": "api/v1/LiveStockRegistry/deleteLiveStockRegistry/{registryId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registryId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.LiveStockRegistryController",
+    "Method": "GetList",
+    "RelativePath": "api/v1/LiveStockRegistry/GetLiveStockRegistries",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.LiveStockRegistryController",
+    "Method": "GetList",
+    "RelativePath": "api/v1/LiveStockRegistry/getLiveStockRegistriesbyParam",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Livestockregistryid",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "Farmid",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "Seasonid",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Livestocktypeid",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Quantity",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Startdate.Year",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Startdate.Month",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Startdate.Day",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Startdate.DayOfWeek",
+        "Type": "System.DayOfWeek",
+        "IsRequired": false
+      },
+      {
+        "Name": "Startdate.DayOfYear",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Startdate.DayNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Enddate.Year",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Enddate.Month",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Enddate.Day",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Enddate.DayOfWeek",
+        "Type": "System.DayOfWeek",
+        "IsRequired": false
+      },
+      {
+        "Name": "Enddate.DayOfYear",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Enddate.DayNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.LiveStockRegistryController",
+    "Method": "GetEntity",
+    "RelativePath": "api/v1/LiveStockRegistry/getLiveStockRegistry/{registryId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registryId",
+        "Type": "System.Int32",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

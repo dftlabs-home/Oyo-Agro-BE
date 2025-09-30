@@ -90,3 +90,4 @@ C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\ref\OyoAgro.Api
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\OyoAgro.Api.sourcelink.json
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\OyoAgro.Api.RazorAssemblyInfo.cache
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\OyoAgro.Api.RazorAssemblyInfo.cs
+C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\staticwebassets.upToDateCheck.txt

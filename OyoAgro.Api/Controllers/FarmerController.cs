@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OyoAgro.Api.Authorizations;
 using OyoAgro.BusinessLogic.Layer.Interfaces;
 using OyoAgro.BusinessLogic.Layer.Services;
 using OyoAgro.DataAccess.Layer.Models.Entities;
+using OyoAgro.DataAccess.Layer.Models.Entities.Operator;
 using OyoAgro.DataAccess.Layer.Models.Params;
 
 namespace OyoAgro.Api.Controllers
@@ -9,6 +11,7 @@ namespace OyoAgro.Api.Controllers
     [ApiController]
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
+    [Authorize]
     public class FarmerController : ControllerBase
     {
         private readonly IFarmerSevice _farmerSevice;
@@ -20,8 +23,12 @@ namespace OyoAgro.Api.Controllers
         [HttpPost("Create")]
         public async Task<IActionResult> Create([FromBody] FarmerParam model)
         {
+            var token = string.Empty;
+            var header = (string)HttpContext.Request.Headers["Authorization"]!;
+            if (header != null) token = header.Substring(7);
+            var user = await new DataRepository().GetUserByToken(token);
+            model.UserId = user.UserId;
             var response = await _farmerSevice.SaveEntity(model);
-
 
             return Ok(new { success = true, Data = response });
 

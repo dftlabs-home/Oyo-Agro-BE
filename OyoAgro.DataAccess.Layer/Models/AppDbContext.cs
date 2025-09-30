@@ -291,6 +291,7 @@ namespace OyoAgro.DataAccess.Layer.Models
                     .IsUnique();
 
                 entity.Property(e => e.Farmerid).HasColumnName("farmerid");
+                entity.Property(e => e.UserId).HasColumnName("userid");
 
                 entity.Property(e => e.Associationid).HasColumnName("associationid");
 
