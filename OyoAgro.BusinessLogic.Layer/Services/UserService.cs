@@ -85,12 +85,12 @@ namespace OyoAgro.BusinessLogic.Layer.Services
                     response.Tag = 0;
                     return response;
                 }
-                 if (user.Isactive == true)
-                {
-                    response.Message = "User already active, please logout from other session";
-                    response.Tag = 0;
-                    return response;
-                }
+                // if (user.Isactive == true)
+                //{
+                //    response.Message = "User already active, please logout from other session";
+                //    response.Tag = 0;
+                //    return response;
+                //}
 
                 if (password != EncryptionHelper.Decrypt(user.Passwordhash, user.Salt))
                 {
