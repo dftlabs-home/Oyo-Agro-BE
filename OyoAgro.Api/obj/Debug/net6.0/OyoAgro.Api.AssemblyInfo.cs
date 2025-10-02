@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OyoAgro.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5cff978b44a73e96342a676f6ecbdf582bd3a37b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b397a481f8df8924a5786a75eda5c1cd8982ad78")]
 [assembly: System.Reflection.AssemblyProductAttribute("OyoAgro.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OyoAgro.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
