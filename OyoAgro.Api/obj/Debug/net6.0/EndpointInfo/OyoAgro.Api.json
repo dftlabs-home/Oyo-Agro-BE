@@ -813,28 +813,9 @@
                   "Gender": {
                     "type": "string"
                   },
-                  "Dateofbirth.Year": {
-                    "type": "integer",
-                    "format": "int32"
-                  },
-                  "Dateofbirth.Month": {
-                    "type": "integer",
-                    "format": "int32"
-                  },
-                  "Dateofbirth.Day": {
-                    "type": "integer",
-                    "format": "int32"
-                  },
-                  "Dateofbirth.DayOfWeek": {
-                    "$ref": "#/components/schemas/DayOfWeek"
-                  },
-                  "Dateofbirth.DayOfYear": {
-                    "type": "integer",
-                    "format": "int32"
-                  },
-                  "Dateofbirth.DayNumber": {
-                    "type": "integer",
-                    "format": "int32"
+                  "Dateofbirth": {
+                    "type": "string",
+                    "format": "date-time"
                   },
                   "Email": {
                     "type": "string"
@@ -904,22 +885,7 @@
                 "Gender": {
                   "style": "form"
                 },
-                "Dateofbirth.Year": {
-                  "style": "form"
-                },
-                "Dateofbirth.Month": {
-                  "style": "form"
-                },
-                "Dateofbirth.Day": {
-                  "style": "form"
-                },
-                "Dateofbirth.DayOfWeek": {
-                  "style": "form"
-                },
-                "Dateofbirth.DayOfYear": {
-                  "style": "form"
-                },
-                "Dateofbirth.DayNumber": {
+                "Dateofbirth": {
                   "style": "form"
                 },
                 "Email": {
@@ -2434,7 +2400,7 @@
           },
           "dateofbirth": {
             "type": "string",
-            "format": "date",
+            "format": "date-time",
             "nullable": true
           },
           "email": {

@@ -48,7 +48,7 @@ namespace OyoAgro.DataAccess.Layer.Models
                 //optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=OyoAgro;Username=postgres;Password=Admin");
                 optionsBuilder.UseNpgsql("Host=turntable.proxy.rlwy.net; Port=34939; Database=oyoagrodb; Username=postgres; Password=GsinVqwnnTiyadmTWlHipqxtTjrmsZQF");
             }
-        }
+        }s
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

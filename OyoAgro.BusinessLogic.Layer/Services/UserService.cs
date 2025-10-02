@@ -343,6 +343,8 @@ namespace OyoAgro.BusinessLogic.Layer.Services
             param.UserId = toLogIn.Userid;
             var userActivities = await _unitOfWork.ProfileAdditionalActivities.GetList(param);
             var userActivitiesString = string.Join(",", userActivities);
+            var userrole = await _unitOfWork.UserProfile.GetUserProfile(param.UserId);
+
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(
@@ -351,6 +353,7 @@ namespace OyoAgro.BusinessLogic.Layer.Services
                         new Claim("UserName", toLogIn.Username!.ToString()),
                         new Claim("UserStatus", toLogIn.Status.ToString()),
                         new Claim("userActivities", userActivitiesString),
+                        new Claim("role", userrole.Roleid.ToString()),
                         new Claim("fullname", userProfile.Firstname + " " + userProfile.Lastname),
                     }),
                 Expires = DateTime.UtcNow.AddDays(7),

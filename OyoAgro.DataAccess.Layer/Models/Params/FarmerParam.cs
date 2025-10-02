@@ -13,7 +13,7 @@ namespace OyoAgro.DataAccess.Layer.Models.Params
         public string? Middlename { get; set; }
         public string Lastname { get; set; } = null!;
         public string? Gender { get; set; }
-        public DateOnly? Dateofbirth { get; set; }
+        public DateTime? Dateofbirth { get; set; }
         public string? Email { get; set; }
         public string? Phonenumber { get; set; }
         public int? Associationid { get; set; }

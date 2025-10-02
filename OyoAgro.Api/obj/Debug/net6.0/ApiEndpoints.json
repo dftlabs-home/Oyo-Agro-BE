@@ -578,33 +578,8 @@
         "IsRequired": false
       },
       {
-        "Name": "Dateofbirth.Year",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Dateofbirth.Month",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Dateofbirth.Day",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Dateofbirth.DayOfWeek",
-        "Type": "System.DayOfWeek",
-        "IsRequired": false
-      },
-      {
-        "Name": "Dateofbirth.DayOfYear",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Dateofbirth.DayNumber",
-        "Type": "System.Int32",
+        "Name": "Dateofbirth",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       },
       {

@@ -11,7 +11,7 @@ namespace OyoAgro.Api.Controllers
     [ApiController]
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
-    [Authorize]
+    //[Authorize]
     public class FarmerController : ControllerBase
     {
         private readonly IFarmerSevice _farmerSevice;
@@ -24,10 +24,10 @@ namespace OyoAgro.Api.Controllers
         public async Task<IActionResult> Create([FromBody] FarmerParam model)
         {
             var token = string.Empty;
-            var header = (string)HttpContext.Request.Headers["Authorization"]!;
-            if (header != null) token = header.Substring(7);
-            var user = await new DataRepository().GetUserByToken(token);
-            model.UserId = user.UserId;
+            //var header = (string)HttpContext.Request.Headers["Authorization"]!;
+            //if (header != null) token = header.Substring(7);
+            //var user = await new DataRepository().GetUserByToken(token);
+            //model.UserId = user.UserId;
             var response = await _farmerSevice.SaveEntity(model);
 
             return Ok(new { success = true, Data = response });

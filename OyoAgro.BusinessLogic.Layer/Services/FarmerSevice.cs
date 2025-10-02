@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OyoAgro.BusinessLogic.Layer.Interfaces;
+using OyoAgro.DataAccess.Layer.Conversion;
 using OyoAgro.DataAccess.Layer.Interfaces;
 using OyoAgro.DataAccess.Layer.Models.Dtos;
 using OyoAgro.DataAccess.Layer.Models.Entities;
@@ -132,7 +133,7 @@ namespace OyoAgro.BusinessLogic.Layer.Services
                 Email = param.Email,
                 Firstname = param.Firstname,
                 Associationid = param.Associationid,
-                Availablelabor = param.Availablelabor,
+                Availablelabor = param.Availablelabor,  
                 Dateofbirth = param.Dateofbirth,
                 Gender = param.Gender,
                 Householdsize = param.Householdsize,
