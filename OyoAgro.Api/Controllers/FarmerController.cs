@@ -11,7 +11,7 @@ namespace OyoAgro.Api.Controllers
     [ApiController]
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
-    //[Authorize]
+    [Authorize]
     public class FarmerController : ControllerBase
     {
         private readonly IFarmerSevice _farmerSevice;
