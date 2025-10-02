@@ -25,6 +25,7 @@ namespace OyoAgro.Api.Controllers
         {
             var token = string.Empty;
             var header = (string)HttpContext.Request.Headers["Authorization"]!;
+           
             if (header != null) token = header.Substring(7);
             var user = await new DataRepository().GetUserByToken(token);
             model.UserId = user.UserId;
@@ -55,9 +56,9 @@ namespace OyoAgro.Api.Controllers
 
 
         [HttpGet("deleteFarmer/{farmerId}")]
-        public async Task<IActionResult> DeleteEntity([FromRoute] int regionId)
+        public async Task<IActionResult> DeleteEntity([FromRoute] int farmerId)
         {
-            var response = await _farmerSevice.DeleteEntity(regionId);
+            var response = await _farmerSevice.DeleteEntity(farmerId);
 
 
             return Ok(new { success = true, Data = response });

@@ -23,7 +23,7 @@ namespace OyoAgro.DataAccess.Layer.Models.Entities
         public int? Associationid { get; set; }
         public int? Householdsize { get; set; }
         public int? Availablelabor { get; set; }
-        public int UserId { get; set; }
+        public int? UserId { get; set; }
         public string? Photourl { get; set; }      
         public long? Version { get; set; }
 

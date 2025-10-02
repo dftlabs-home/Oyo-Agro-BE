@@ -948,20 +948,12 @@
         ],
         "parameters": [
           {
-            "name": "regionId",
+            "name": "farmerId",
             "in": "path",
             "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
-            }
-          },
-          {
-            "name": "farmerId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
             }
           }
         ],

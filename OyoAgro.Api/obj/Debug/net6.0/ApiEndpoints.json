@@ -506,13 +506,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "regionId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
         "Name": "farmerId",
-        "Type": "",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

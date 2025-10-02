@@ -51,7 +51,7 @@ namespace OyoAgro.DataAccess.Layer.Repositories
 
         public async Task DeleteForm(int ids)
         {
-            await BaseRepository().Delete<Farmer>(ids);
+            await BaseRepository().Delete<Farmer>(x=> x.Farmerid == ids);
         }
 
         public async Task SaveForm(Farmer entity)
