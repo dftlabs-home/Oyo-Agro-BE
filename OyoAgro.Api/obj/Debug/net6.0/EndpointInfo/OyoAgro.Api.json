@@ -1629,6 +1629,294 @@
         }
       }
     },
+    "/api/v1/Notification/Create": {
+      "post": {
+        "tags": [
+          "Notification"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationParam"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationParam"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationParam"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Notification/GetNotifications": {
+      "get": {
+        "tags": [
+          "Notification"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Notification/GetNotificationsByParam": {
+      "post": {
+        "tags": [
+          "Notification"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Notificationid": {
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "Createdby": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Title": {
+                    "type": "string"
+                  },
+                  "Message": {
+                    "type": "string"
+                  },
+                  "Isread": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              "encoding": {
+                "Notificationid": {
+                  "style": "form"
+                },
+                "Createdby": {
+                  "style": "form"
+                },
+                "Title": {
+                  "style": "form"
+                },
+                "Message": {
+                  "style": "form"
+                },
+                "Isread": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Notification/deleteNotification/{notificationId}": {
+      "get": {
+        "tags": [
+          "Notification"
+        ],
+        "parameters": [
+          {
+            "name": "notificationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Notification/getNotification/{notificationId}": {
+      "get": {
+        "tags": [
+          "Notification"
+        ],
+        "parameters": [
+          {
+            "name": "notificationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/NotificationTarget/Create": {
+      "post": {
+        "tags": [
+          "NotificationTarget"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationTargetParam"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationTargetParam"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationTargetParam"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/NotificationTarget/getNotificationTargets": {
+      "get": {
+        "tags": [
+          "NotificationTarget"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/NotificationTarget/GetTargetByParams": {
+      "post": {
+        "tags": [
+          "NotificationTarget"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Notificationid": {
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "Regionid": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Lgaid": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Userid": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              },
+              "encoding": {
+                "Notificationid": {
+                  "style": "form"
+                },
+                "Regionid": {
+                  "style": "form"
+                },
+                "Lgaid": {
+                  "style": "form"
+                },
+                "Userid": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/NotificationTarget/deleteTarget/{targetid}": {
+      "get": {
+        "tags": [
+          "NotificationTarget"
+        ],
+        "parameters": [
+          {
+            "name": "targetId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/NotificationTarget/getTarget/{targetId}": {
+      "get": {
+        "tags": [
+          "NotificationTarget"
+        ],
+        "parameters": [
+          {
+            "name": "targetId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/v1/ProfileActivity/Create": {
       "post": {
         "tags": [
@@ -2548,6 +2836,58 @@
           },
           "name": {
             "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "NotificationParam": {
+        "type": "object",
+        "properties": {
+          "notificationid": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "createdby": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "isread": {
+            "type": "boolean",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "NotificationTargetParam": {
+        "type": "object",
+        "properties": {
+          "notificationid": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "regionid": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "lgaid": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "userid": {
+            "type": "integer",
+            "format": "int32",
             "nullable": true
           }
         },

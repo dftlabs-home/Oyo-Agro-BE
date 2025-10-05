@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OyoAgro.DataAccess.Layer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+68af5d3f4a79a5dc7cd4f22365b024ea6ff948bf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9737f85c3c62c89842aa6b7b15b053dfd07902d1")]
 [assembly: System.Reflection.AssemblyProductAttribute("OyoAgro.DataAccess.Layer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OyoAgro.DataAccess.Layer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

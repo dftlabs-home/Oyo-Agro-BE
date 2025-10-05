@@ -1063,6 +1063,189 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "OyoAgro.Api.Controllers.NotificationController",
+    "Method": "Create",
+    "RelativePath": "api/v1/Notification/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "OyoAgro.DataAccess.Layer.Models.Params.NotificationParam",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.NotificationController",
+    "Method": "DeleteEntity",
+    "RelativePath": "api/v1/Notification/deleteNotification/{notificationId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "notificationId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.NotificationController",
+    "Method": "GetEntity",
+    "RelativePath": "api/v1/Notification/getNotification/{notificationId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "notificationId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.NotificationController",
+    "Method": "GetList",
+    "RelativePath": "api/v1/Notification/GetNotifications",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.NotificationController",
+    "Method": "GetList",
+    "RelativePath": "api/v1/Notification/GetNotificationsByParam",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Notificationid",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "Createdby",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Title",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Message",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Isread",
+        "Type": "System.Nullable\u00601[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.NotificationTargetController",
+    "Method": "Create",
+    "RelativePath": "api/v1/NotificationTarget/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "OyoAgro.DataAccess.Layer.Models.Params.NotificationTargetParam",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.NotificationTargetController",
+    "Method": "DeleteEntity",
+    "RelativePath": "api/v1/NotificationTarget/deleteTarget/{targetid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "targetId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.NotificationTargetController",
+    "Method": "GetList",
+    "RelativePath": "api/v1/NotificationTarget/getNotificationTargets",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.NotificationTargetController",
+    "Method": "GetEntity",
+    "RelativePath": "api/v1/NotificationTarget/getTarget/{targetId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "targetId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.NotificationTargetController",
+    "Method": "GetList",
+    "RelativePath": "api/v1/NotificationTarget/GetTargetByParams",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Notificationid",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "Regionid",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Lgaid",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Userid",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "OyoAgro.Api.Controllers.ProfileActivityController",
     "Method": "Create",
     "RelativePath": "api/v1/ProfileActivity/Create",
