@@ -531,6 +531,22 @@
   },
   {
     "ContainingType": "OyoAgro.Api.Controllers.FarmerController",
+    "Method": "GetListByUserId",
+    "RelativePath": "api/v1/Farmer/getFarmerbyUserId/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.FarmerController",
     "Method": "GetList",
     "RelativePath": "api/v1/Farmer/GetFarmers",
     "HttpMethod": "GET",

@@ -26,6 +26,8 @@ namespace OyoAgro.DataAccess.Layer.Interfaces
         ICropRegistryRepository CropRegistryRepository{ get; }
         ILiveStockRegistryRepository LiveStockRegistryRepository{ get; }
         ILivestockRepository LivestockRepository{ get; }
+        INotificationTargetRepository NotificationTargetRepository{ get; }
+        INotificationRepository NotificationRepository{ get; }
         
         int Complete();
 

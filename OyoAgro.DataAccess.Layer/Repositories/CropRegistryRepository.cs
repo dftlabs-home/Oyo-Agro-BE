@@ -36,7 +36,7 @@ namespace OyoAgro.DataAccess.Layer.Repositories
 
         public async Task DeleteForm(int ids)
         {
-            await BaseRepository().Delete<Cropregistry>(ids);
+            await BaseRepository().Delete<Cropregistry>(x=> x.Cropregistryid == ids);
         }
 
         public async Task SaveForm(Cropregistry entity)

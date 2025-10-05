@@ -987,6 +987,29 @@
         }
       }
     },
+    "/api/v1/Farmer/getFarmerbyUserId/{userId}": {
+      "get": {
+        "tags": [
+          "Farmer"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/v1/FarmType/Create": {
       "post": {
         "tags": [

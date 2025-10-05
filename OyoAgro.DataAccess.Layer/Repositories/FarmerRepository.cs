@@ -33,11 +33,17 @@ namespace OyoAgro.DataAccess.Layer.Repositories
             return list;
         }
 
-
-         public async Task<Farmer> GetEntitybyEmail(string Email)
+        public async Task<Farmer> GetEntitybyEmail(string email)
         {
-            var list = await BaseRepository().FindEntity<Farmer>(x => x.Email == Email);
+            var list = await BaseRepository().FindEntity<Farmer>(x => x.Email== email);
             return list;
+        }
+
+
+         public async Task<List<Farmer>> GetEntitybyUserId(int userId)
+        {
+            var result = await BaseRepository().FindList<Farmer>(x => x.UserId== userId);
+            return result.ToList();
         }
 
         public async Task<Farmer> GetEntitybyPhonel(string phone)

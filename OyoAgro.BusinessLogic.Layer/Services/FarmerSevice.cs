@@ -171,6 +171,15 @@ namespace OyoAgro.BusinessLogic.Layer.Services
             response.Data = obj;
             return response;
         }
+        public async Task<TData<List<Farmer>>> GetListByUserId(int userId)
+        {
+            var response = new TData<List<Farmer>>();
+            var obj = await _unitOfWork.FarmerRepository.GetEntitybyUserId(userId);
+            response.Data = obj;
+            return response;
+        }
+
+
         public async Task<TData<List<Farmer>>> GetList()
         {
             var response = new TData<List<Farmer>>();

@@ -21,6 +21,7 @@ namespace OyoAgro.Api.Authorizations
             services.AddScoped<ICropService, CropService>();
             services.AddScoped<IFarmTypeService, FarmTypeService>();
             services.AddScoped<ILiveStockService, LiveStockService>();
+            services.AddScoped<INotificationTargetService, NotificationTargetService>();
 
             return services;
         }

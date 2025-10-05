@@ -36,7 +36,7 @@ namespace OyoAgro.DataAccess.Layer.Repositories
 
         public async Task DeleteForm(int ids)
         {
-            await BaseRepository().Delete<Livestockregistry>(ids);
+            await BaseRepository().Delete<Livestockregistry>(x=> x.Livestockregistryid == ids);
         }
 
         public async Task SaveForm(Livestockregistry entity)

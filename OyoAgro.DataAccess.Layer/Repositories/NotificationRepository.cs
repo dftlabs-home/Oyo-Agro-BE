@@ -12,44 +12,38 @@ using OyoAgro.DataAccess.Layer.Models.Params;
 
 namespace OyoAgro.DataAccess.Layer.Repositories
 {
-    public class CropRepository : DataRepository, ICropRepository
+    public class NotificationRepository : DataRepository, INotificationRepository
     {
-        public async Task<List<Crop>> GetList(CropParam param)
+        public async Task<List<Notification>> GetList(NotificationParam param)
         {
             var expression = ListFilter(param);
             var list = await BaseRepository().FindList(expression);
             return list.ToList();
         }
-
-        public async Task<List<Crop>> GetList()
+        public async Task<Notification> GetEntity(int notificationId)
         {
-            var list = await BaseRepository().FindList<Crop>();
-            return list.ToList();
-        }
-     
-
-        public async Task<Crop> GetEntity(int croptypeId)
-        {
-            var list = await BaseRepository().FindEntity<Crop>(x => x.Croptypeid == croptypeId);
+            var list = await BaseRepository().FindEntity<Notification>(x => x.Notificationid == notificationId);
             return list;
         }
 
-
-
-
+        public async Task<List<Notification>> GetList()
+        {
+            var list = await BaseRepository().FindList<Notification>();
+            return list.ToList();
+        }
 
         public async Task DeleteForm(int ids)
         {
-            await BaseRepository().Delete<Crop>(x=> x.Croptypeid == ids );
+            await BaseRepository().Delete<Notification>(x => x.Notificationid == ids);
         }
 
-        public async Task SaveForm(Crop entity)
+        public async Task SaveForm(Notification entity)
         {
             var message = string.Empty;
             var db = await BaseRepository().BeginTrans();
             try
             {
-                if (entity.Croptypeid == 0)
+                if (entity.Notificationid == 0)
                 {
                     await entity.Create();
                     await db.Insert(entity);
@@ -73,16 +67,20 @@ namespace OyoAgro.DataAccess.Layer.Repositories
 
 
 
-        private Expression<Func<Crop, bool>> ListFilter(CropParam param)
+        private Expression<Func<Notification, bool>> ListFilter(NotificationParam param)
         {
-            var expression = ExtensionLinq.True<Crop>();
+            var expression = ExtensionLinq.True<Notification>();
             if (param != null)
             {
-                if (param.Croptypeid > 0)
+                if (param.Createdby > 0)
                 {
-                    expression = expression.And(t => t.Croptypeid == param.Croptypeid);
+                    expression = expression.And(t => t.Createdby == param.Createdby);
                 }
 
+                if (param.Notificationid > 0)
+                {
+                    expression = expression.And(t => t.Notificationid == param.Notificationid);
+                }
 
 
             }

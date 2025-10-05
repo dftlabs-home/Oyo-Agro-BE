@@ -51,7 +51,7 @@ namespace OyoAgro.DataAccess.Layer.Repositories
 
         public async Task DeleteForm(int ids)
         {
-            await BaseRepository().Delete<Userregion>(ids);
+            await BaseRepository().Delete<Userregion>(x=> x.Userregionid == ids);
         }
 
         public async Task SaveForm(Userregion entity)

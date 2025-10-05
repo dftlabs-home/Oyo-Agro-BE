@@ -28,7 +28,7 @@ namespace OyoAgro.Api.Controllers
            
             if (header != null) token = header.Substring(7);
             var user = await new DataRepository().GetUserByToken(token);
-            model.UserId = user.UserId;
+            model.UserId = user.userid;
             var response = await _farmerSevice.SaveEntity(model);
 
             return Ok(new { success = true, Data = response });
@@ -69,6 +69,16 @@ namespace OyoAgro.Api.Controllers
         public async Task<IActionResult> GetEntity([FromRoute] int farmerId)
         {
             var response = await _farmerSevice.GetEntity(farmerId);
+
+            return Ok(new { success = true, Data = response });
+
+
+        }
+        
+        [HttpGet("getFarmerbyUserId/{userId}")]
+        public async Task<IActionResult> GetListByUserId([FromRoute] int userId)
+        {
+            var response = await _farmerSevice.GetListByUserId(userId);
 
             return Ok(new { success = true, Data = response });
 

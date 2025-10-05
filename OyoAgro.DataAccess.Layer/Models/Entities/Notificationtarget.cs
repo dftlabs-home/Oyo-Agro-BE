@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using OyoAgro.DataAccess.Layer.Models.Entities.Base;
 
 namespace OyoAgro.DataAccess.Layer.Models.Entities
 {
-    public partial class Notificationtarget
+    public partial class Notificationtarget : BaseEntity
     {
         public long Targetid { get; set; }
         public long Notificationid { get; set; }

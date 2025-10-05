@@ -31,6 +31,8 @@ namespace OyoAgro.DataAccess.Layer
         private ICropRegistryRepository? _cropRegistryRepository;
         private ILiveStockRegistryRepository? _liveStockRegistryRepository;
         private ILivestockRepository? _livestockRepository;
+        private INotificationTargetRepository? _notificationTargetRepository;
+        private INotificationRepository? _notificationRepository;
         
         public UnitOfWork(AppDbContext context)
         {
@@ -89,6 +91,12 @@ namespace OyoAgro.DataAccess.Layer
 
           public ILivestockRepository LivestockRepository=>
          _livestockRepository ??= new LivestockRepository();
+
+        public INotificationTargetRepository NotificationTargetRepository=>
+         _notificationTargetRepository ??= new NotificationTargetRepository();
+
+           public INotificationRepository NotificationRepository=>
+         _notificationRepository ??= new NotificationRepository();
 
 
         public int Complete()

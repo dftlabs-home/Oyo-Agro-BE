@@ -8,11 +8,11 @@ namespace OyoAgro.DataAccess.Layer.Models.Dtos
 {
     public class OperatorInfo
     {
-        public int UserId { get; set; } 
-        public int LoginCount { get; set; } 
-        public int UserStatus { get; set; } 
-        public string? UserName { get; set; } 
-        public string? ApiToken { get; set; }
-        public int IsSystem { get; set; } 
+        public int userid { get; set; } 
+        public int logincount { get; set; } 
+        public int status { get; set; } 
+        public string? username { get; set; } 
+        public string? apitoken { get; set; }
+        //public int IsSystem { get; set; } 
     }
 }

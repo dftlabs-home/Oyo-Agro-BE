@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Common;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -10,57 +9,41 @@ using OyoAgro.DataAccess.Layer.Interfaces;
 using OyoAgro.DataAccess.Layer.Models.Entities;
 using OyoAgro.DataAccess.Layer.Models.Entities.Operator;
 using OyoAgro.DataAccess.Layer.Models.Params;
-using OyoAgro.DataAccess.Layer.Models.ViewModels;
 
 namespace OyoAgro.DataAccess.Layer.Repositories
 {
-    public class LgaRepository : DataRepository, ILgaRepository
+    public class NotificationTargetRepository : DataRepository, INotificationTargetRepository
     {
-        public async Task<List<Lga>> GetList(LgaParam param)
+        public async Task<List<Notificationtarget>> GetList(NotificationTargetParam param)
         {
             var expression = ListFilter(param);
             var list = await BaseRepository().FindList(expression);
             return list.ToList();
         }
-
-        public async Task<List<Lga>> GetList()
+        public async Task<Notificationtarget> GetEntity(int targetId)
         {
-            var list = await BaseRepository().FindList<Lga>();
-            return list.ToList();
-        }
-
-        public async Task<Lga> GetEntity(int lgaId)
-        {
-            var list = await BaseRepository().FindEntity<Lga>(x => x.Lgaid == lgaId);
+            var list = await BaseRepository().FindEntity<Notificationtarget>(x => x.Targetid == targetId);
             return list;
         }
 
-
-
-        public async Task<List<Lga>> GetListLgaId(int lgaId)
+        public async Task<List<Notificationtarget>> GetList()
         {
-            var list = await BaseRepository().FindList<Lga>(x => x.Lgaid == lgaId);
+            var list = await BaseRepository().FindList<Notificationtarget>();
             return list.ToList();
         }
-
-        public async Task<List<Lga>> GetListByRegionId(int regionId)
-        {
-            var list = await BaseRepository().FindList<Lga>(x => x.Regionid == regionId);
-            return list.ToList();
-        }
-       
+        
         public async Task DeleteForm(int ids)
         {
-            await BaseRepository().Delete<Lga>(x=> x.Lgaid == ids);
+            await BaseRepository().Delete<Address>(x => x.Addressid == ids);
         }
 
-        public async Task SaveForm(Lga entity)
+        public async Task SaveForm(Notificationtarget entity)
         {
             var message = string.Empty;
             var db = await BaseRepository().BeginTrans();
             try
             {
-                if (entity.Lgaid == 0)
+                if (entity.Targetid == 0)
                 {
                     await entity.Create();
                     await db.Insert(entity);
@@ -84,20 +67,31 @@ namespace OyoAgro.DataAccess.Layer.Repositories
 
 
 
-        private Expression<Func<Lga, bool>> ListFilter(LgaParam param)
+        private Expression<Func<Notificationtarget, bool>> ListFilter(NotificationTargetParam param)
         {
-            var expression = ExtensionLinq.True<Lga>();
+            var expression = ExtensionLinq.True<Notificationtarget>();
             if (param != null)
             {
-                if (param.Lgaid > 0)
+                if (param.Userid > 0)
+                {
+                    expression = expression.And(t => t.Userid == param.Userid);
+                }
+
+                if (param.Notificationid> 0)
+                {
+                    expression = expression.And(t => t.Regionid == param.Regionid);
+                }
+
+                if (param.Lgaid> 0)
                 {
                     expression = expression.And(t => t.Lgaid == param.Lgaid);
                 }
 
-                  if (param.Regionid > 0)
+                     if (param.Regionid > 0)
                 {
-                    expression = expression.And(t => t.Lgaid == param.Regionid);
+                    expression = expression.And(t => t.Regionid == param.Regionid);
                 }
+
 
 
             }
@@ -106,3 +100,4 @@ namespace OyoAgro.DataAccess.Layer.Repositories
 
     }
 }
+

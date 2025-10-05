@@ -15,7 +15,8 @@ namespace OyoAgro.DataAccess.Layer.Interfaces
         Task<Farmer> GetEntity(int farmerId);
         Task DeleteForm(int ids);
         Task SaveForm(Farmer entity);
-        Task<Farmer> GetEntitybyEmail(string Email);
+        Task<List<Farmer>> GetEntitybyUserId(int userId);
+        Task<Farmer> GetEntitybyEmail(string email);
         Task<Farmer> GetEntitybyPhonel(string phone);
     }
 }
