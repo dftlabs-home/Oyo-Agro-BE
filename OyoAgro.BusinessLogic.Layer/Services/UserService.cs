@@ -158,176 +158,185 @@ namespace OyoAgro.BusinessLogic.Layer.Services
 
         public async Task<TData<string>> SaveForm(UserParam entity)
         {
-            var obj = new TData<string>();
-            if (string.IsNullOrEmpty(entity.EmailAddress))
+            try
             {
-                obj.Message = "Email must be provided!";
-                obj.Tag = 0;
+                var obj = new TData<string>();
+                if (string.IsNullOrEmpty(entity.EmailAddress))
+                {
+                    obj.Message = "Email must be provided!";
+                    obj.Tag = 0;
+                    return obj;
+                }
+                if (string.IsNullOrEmpty(entity.Phonenumber))
+                {
+                    obj.Message = "Mobile Number must be provided!";
+                    obj.Tag = 0;
+                    return obj;
+                }
+                if (string.IsNullOrEmpty(entity.Firstname))
+                {
+                    obj.Message = "First Name must be provided!";
+                    obj.Tag = 0;
+                    return obj;
+                }
+                if (string.IsNullOrEmpty(entity.Lastname))
+                {
+                    obj.Message = "Last Name must be provided!";
+                    obj.Tag = 0;
+                    return obj;
+                }
+
+                if (string.IsNullOrEmpty(entity.Streetaddress))
+                {
+                    obj.Message = "Street Address must be provided!";
+                    obj.Tag = 0;
+                    return obj;
+                }
+                if (string.IsNullOrEmpty(entity.Town))
+                {
+                    obj.Message = "Town must be provided!";
+                    obj.Tag = 0;
+                    return obj;
+                }
+                if (string.IsNullOrEmpty(entity.Postalcode))
+                {
+                    obj.Message = "Postal Code must be provided!";
+                    obj.Tag = 0;
+                    return obj;
+                }
+
+                if (entity.Latitude == 0)
+                {
+                    obj.Message = "Latitude must be provided!";
+                    obj.Tag = 0;
+                    return obj;
+                }
+                if (entity.Longitude == 0)
+                {
+                    obj.Message = "Longitude must be provided!";
+                    obj.Tag = 0;
+                    return obj;
+                }
+
+
+                if (entity.Lgaid == 0)
+                {
+                    obj.Message = "LGA must be provided!";
+                    obj.Tag = 0;
+                    return obj;
+                }
+
+                if (entity.Regionid == 0)
+                {
+                    obj.Message = "Region must be provided!";
+                    obj.Tag = 0;
+                    return obj;
+                }
+
+
+                if (entity.Phonenumber.Length != 11)
+                {
+                    obj.Message = "Mobile Number must be 11 digits long!";
+                    obj.Tag = 0;
+                    return obj;
+                }
+
+
+                var UserExist = await _unitOfWork.Users.GetUserByUserName(entity.EmailAddress);
+                if (UserExist != null)
+                {
+                    obj.Message = "Email already exists!";
+                    obj.Tag = 0;
+                    return obj;
+                }
+                var MobileExists = await _unitOfWork.UserProfile.GetUserByPhone(entity.Phonenumber);
+                if (MobileExists != null)
+                {
+                    obj.Message = "Mobile No already exists!";
+                    obj.Tag = 0;
+                    return obj;
+                }
+
+                var emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+                if (!Regex.IsMatch(entity.EmailAddress, emailPattern))
+                {
+                    obj.Message = "Please provide a valid Email Address!";
+                    obj.Tag = 0;
+                    return obj;
+                }
+
+                entity.Salt = new UserService(_unitOfWork).GetPasswordSalt();
+                entity.DecryptedPassword = new UserService(_unitOfWork).GenerateDefaultPassword();
+                entity.Password = EncryptionHelper.Encrypt(entity.DecryptedPassword, entity.Salt);
+
+                var UserEntity = new Useraccount
+                {
+                    Email = entity.EmailAddress,
+                    DecryptedPassword = entity.DecryptedPassword,
+                    Salt = entity.Salt,
+                    Passwordhash = entity.Password,
+                    Lgaid = entity.Lgaid,
+                    Username = entity.UserName,
+                    Status = 1
+                };
+                await _unitOfWork.Users.SaveForm(UserEntity);
+                var userInfp = await _unitOfWork.Users.GetUserById(UserEntity.Userid);
+                var userprofile = new Userprofile
+                {
+                    Userid = userInfp.Userid,
+                    Firstname = entity.Firstname,
+                    Lastname = entity.Lastname,
+                    Phonenumber = entity.Phonenumber,
+                    Roleid = (int)RoleEnum.User,
+                    Lgaid = entity.Lgaid,
+                    Middlename = entity.Middlename,
+                    Email = entity.EmailAddress,
+                    Version = 1,
+                };
+                await _unitOfWork.UserProfile.SaveForm(userprofile);
+                var userAddress = new Address
+                {
+                    Userid = userInfp.Userid,
+                    Streetaddress = entity.Streetaddress,
+                    Longitude = entity.Longitude,
+                    Latitude = entity.Latitude,
+                    Postalcode = entity.Postalcode,
+                    Lgaid = entity.Lgaid
+                };
+                await _unitOfWork.AddressRepository.SaveForm(userAddress);
+                var region = new Userregion
+                {
+                    Userid = userInfp.Userid,
+                    Regionid = Convert.ToInt32(entity.Regionid),
+
+                };
+
+                await _unitOfWork.UserRegionRepository.SaveForm(region);
+
+                MailParameter mailParameter = new()
+                {
+                    UserEmail = userprofile.Email,
+                    RealName = entity.Firstname + " " + entity.Lastname,
+                    UserName = entity.EmailAddress,
+                    UserPassword = entity.DecryptedPassword,
+                    UserCompany = GlobalConstant.COMPANY
+                };
+                string message = "";
+
+                var sendMail = EmailHelper.IsPasswordEmailSent(mailParameter, out message);
+
+
+                obj.Data = UserEntity.Userid.ToString();
+                obj.Message = "User Created Successfully";
+                obj.Tag = 1;
                 return obj;
+
             }
-            if (string.IsNullOrEmpty(entity.Phonenumber))
+            catch (Exception ex)
             {
-                obj.Message = "Mobile Number must be provided!";
-                obj.Tag = 0;
-                return obj;
+
+                throw ex;
             }
-            if (string.IsNullOrEmpty(entity.Firstname))
-            {
-                obj.Message = "First Name must be provided!";
-                obj.Tag = 0;
-                return obj;
-            }
-            if (string.IsNullOrEmpty(entity.Lastname))
-            {
-                obj.Message = "Last Name must be provided!";
-                obj.Tag = 0;
-                return obj;
-            }
-
-            if (string.IsNullOrEmpty(entity.Streetaddress))
-            {
-                obj.Message = "Street Address must be provided!";
-                obj.Tag = 0;
-                return obj;
-            }
-            if (string.IsNullOrEmpty(entity.Town))
-            {
-                obj.Message = "Town must be provided!";
-                obj.Tag = 0;
-                return obj;
-            }
-            if (string.IsNullOrEmpty(entity.Postalcode))
-            {
-                obj.Message = "Postal Code must be provided!";
-                obj.Tag = 0;
-                return obj;
-            }
-
-            if (entity.Latitude == 0)
-            {
-                obj.Message = "Latitude must be provided!";
-                obj.Tag = 0;
-                return obj;
-            }
-            if (entity.Longitude == 0)
-            {
-                obj.Message = "Longitude must be provided!";
-                obj.Tag = 0;
-                return obj;
-            }
-
-
-            if (entity.Lgaid == 0)
-            {
-                obj.Message = "LGA must be provided!";
-                obj.Tag = 0;
-                return obj;
-            }
-
-            if (entity.Regionid == 0)
-            {
-                obj.Message = "Region must be provided!";
-                obj.Tag = 0;
-                return obj;
-            }
-
-
-            if (entity.Phonenumber.Length != 11)
-            {
-                obj.Message = "Mobile Number must be 11 digits long!";
-                obj.Tag = 0;
-                return obj;
-            }
-
-
-            var UserExist = await _unitOfWork.Users.GetUserByUserName(entity.EmailAddress);
-            if (UserExist != null)
-            {
-                obj.Message = "Email already exists!";
-                obj.Tag = 0;
-                return obj;
-            }
-            var MobileExists = await _unitOfWork.UserProfile.GetUserByPhone(entity.Phonenumber);
-            if (MobileExists != null)
-            {
-                obj.Message = "Mobile No already exists!";
-                obj.Tag = 0;
-                return obj;
-            }
-
-            var emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
-            if (!Regex.IsMatch(entity.EmailAddress, emailPattern))
-            {
-                obj.Message = "Please provide a valid Email Address!";
-                obj.Tag = 0;
-                return obj;
-            }
-
-            entity.Salt = new UserService(_unitOfWork).GetPasswordSalt();
-            entity.DecryptedPassword = new UserService(_unitOfWork).GenerateDefaultPassword();
-            entity.Password = EncryptionHelper.Encrypt(entity.DecryptedPassword, entity.Salt);
-
-            var UserEntity = new Useraccount
-            {
-                Email = entity.EmailAddress,
-                DecryptedPassword = entity.DecryptedPassword,
-                Salt = entity.Salt,
-                Passwordhash = entity.Password,
-                Lgaid = entity.Lgaid,
-                Username = entity.UserName,
-                Status = 1
-            };
-            await _unitOfWork.Users.SaveForm(UserEntity);
-            var userInfp = await _unitOfWork.Users.GetUserById(UserEntity.Userid);
-            var userprofile = new Userprofile
-            {
-                Userid = userInfp.Userid,
-                Firstname = entity.Firstname,
-                Lastname = entity.Lastname,
-                Phonenumber = entity.Phonenumber,
-                Roleid = (int)RoleEnum.User,
-                Lgaid = entity.Lgaid,
-                Middlename = entity.Middlename,
-                Email = entity.EmailAddress,
-                Version = 1,
-            };
-            await _unitOfWork.UserProfile.SaveForm(userprofile);
-            var userAddress = new Address
-            {
-                Userid = userInfp.Userid,
-                Streetaddress = entity.Streetaddress,
-                Longitude = entity.Longitude,
-                Latitude = entity.Latitude,
-                Postalcode = entity.Postalcode,
-                Lgaid = entity.Lgaid
-            };
-            await _unitOfWork.AddressRepository.SaveForm(userAddress);
-            var region = new Userregion
-            {
-                Userid = userInfp.Userid,
-                Regionid = Convert.ToInt32(entity.Regionid),
-
-            };
-
-            await _unitOfWork.UserRegionRepository.SaveForm(region);
-
-            MailParameter mailParameter = new()
-            {
-                UserEmail = userprofile.Email,
-                RealName = entity.Firstname+ " " + entity.Lastname,
-                UserName = entity.EmailAddress,
-                UserPassword = entity.DecryptedPassword,
-                UserCompany = GlobalConstant.COMPANY
-            };
-            string message = "";
-
-            var sendMail = EmailHelper.IsPasswordEmailSent(mailParameter, out message);
-
-
-            obj.Data = UserEntity.Userid.ToString();
-            obj.Message = "User Created Successfully";
-            obj.Tag = 1;
-            return obj;
         }
 
 
