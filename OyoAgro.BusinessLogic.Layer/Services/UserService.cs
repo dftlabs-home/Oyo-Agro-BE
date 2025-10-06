@@ -321,7 +321,7 @@ namespace OyoAgro.BusinessLogic.Layer.Services
             };
             string message = "";
 
-            var sendMail = EmailHelper.IsPasswordEmailSent(mailParameter, out message);
+            //var sendMail = EmailHelper.IsPasswordEmailSent(mailParameter, out message);
 
 
             obj.Data = UserEntity.Userid.ToString();
