@@ -70,7 +70,7 @@ namespace OyoAgro.DataAccess.Layer.Repositories
 
         public async Task<Useraccount> GetUserByToken(string token)
         {
-            return await BaseRepository().FindEntity<Useraccount>(x => x.Apitoken == token);
+            return await BaseRepository().FindEntity<Useraccount>(x => x.Apitoken == token && x.Isactive == true);
         }
 
           public async Task<Useraccount> GetUserById(int UserId)

@@ -41,15 +41,15 @@ namespace OyoAgro.Api.Controllers
                 if (header != null) token = header.Substring(7);
                 var user = await _userService.GetUserByToken(token);
 
-                if (user.Tag == 1)
+                if (user.Data != null)
                 {
                     await _userService.Logout(user.Data.Userid);
-                    return Ok(new { success = true, Data = response });
+                    return Ok(new { success = true, Data = "User logged out successfully"  });
 
                 }
                 else
                 {
-                    return Ok(new { success = false, Data = response });
+                    return Ok(new { success = false, Data = "User not recognized" });
                 }
 
             }

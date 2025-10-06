@@ -6,6 +6,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using OyoAgro.BusinessLogic.Layer.Helpers;
@@ -141,9 +142,15 @@ namespace OyoAgro.BusinessLogic.Layer.Services
         {
             try
             {
-                var obj = new TData<Useraccount>();
+                var context = new AppDbContext();
 
-                await _unitOfWork.Users.UpdateUser(new Useraccount { Userid = userId, Isactive = false, Apitoken = null });
+                var obj = new TData<Useraccount>();
+                var userInfo = await context.Useraccounts.Where(x => x.Userid == userId).FirstOrDefaultAsync();
+                userInfo.Isactive = false;
+                userInfo.Apitoken = null;
+                context.Useraccounts.Update(userInfo);
+                context.SaveChanges();
+
                 obj.Tag = 1;
                 obj.Message = "Logout successfully";
                 return obj;

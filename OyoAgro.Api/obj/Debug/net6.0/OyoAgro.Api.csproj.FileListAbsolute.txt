@@ -91,3 +91,4 @@ C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\OyoAgro.Api.sou
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\OyoAgro.Api.RazorAssemblyInfo.cache
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\OyoAgro.Api.RazorAssemblyInfo.cs
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\staticwebassets.upToDateCheck.txt
+C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\bin\Debug\net6.0\Templates\_PasswordTemplate.cshtml
