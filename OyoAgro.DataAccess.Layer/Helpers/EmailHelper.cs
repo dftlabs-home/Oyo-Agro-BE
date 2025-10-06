@@ -11,7 +11,7 @@ namespace OyoAgro.DataAccess.Layer.Helpers
 {
     public static class EmailHelper
     {
-        public static bool IsPasswordEmailSent(MailParameter user, out string message)
+        public static string IsPasswordEmailSent(MailParameter user, out string message)
         {
             message = string.Empty;
 
@@ -56,10 +56,11 @@ namespace OyoAgro.DataAccess.Layer.Helpers
             try
             {
                 smtp.Send(mail);
-                return true;
+                return "sent";
             }
             catch (Exception e)
             {
+
                 if (e.InnerException != null)
                 {
                     if (!string.IsNullOrEmpty(e.InnerException.Message))
@@ -71,7 +72,7 @@ namespace OyoAgro.DataAccess.Layer.Helpers
                 {
                     message = e.Message;
                 }
-                return false;
+                return message;
             }
         }
 

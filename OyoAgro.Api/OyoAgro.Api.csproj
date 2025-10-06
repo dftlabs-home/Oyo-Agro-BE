@@ -22,4 +22,10 @@
     <ProjectReference Include="..\OyoAgro.DataAccess.Layer\OyoAgro.DataAccess.Layer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Templates\_PasswordTemplate.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>
