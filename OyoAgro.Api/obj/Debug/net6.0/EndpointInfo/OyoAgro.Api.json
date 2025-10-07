@@ -2509,6 +2509,18 @@
           }
         }
       }
+    },
+    "/api/v1/User/GetOfficers": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
     }
   },
   "components": {

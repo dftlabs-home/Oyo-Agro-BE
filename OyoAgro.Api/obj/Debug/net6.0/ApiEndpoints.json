@@ -1576,6 +1576,16 @@
   },
   {
     "ContainingType": "OyoAgro.Api.Controllers.UserController",
+    "Method": "GetList",
+    "RelativePath": "api/v1/User/GetOfficers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OyoAgro.Api.Controllers.UserController",
     "Method": "Login",
     "RelativePath": "api/v1/User/login",
     "HttpMethod": "POST",

@@ -137,6 +137,17 @@ namespace OyoAgro.BusinessLogic.Layer.Services
             }
         }
 
+        
+        public async Task<TData<List<Userprofile>>> GetList()
+        {
+            var response = new TData<List<Userprofile>>();
+            var obj = await _unitOfWork.Users.GetList();            
+            obj = obj.Where(x=> x.Roleid == 2).ToList();
+            response.Data = obj;
+            return response;
+        }
+
+
 
         public async Task<TData<Useraccount>> Logout(int userId)
         {
