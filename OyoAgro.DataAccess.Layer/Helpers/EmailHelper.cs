@@ -79,33 +79,26 @@ namespace OyoAgro.DataAccess.Layer.Helpers
         {
             try
             {
-                // Define your log directory on C drive
-                string logDir = @"C:\AppLogs";
-                if (!Directory.Exists(logDir))
-                    Directory.CreateDirectory(logDir);
+                Console.WriteLine("==========================================");
+                Console.WriteLine($"Time: {DateTime.Now}");
+                Console.WriteLine($"Message: {ex.Message}");
+                Console.WriteLine($"StackTrace: {ex.StackTrace}");
 
-                string logPath = Path.Combine(logDir, $"email_log_{DateTime.Now:yyyyMMdd}.txt");
-
-                using (StreamWriter writer = new StreamWriter(logPath, true))
+                if (ex.InnerException != null)
                 {
-                    writer.WriteLine("==========================================");
-                    writer.WriteLine($"Time: {DateTime.Now}");
-                    writer.WriteLine($"Message: {ex.Message}");
-                    writer.WriteLine($"StackTrace: {ex.StackTrace}");
-                    if (ex.InnerException != null)
-                    {
-                        writer.WriteLine($"InnerException: {ex.InnerException.Message}");
-                        writer.WriteLine($"Inner Stack: {ex.InnerException.StackTrace}");
-                    }
-                    writer.WriteLine("==========================================");
-                    writer.WriteLine();
+                    Console.WriteLine($"InnerException: {ex.InnerException.Message}");
+                    Console.WriteLine($"Inner Stack: {ex.InnerException.StackTrace}");
                 }
+
+                Console.WriteLine("==========================================");
+                Console.WriteLine();
             }
             catch
             {
                 // avoid recursive crash if logging fails
             }
         }
+
     }
 
 
