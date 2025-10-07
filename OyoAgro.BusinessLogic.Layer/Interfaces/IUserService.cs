@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using OyoAgro.DataAccess.Layer.Models.Dtos;
 using OyoAgro.DataAccess.Layer.Models.Entities;
 using OyoAgro.DataAccess.Layer.Models.Params;
+using OyoAgro.DataAccess.Layer.Models.ViewModels;
 
 namespace OyoAgro.BusinessLogic.Layer.Interfaces
 {
@@ -16,6 +17,6 @@ namespace OyoAgro.BusinessLogic.Layer.Interfaces
         Task<TData<Useraccount>> Logout(int userId);
         string GetPasswordSalt();
         Task<TData<string>> SaveForm(UserParam entity);
-        Task<TData<List<Userprofile>>> GetList();
+        Task<TData<List<UsersViewModel>>> GetList();
     }
 }
