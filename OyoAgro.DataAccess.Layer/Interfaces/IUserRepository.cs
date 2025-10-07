@@ -16,6 +16,7 @@ namespace OyoAgro.DataAccess.Layer.Interfaces
         Task SaveForm(Useraccount entity);
         Task UpdateUser(Useraccount entity);
         Task<Useraccount> GetUserById(int UserId);
+        Task<List<Userprofile>> GetList();
     }
 }
         

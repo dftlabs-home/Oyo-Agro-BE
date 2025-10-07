@@ -16,5 +16,6 @@ namespace OyoAgro.BusinessLogic.Layer.Interfaces
         Task<TData<Useraccount>> Logout(int userId);
         string GetPasswordSalt();
         Task<TData<string>> SaveForm(UserParam entity);
+        Task<TData<List<Userprofile>>> GetList();
     }
 }

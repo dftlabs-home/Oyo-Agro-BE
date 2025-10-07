@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OyoAgro.Api.Authorizations;
 using OyoAgro.BusinessLogic.Layer.Interfaces;
+using OyoAgro.BusinessLogic.Layer.Services;
 using OyoAgro.DataAccess.Layer.Models.Dtos;
 using OyoAgro.DataAccess.Layer.Models.Entities;
 using OyoAgro.DataAccess.Layer.Models.Params;
@@ -77,6 +78,16 @@ namespace OyoAgro.Api.Controllers
             }
         }
 
+
+        [HttpGet("GetOfficers")]
+        public async Task<IActionResult> GetList()
+        {
+            var response = await _userService.GetList();
+
+
+            return Ok(new { success = true, Data = response });
+
+        }
 
 
 
