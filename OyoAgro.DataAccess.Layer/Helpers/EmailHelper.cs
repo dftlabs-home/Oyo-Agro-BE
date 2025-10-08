@@ -174,6 +174,93 @@ namespace OyoAgro.DataAccess.Layer.Helpers
         //    }
         //}
 
+        //public static bool IsPasswordEmailSent(MailParameter user, out string message)
+        //{
+        //    message = string.Empty;
+
+        //    try
+        //    {
+        //        var builder = new StringBuilder();
+
+        //        // Path to the template file
+        //        string templatePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Templates", "_PasswordTemplate.cshtml");
+
+        //        if (File.Exists(templatePath))
+        //        {
+        //            using (StreamReader reader = new StreamReader(templatePath))
+        //            {
+        //                builder.Append(reader.ReadToEnd());
+        //            }
+
+        //            builder.Replace("[realname]", user.RealName);
+        //            builder.Replace("[username]", user.UserName);
+        //            builder.Replace("[password]", user.UserPassword);
+        //            builder.Replace("[company]", user.UserCompany);
+        //            builder.Replace("[link]", string.Empty);
+        //            builder.Replace("[year]", DateTime.Now.Year.ToString());
+        //            builder.Replace("[reserved]", GlobalConstant.RESERVED);
+        //        }
+        //        else
+        //        {
+        //            // ✅ fallback email body if template not found
+        //            builder.AppendLine($"Hello {user.RealName},");
+        //            builder.AppendLine();
+        //            builder.AppendLine("Your account has been created successfully.");
+        //            builder.AppendLine($"Username: {user.UserName}");
+        //            builder.AppendLine($"Password: {user.UserPassword}");
+        //            builder.AppendLine();
+        //            builder.AppendLine($"Company: {user.UserCompany}");
+        //            builder.AppendLine($"{DateTime.Now.Year} {GlobalConstant.RESERVED}");
+        //        }
+
+        //        // ✅ Load credentials from Railway environment variables
+        //        string smtpUser = Environment.GetEnvironmentVariable("SMTP_USER");
+        //        string smtpPass = Environment.GetEnvironmentVariable("SMTP_PASS");
+        //        string smtpHost = Environment.GetEnvironmentVariable("SMTP_HOST") ?? "smtp.gmail.com";
+        //        int smtpPort = int.Parse(Environment.GetEnvironmentVariable("SMTP_PORT") ?? "587");
+        //        bool smtpSsl = bool.Parse(Environment.GetEnvironmentVariable("SMTP_SSL") ?? "true");
+
+        //        NetworkCredential credential = new NetworkCredential
+        //        {
+        //            UserName = smtpUser,
+        //            Password = smtpPass
+        //        };
+
+        //        MailMessage mail = new MailMessage
+        //        {
+        //            IsBodyHtml = true,
+        //            From = new MailAddress(smtpUser)
+        //        };
+        //        mail.To.Add(user.UserEmail);
+        //        mail.Subject = "Password Notification";
+        //        mail.Body = builder.ToString();
+
+        //        using (SmtpClient smtp = new SmtpClient
+        //        {
+        //            Host = smtpHost,
+        //            UseDefaultCredentials = false,
+        //            Credentials = credential,
+        //            Port = smtpPort,
+        //            EnableSsl = smtpSsl,
+        //            DeliveryMethod = SmtpDeliveryMethod.Network,
+        //            Timeout = 20000
+        //        })
+        //        {
+        //            smtp.Send(mail);
+        //        }
+
+        //        return true;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        message = ex.Message;
+        //        LogErrorToRailway(ex);
+        //        return false;
+        //    }
+        //}
+
+
+
         public static bool IsPasswordEmailSent(MailParameter user, out string message)
         {
             message = string.Empty;
@@ -182,7 +269,7 @@ namespace OyoAgro.DataAccess.Layer.Helpers
             {
                 var builder = new StringBuilder();
 
-                // Path to the template file
+                // Path to template file
                 string templatePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Templates", "_PasswordTemplate.cshtml");
 
                 if (File.Exists(templatePath))
@@ -202,7 +289,7 @@ namespace OyoAgro.DataAccess.Layer.Helpers
                 }
                 else
                 {
-                    // ✅ fallback email body if template not found
+                    // fallback body if template not found
                     builder.AppendLine($"Hello {user.RealName},");
                     builder.AppendLine();
                     builder.AppendLine("Your account has been created successfully.");
@@ -214,9 +301,9 @@ namespace OyoAgro.DataAccess.Layer.Helpers
                 }
 
                 // ✅ Load credentials from Railway environment variables
-                string smtpUser = Environment.GetEnvironmentVariable("SMTP_USER");
-                string smtpPass = Environment.GetEnvironmentVariable("SMTP_PASS");
-                string smtpHost = Environment.GetEnvironmentVariable("SMTP_HOST") ?? "smtp.gmail.com";
+                string smtpUser = Environment.GetEnvironmentVariable("SMTP_USER"); // Brevo login (e.g. 98dd9b001@smtp-brevo.com)
+                string smtpPass = Environment.GetEnvironmentVariable("SMTP_PASS"); // Brevo API key
+                string smtpHost = Environment.GetEnvironmentVariable("SMTP_HOST") ?? "smtp-relay.brevo.com";
                 int smtpPort = int.Parse(Environment.GetEnvironmentVariable("SMTP_PORT") ?? "587");
                 bool smtpSsl = bool.Parse(Environment.GetEnvironmentVariable("SMTP_SSL") ?? "true");
 
@@ -226,10 +313,13 @@ namespace OyoAgro.DataAccess.Layer.Helpers
                     Password = smtpPass
                 };
 
+                // ✅ Must be a VERIFIED SENDER in Brevo
+                string fromEmail = Environment.GetEnvironmentVariable("SMTP_FROM") ?? "no-reply@yourdomain.com";
+
                 MailMessage mail = new MailMessage
                 {
                     IsBodyHtml = true,
-                    From = new MailAddress(smtpUser)
+                    From = new MailAddress(Environment.GetEnvironmentVariable("SMTP_FROM") ?? smtpUser, "Fintrak Software")
                 };
                 mail.To.Add(user.UserEmail);
                 mail.Subject = "Password Notification";
