@@ -12,94 +12,191 @@ namespace OyoAgro.DataAccess.Layer.Helpers
     public static class EmailHelper
     {
 
-        public static bool IsPasswordEmailSent(MailParameter user, out string message)
-        {
-            message = string.Empty;
+        //public static bool IsPasswordEmailSent(MailParameter user, out string message)
+        //{
+        //    message = string.Empty;
 
-            try
+        //    try
+        //    {
+        //        var builder = new StringBuilder();
+
+        //        // Use AppDomain path so it works in IIS publish too
+        //        string templatePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Templates", "_PasswordTemplate.cshtml");
+
+        //        if (!File.Exists(templatePath))
+        //            throw new FileNotFoundException($"Email template not found: {templatePath}");
+
+        //        using (StreamReader reader = new StreamReader(templatePath))
+        //        {
+        //            builder.Append(reader.ReadToEnd());
+        //        }
+
+        //        builder.Replace("[realname]", user.RealName);
+        //        builder.Replace("[username]", user.UserName);
+        //        builder.Replace("[password]", user.UserPassword);
+        //        builder.Replace("[company]", user.UserCompany);
+        //        builder.Replace("[link]", string.Empty);
+        //        builder.Replace("[year]", DateTime.Now.Year.ToString());
+        //        builder.Replace("[reserved]", GlobalConstant.RESERVED);
+
+        //        NetworkCredential credential = new NetworkCredential
+        //        {
+        //            UserName = GlobalConstant.CREDENTIAL_USERNAME,
+        //            Password = GlobalConstant.CREDENTIAL_PASSWORD
+        //        };
+
+        //        MailMessage mail = new MailMessage
+        //        {
+        //            IsBodyHtml = true,
+        //            From = new MailAddress(GlobalConstant.MAIL_FROM)
+        //        };
+        //        mail.To.Add(user.UserEmail);
+        //        mail.Subject = "Password Notification";
+        //        mail.Body = builder.ToString();
+
+        //        SmtpClient smtp = new SmtpClient
+        //        {
+        //            Host = GlobalConstant.SMTP_HOST,
+        //            UseDefaultCredentials = false,
+        //            Credentials = credential,
+        //            Port = GlobalConstant.SMTP_PORT,
+        //            EnableSsl = GlobalConstant.SMTP_SSL,
+        //            DeliveryMethod = SmtpDeliveryMethod.Network,
+        //            Timeout = 20000
+        //        };
+
+        //        smtp.Send(mail);
+        //        return true;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        message = ex.Message;
+        //        LogErrorToFile(ex);   // ✅ Log error to file
+        //        return false;
+        //    }
+        //}
+        //private static void LogErrorToFile(Exception ex)
+        //{
+        //    try
+        //    {
+        //        Console.WriteLine("==========================================");
+        //        Console.WriteLine($"Time: {DateTime.Now}");
+        //        Console.WriteLine($"Message: {ex.Message}");
+        //        Console.WriteLine($"StackTrace: {ex.StackTrace}");
+
+        //        if (ex.InnerException != null)
+        //        {
+        //            Console.WriteLine($"InnerException: {ex.InnerException.Message}");
+        //            Console.WriteLine($"Inner Stack: {ex.InnerException.StackTrace}");
+        //        }
+
+        //        Console.WriteLine("==========================================");
+        //        Console.WriteLine();
+        //    }
+        //    catch
+        //    {
+        //        // avoid recursive crash if logging fails
+        //    }
+        //}
+
+
+       
+            public static bool IsPasswordEmailSent(MailParameter user, out string message)
             {
-                var builder = new StringBuilder();
+                message = string.Empty;
 
-                // Use AppDomain path so it works in IIS publish too
-                string templatePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Templates", "_PasswordTemplate.cshtml");
-
-                if (!File.Exists(templatePath))
-                    throw new FileNotFoundException($"Email template not found: {templatePath}");
-
-                using (StreamReader reader = new StreamReader(templatePath))
+                try
                 {
-                    builder.Append(reader.ReadToEnd());
+                    var builder = new StringBuilder();
+
+                    // Use AppDomain path so it works in Railway too
+                    string templatePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Templates", "_PasswordTemplate.cshtml");
+
+                    if (!File.Exists(templatePath))
+                        throw new FileNotFoundException($"Email template not found: {templatePath}");
+
+                    using (StreamReader reader = new StreamReader(templatePath))
+                    {
+                        builder.Append(reader.ReadToEnd());
+                    }
+
+                    builder.Replace("[realname]", user.RealName);
+                    builder.Replace("[username]", user.UserName);
+                    builder.Replace("[password]", user.UserPassword);
+                    builder.Replace("[company]", user.UserCompany);
+                    builder.Replace("[link]", string.Empty);
+                    builder.Replace("[year]", DateTime.Now.Year.ToString());
+                    builder.Replace("[reserved]", GlobalConstant.RESERVED);
+
+                    // ✅ Load credentials from Railway env variables
+                    string smtpUser = Environment.GetEnvironmentVariable("SMTP_USER");
+                    string smtpPass = Environment.GetEnvironmentVariable("SMTP_PASS");
+                    string smtpHost = Environment.GetEnvironmentVariable("SMTP_HOST") ?? "smtp.gmail.com";
+                    int smtpPort = int.Parse(Environment.GetEnvironmentVariable("SMTP_PORT") ?? "587");
+                    bool smtpSsl = bool.Parse(Environment.GetEnvironmentVariable("SMTP_SSL") ?? "true");
+
+                    NetworkCredential credential = new NetworkCredential
+                    {
+                        UserName = smtpUser,
+                        Password = smtpPass
+                    };
+
+                    MailMessage mail = new MailMessage
+                    {
+                        IsBodyHtml = true,
+                        From = new MailAddress(smtpUser)
+                    };
+                    mail.To.Add(user.UserEmail);
+                    mail.Subject = "Password Notification";
+                    mail.Body = builder.ToString();
+
+                    using (SmtpClient smtp = new SmtpClient
+                    {
+                        Host = smtpHost,
+                        UseDefaultCredentials = false,
+                        Credentials = credential,
+                        Port = smtpPort,
+                        EnableSsl = smtpSsl,
+                        DeliveryMethod = SmtpDeliveryMethod.Network,
+                        Timeout = 20000
+                    })
+                    {
+                        smtp.Send(mail);
+                    }
+
+                    return true;
                 }
-
-                builder.Replace("[realname]", user.RealName);
-                builder.Replace("[username]", user.UserName);
-                builder.Replace("[password]", user.UserPassword);
-                builder.Replace("[company]", user.UserCompany);
-                builder.Replace("[link]", string.Empty);
-                builder.Replace("[year]", DateTime.Now.Year.ToString());
-                builder.Replace("[reserved]", GlobalConstant.RESERVED);
-
-                NetworkCredential credential = new NetworkCredential
+                catch (Exception ex)
                 {
-                    UserName = GlobalConstant.CREDENTIAL_USERNAME,
-                    Password = GlobalConstant.CREDENTIAL_PASSWORD
-                };
-
-                MailMessage mail = new MailMessage
-                {
-                    IsBodyHtml = true,
-                    From = new MailAddress(GlobalConstant.MAIL_FROM)
-                };
-                mail.To.Add(user.UserEmail);
-                mail.Subject = "Password Notification";
-                mail.Body = builder.ToString();
-
-                SmtpClient smtp = new SmtpClient
-                {
-                    Host = GlobalConstant.SMTP_HOST,
-                    UseDefaultCredentials = false,
-                    Credentials = credential,
-                    Port = GlobalConstant.SMTP_PORT,
-                    EnableSsl = GlobalConstant.SMTP_SSL,
-                    DeliveryMethod = SmtpDeliveryMethod.Network,
-                    Timeout = 20000
-                };
-
-                smtp.Send(mail);
-                return true;
+                    message = ex.Message;
+                    LogErrorToRailway(ex);  // ✅ log to Railway
+                    return false;
+                }
             }
-            catch (Exception ex)
+
+            private static void LogErrorToRailway(Exception ex)
             {
-                message = ex.Message;
-                LogErrorToFile(ex);   // ✅ Log error to file
-                return false;
+                try
+                {
+                    Console.Error.WriteLine("===== EMAIL ERROR =====");
+                    Console.Error.WriteLine($"Time: {DateTime.Now}");
+                    Console.Error.WriteLine($"Message: {ex.Message}");
+                    Console.Error.WriteLine($"StackTrace: {ex.StackTrace}");
+
+                    if (ex.InnerException != null)
+                    {
+                        Console.Error.WriteLine($"InnerException: {ex.InnerException.Message}");
+                        Console.Error.WriteLine($"Inner Stack: {ex.InnerException.StackTrace}");
+                    }
+
+                    Console.Error.WriteLine("========================");
+                }
+                catch { }
             }
         }
-        private static void LogErrorToFile(Exception ex)
-        {
-            try
-            {
-                Console.WriteLine("==========================================");
-                Console.WriteLine($"Time: {DateTime.Now}");
-                Console.WriteLine($"Message: {ex.Message}");
-                Console.WriteLine($"StackTrace: {ex.StackTrace}");
 
-                if (ex.InnerException != null)
-                {
-                    Console.WriteLine($"InnerException: {ex.InnerException.Message}");
-                    Console.WriteLine($"Inner Stack: {ex.InnerException.StackTrace}");
-                }
-
-                Console.WriteLine("==========================================");
-                Console.WriteLine();
-            }
-            catch
-            {
-                // avoid recursive crash if logging fails
-            }
-        }
 
     }
 
 
-}
+
