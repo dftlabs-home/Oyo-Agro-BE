@@ -28,6 +28,7 @@ namespace OyoAgro.DataAccess.Layer.Repositories
             var list = await BaseRepository().FindList<Lga>();
             return list.ToList();
         }
+        
 
         public async Task<Lga> GetEntity(int lgaId)
         {

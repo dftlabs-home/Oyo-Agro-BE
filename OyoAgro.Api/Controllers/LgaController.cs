@@ -8,7 +8,7 @@ namespace OyoAgro.Api.Controllers
     [ApiController]
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
-    [Authorize]
+   [Authorize]
 
     public class LgaController : ControllerBase
     {
@@ -62,6 +62,15 @@ namespace OyoAgro.Api.Controllers
         public async Task<IActionResult> GetEntity([FromRoute] int lgaId)
         {
             var response = await _lgaServices.GetEntity(lgaId);
+
+            return Ok(new { success = true, Data = response });
+
+
+        }
+         [HttpGet("getLgasByRegionId/{regionId}")]
+        public async Task<IActionResult> GetListByRegionId([FromRoute] int regionId)
+        {
+            var response = await _lgaServices.GetEntityByRegionId(regionId);
 
             return Ok(new { success = true, Data = response });
 

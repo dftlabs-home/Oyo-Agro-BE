@@ -830,6 +830,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "OyoAgro.Api.Controllers.LgaController",
+    "Method": "GetListByRegionId",
+    "RelativePath": "api/v1/Lga/getLgasByRegionId/{regionId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "regionId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "OyoAgro.Api.Controllers.LiveStockController",
     "Method": "Create",
     "RelativePath": "api/v1/LiveStock/Create",

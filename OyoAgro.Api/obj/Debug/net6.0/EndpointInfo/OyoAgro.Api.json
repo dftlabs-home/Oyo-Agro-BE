@@ -1271,6 +1271,29 @@
         }
       }
     },
+    "/api/v1/Lga/getLgasByRegionId/{regionId}": {
+      "get": {
+        "tags": [
+          "Lga"
+        ],
+        "parameters": [
+          {
+            "name": "regionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/v1/LiveStock/Create": {
       "post": {
         "tags": [
