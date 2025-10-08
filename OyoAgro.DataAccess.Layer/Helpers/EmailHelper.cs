@@ -100,21 +100,93 @@ namespace OyoAgro.DataAccess.Layer.Helpers
         //}
 
 
-       
-            public static bool IsPasswordEmailSent(MailParameter user, out string message)
+
+        //public static bool IsPasswordEmailSent(MailParameter user, out string message)
+        //{
+        //    message = string.Empty;
+
+        //    try
+        //    {
+        //        var builder = new StringBuilder();
+
+        //        // Use AppDomain path so it works in Railway too
+        //        string templatePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Templates", "_PasswordTemplate.cshtml");
+
+        //        if (!File.Exists(templatePath))
+        //            throw new FileNotFoundException($"Email template not found: {templatePath}");
+
+        //        using (StreamReader reader = new StreamReader(templatePath))
+        //        {
+        //            builder.Append(reader.ReadToEnd());
+        //        }
+
+        //        builder.Replace("[realname]", user.RealName);
+        //        builder.Replace("[username]", user.UserName);
+        //        builder.Replace("[password]", user.UserPassword);
+        //        builder.Replace("[company]", user.UserCompany);
+        //        builder.Replace("[link]", string.Empty);
+        //        builder.Replace("[year]", DateTime.Now.Year.ToString());
+        //        builder.Replace("[reserved]", GlobalConstant.RESERVED);
+
+        //        // ✅ Load credentials from Railway env variables
+        //        string smtpUser = Environment.GetEnvironmentVariable("SMTP_USER");
+        //        string smtpPass = Environment.GetEnvironmentVariable("SMTP_PASS");
+        //        string smtpHost = Environment.GetEnvironmentVariable("SMTP_HOST") ?? "smtp.gmail.com";
+        //        int smtpPort = int.Parse(Environment.GetEnvironmentVariable("SMTP_PORT") ?? "587");
+        //        bool smtpSsl = bool.Parse(Environment.GetEnvironmentVariable("SMTP_SSL") ?? "true");
+
+        //        NetworkCredential credential = new NetworkCredential
+        //        {
+        //            UserName = smtpUser,
+        //            Password = smtpPass
+        //        };
+
+        //        MailMessage mail = new MailMessage
+        //        {
+        //            IsBodyHtml = true,
+        //            From = new MailAddress(smtpUser)
+        //        };
+        //        mail.To.Add(user.UserEmail);
+        //        mail.Subject = "Password Notification";
+        //        mail.Body = builder.ToString();
+
+        //        using (SmtpClient smtp = new SmtpClient
+        //        {
+        //            Host = smtpHost,
+        //            UseDefaultCredentials = false,
+        //            Credentials = credential,
+        //            Port = smtpPort,
+        //            EnableSsl = smtpSsl,
+        //            DeliveryMethod = SmtpDeliveryMethod.Network,
+        //            Timeout = 20000
+        //        })
+        //        {
+        //            smtp.Send(mail);
+        //        }
+
+        //        return true;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        message = ex.Message;
+        //        LogErrorToRailway(ex);  // ✅ log to Railway
+        //        return false;
+        //    }
+        //}
+
+        public static bool IsPasswordEmailSent(MailParameter user, out string message)
+        {
+            message = string.Empty;
+
+            try
             {
-                message = string.Empty;
+                var builder = new StringBuilder();
 
-                try
+                // Path to the template file
+                string templatePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Templates", "_PasswordTemplate.cshtml");
+
+                if (File.Exists(templatePath))
                 {
-                    var builder = new StringBuilder();
-
-                    // Use AppDomain path so it works in Railway too
-                    string templatePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Templates", "_PasswordTemplate.cshtml");
-
-                    if (!File.Exists(templatePath))
-                        throw new FileNotFoundException($"Email template not found: {templatePath}");
-
                     using (StreamReader reader = new StreamReader(templatePath))
                     {
                         builder.Append(reader.ReadToEnd());
@@ -127,54 +199,69 @@ namespace OyoAgro.DataAccess.Layer.Helpers
                     builder.Replace("[link]", string.Empty);
                     builder.Replace("[year]", DateTime.Now.Year.ToString());
                     builder.Replace("[reserved]", GlobalConstant.RESERVED);
-
-                    // ✅ Load credentials from Railway env variables
-                    string smtpUser = Environment.GetEnvironmentVariable("SMTP_USER");
-                    string smtpPass = Environment.GetEnvironmentVariable("SMTP_PASS");
-                    string smtpHost = Environment.GetEnvironmentVariable("SMTP_HOST") ?? "smtp.gmail.com";
-                    int smtpPort = int.Parse(Environment.GetEnvironmentVariable("SMTP_PORT") ?? "587");
-                    bool smtpSsl = bool.Parse(Environment.GetEnvironmentVariable("SMTP_SSL") ?? "true");
-
-                    NetworkCredential credential = new NetworkCredential
-                    {
-                        UserName = smtpUser,
-                        Password = smtpPass
-                    };
-
-                    MailMessage mail = new MailMessage
-                    {
-                        IsBodyHtml = true,
-                        From = new MailAddress(smtpUser)
-                    };
-                    mail.To.Add(user.UserEmail);
-                    mail.Subject = "Password Notification";
-                    mail.Body = builder.ToString();
-
-                    using (SmtpClient smtp = new SmtpClient
-                    {
-                        Host = smtpHost,
-                        UseDefaultCredentials = false,
-                        Credentials = credential,
-                        Port = smtpPort,
-                        EnableSsl = smtpSsl,
-                        DeliveryMethod = SmtpDeliveryMethod.Network,
-                        Timeout = 20000
-                    })
-                    {
-                        smtp.Send(mail);
-                    }
-
-                    return true;
                 }
-                catch (Exception ex)
+                else
                 {
-                    message = ex.Message;
-                    LogErrorToRailway(ex);  // ✅ log to Railway
-                    return false;
+                    // ✅ fallback email body if template not found
+                    builder.AppendLine($"Hello {user.RealName},");
+                    builder.AppendLine();
+                    builder.AppendLine("Your account has been created successfully.");
+                    builder.AppendLine($"Username: {user.UserName}");
+                    builder.AppendLine($"Password: {user.UserPassword}");
+                    builder.AppendLine();
+                    builder.AppendLine($"Company: {user.UserCompany}");
+                    builder.AppendLine($"{DateTime.Now.Year} {GlobalConstant.RESERVED}");
                 }
-            }
 
-            private static void LogErrorToRailway(Exception ex)
+                // ✅ Load credentials from Railway environment variables
+                string smtpUser = Environment.GetEnvironmentVariable("SMTP_USER");
+                string smtpPass = Environment.GetEnvironmentVariable("SMTP_PASS");
+                string smtpHost = Environment.GetEnvironmentVariable("SMTP_HOST") ?? "smtp.gmail.com";
+                int smtpPort = int.Parse(Environment.GetEnvironmentVariable("SMTP_PORT") ?? "587");
+                bool smtpSsl = bool.Parse(Environment.GetEnvironmentVariable("SMTP_SSL") ?? "true");
+
+                NetworkCredential credential = new NetworkCredential
+                {
+                    UserName = smtpUser,
+                    Password = smtpPass
+                };
+
+                MailMessage mail = new MailMessage
+                {
+                    IsBodyHtml = true,
+                    From = new MailAddress(smtpUser)
+                };
+                mail.To.Add(user.UserEmail);
+                mail.Subject = "Password Notification";
+                mail.Body = builder.ToString();
+
+                using (SmtpClient smtp = new SmtpClient
+                {
+                    Host = smtpHost,
+                    UseDefaultCredentials = false,
+                    Credentials = credential,
+                    Port = smtpPort,
+                    EnableSsl = smtpSsl,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    Timeout = 20000
+                })
+                {
+                    smtp.Send(mail);
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                message = ex.Message;
+                LogErrorToRailway(ex);
+                return false;
+            }
+        }
+
+
+
+        private static void LogErrorToRailway(Exception ex)
             {
                 try
                 {
