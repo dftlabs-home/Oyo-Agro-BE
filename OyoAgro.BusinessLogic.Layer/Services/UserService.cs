@@ -21,6 +21,7 @@ using OyoAgro.DataAccess.Layer.Models.Entities;
 using OyoAgro.DataAccess.Layer.Models.Params;
 using OyoAgro.DataAccess.Layer.Models.ViewModels;
 using OyoAgro.DataAccess.Layer.Request;
+using static OyoAgro.DataAccess.Layer.Helpers.EmailHelper;
 
 namespace OyoAgro.BusinessLogic.Layer.Services
 {
@@ -395,9 +396,17 @@ namespace OyoAgro.BusinessLogic.Layer.Services
                     UserPassword = entity.DecryptedPassword,
                     UserCompany = GlobalConstant.COMPANY
                 };
-                string message = "";
 
-                var sendMail = EmailHelper.IsPasswordEmailSent(mailParameter, out message);
+                var sendMail = await EmailHelper.IsPasswordEmailSent(mailParameter);
+
+                if (sendMail.Success)
+                {
+                    Console.WriteLine("✅ Email sent successfully!");
+                }
+                else
+                {
+                    Console.WriteLine($"❌ Failed to send email: {sendMail.Message}");
+                }
 
 
                 obj.Data = UserEntity.Userid.ToString();
