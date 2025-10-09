@@ -2,6 +2,7 @@ C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\bin\Debug\net6.0\appsettings.Dev
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\bin\Debug\net6.0\appsettings.json
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\bin\Debug\net6.0\OyoAgro.Api.staticwebassets.endpoints.json
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\bin\Debug\net6.0\OyoAgro.Api.exe
+C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\bin\Debug\net6.0\Templates\_PasswordTemplate.cshtml
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\bin\Debug\net6.0\OyoAgro.Api.deps.json
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\bin\Debug\net6.0\OyoAgro.Api.runtimeconfig.json
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\bin\Debug\net6.0\OyoAgro.Api.dll
@@ -71,6 +72,9 @@ C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\OyoAgro.Api.Ass
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\OyoAgro.Api.csproj.CoreCompileInputs.cache
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\OyoAgro.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\OyoAgro.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\OyoAgro.Api.RazorAssemblyInfo.cache
+C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\OyoAgro.Api.RazorAssemblyInfo.cs
+C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\OyoAgro.Api.sourcelink.json
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\scopedcss\bundle\OyoAgro.Api.styles.css
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\staticwebassets.development.json
@@ -81,14 +85,10 @@ C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\staticwebassets
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.OyoAgro.Api.props
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.OyoAgro.Api.props
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\staticwebassets.upToDateCheck.txt
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\OyoAgro..68786ECD.Up2Date
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\OyoAgro.Api.dll
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\refint\OyoAgro.Api.dll
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\OyoAgro.Api.pdb
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\OyoAgro.Api.genruntimeconfig.cache
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\ref\OyoAgro.Api.dll
-C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\OyoAgro.Api.sourcelink.json
-C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\OyoAgro.Api.RazorAssemblyInfo.cache
-C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\OyoAgro.Api.RazorAssemblyInfo.cs
-C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\staticwebassets.upToDateCheck.txt
-C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\bin\Debug\net6.0\Templates\_PasswordTemplate.cshtml

@@ -429,7 +429,7 @@ namespace OyoAgro.DataAccess.Layer.Helpers
 
                 var payload = new
                 {
-                    from = "Ministry of Agric Oyo <onboarding@resend.dev>", // later replace with verified sender
+                    from = "Ministry of Agric Oyo <noreply@deepflytechlabs.online>", // later replace with verified sender
                     to = new[] { user.UserEmail },
                     subject = "Password Notification",
                     html = builder.ToString()
