@@ -372,11 +372,15 @@ namespace OyoAgro.DataAccess.Layer.Helpers
             }
             catch { }
         }
-
-
-        public static async Task<bool> IsPasswordEmailSent(MailParameter user, string message)
+        public class EmailResult
         {
-            message = string.Empty;
+            public bool Success { get; set; }
+            public string Message { get; set; } = string.Empty;
+        }
+
+        public static async Task<EmailResult> IsPasswordEmailSent(MailParameter user)
+        {
+            var result = new EmailResult();
 
             try
             {
@@ -415,8 +419,9 @@ namespace OyoAgro.DataAccess.Layer.Helpers
                 var apiKey = Environment.GetEnvironmentVariable("RESEND_API_KEY");
                 if (string.IsNullOrWhiteSpace(apiKey))
                 {
-                    message = "Resend API key not found.";
-                    return false;
+                    result.Success = false;
+                    result.Message = "Resend API key not found.";
+                    return result;
                 }
 
                 using var client = new HttpClient();
@@ -424,7 +429,7 @@ namespace OyoAgro.DataAccess.Layer.Helpers
 
                 var payload = new
                 {
-                    from = "Ministry of Agric Oyo <onboarding@resend.dev>", // ✅ Resend test sender
+                    from = "Ministry of Agric Oyo <onboarding@resend.dev>", // later replace with verified sender
                     to = new[] { user.UserEmail },
                     subject = "Password Notification",
                     html = builder.ToString()
@@ -436,7 +441,7 @@ namespace OyoAgro.DataAccess.Layer.Helpers
                 var response = await client.PostAsync("https://api.resend.com/emails", content);
                 var responseBody = await response.Content.ReadAsStringAsync();
 
-                // ✅ Log request + response to Railway
+                // ✅ Log to Railway
                 Console.Error.WriteLine("===== RESEND EMAIL DEBUG =====");
                 Console.Error.WriteLine($"Time: {DateTime.Now}");
                 Console.Error.WriteLine($"To: {user.UserEmail}");
@@ -447,20 +452,23 @@ namespace OyoAgro.DataAccess.Layer.Helpers
 
                 if (response.IsSuccessStatusCode)
                 {
-                    return true;
+                    result.Success = true;
+                    result.Message = "Email sent successfully.";
+                    return result;
                 }
 
-                message = $"Resend API error: {responseBody}";
-                return false;
+                result.Success = false;
+                result.Message = $"Resend API error: {responseBody}";
+                return result;
             }
             catch (Exception ex)
             {
-                message = ex.Message;
+                result.Success = false;
+                result.Message = ex.Message;
                 LogErrorToRailway(ex);
-                return false;
+                return result;
             }
         }
-
 
     }
 }
