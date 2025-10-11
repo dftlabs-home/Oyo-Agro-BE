@@ -11,7 +11,6 @@ namespace OyoAgro.Api.Controllers
     [ApiController]
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
-    [Authorize]
 
     public class UserController : ControllerBase
     {
@@ -78,7 +77,7 @@ namespace OyoAgro.Api.Controllers
             }
         }
 
-
+        [Authorize]
         [HttpGet("GetOfficers")]
         public async Task<IActionResult> GetList()
         {
@@ -89,7 +88,8 @@ namespace OyoAgro.Api.Controllers
 
         }
 
-         [HttpGet("GetOfficer/{userId}")]
+        [Authorize]
+        [HttpGet("GetOfficer/{userId}")]
         public async Task<IActionResult> GetOfficer(int userId)
         {
             var response = await _userService.GetOfficer(userId);
