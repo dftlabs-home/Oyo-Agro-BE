@@ -92,3 +92,4 @@ C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\refint\OyoAgro.
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\OyoAgro.Api.pdb
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\OyoAgro.Api.genruntimeconfig.cache
 C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\obj\Debug\net6.0\ref\OyoAgro.Api.dll
+C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\bin\Debug\net6.0\AutoMapper.dll

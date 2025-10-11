@@ -32,7 +32,7 @@ namespace OyoAgro.BusinessLogic.Layer.Services
                 return obj;
             }
 
-            if (param.Farmerid == 0)
+            if ( param.Farmerid == 0)
             {
                 obj.Message = "Farmer is required";
                 obj.Tag = 0;

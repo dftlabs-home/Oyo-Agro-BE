@@ -15,8 +15,8 @@ namespace OyoAgro.DataAccess.Layer.Models.Params
         public string? Cropvariety { get; set; }
         public decimal? Areaplanted { get; set; }
         public decimal? Plantedquantity { get; set; }
-        public DateOnly? Plantingdate { get; set; }
-        public DateOnly? Harvestdate { get; set; }
+        public DateTime? Plantingdate { get; set; }
+        public DateTime? Harvestdate { get; set; }
         public decimal? Areaharvested { get; set; }
         public decimal? Yieldquantity { get; set; }
 

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using OyoAgro.DataAccess.Layer.Settings;
+using OyoAgro.DataAccess.Layer.Helpers;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -69,6 +70,8 @@ builder.Services.AddVersionedApiExplorer(options =>
 });
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+//builder.Services.AddAutoMapper(typeof(MappingProfile));
+
 builder.Services.AddConfigureServices();
 
 SystemConfig.Database = builder.Configuration.GetSection("Database").Get<Database>();
