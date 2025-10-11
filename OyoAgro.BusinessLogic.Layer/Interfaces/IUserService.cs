@@ -18,5 +18,6 @@ namespace OyoAgro.BusinessLogic.Layer.Interfaces
         string GetPasswordSalt();
         Task<TData<string>> SaveForm(UserParam entity);
         Task<TData<List<UsersViewModel>>> GetList();
+        Task<TData<List<UsersViewModel>>> GetOfficer(int userId);
     }
 }

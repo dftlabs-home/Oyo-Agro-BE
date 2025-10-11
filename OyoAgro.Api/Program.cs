@@ -10,6 +10,7 @@ using OyoAgro.DataAccess.Layer.Settings;
 using OyoAgro.DataAccess.Layer.Helpers;
 
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 
@@ -70,7 +71,6 @@ builder.Services.AddVersionedApiExplorer(options =>
 });
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-//builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 builder.Services.AddConfigureServices();
 

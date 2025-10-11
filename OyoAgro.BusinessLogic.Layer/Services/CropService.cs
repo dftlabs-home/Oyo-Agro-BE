@@ -50,6 +50,37 @@ namespace OyoAgro.BusinessLogic.Layer.Services
             return obj;
         }
 
+        public async Task<TData<Crop>> UpdateEntity(CropParam param)
+        {
+            var obj = new TData<Crop>();
+            if (param.Croptypeid == 0)
+            {
+                obj.Message = "Crop Type ID is required ";
+                obj.Tag = 0;
+                return obj;
+            }
+
+            if (string.IsNullOrEmpty(param.Name))
+            {
+                obj.Message = " Name is required";
+                obj.Tag = 0;
+                return obj;
+            }
+
+
+            var crop = new Crop()
+            {
+                Croptypeid = param.Croptypeid,
+                Name = param.Name,
+            };
+            await _unitOfWork.CropRepository.SaveForm(crop);
+            obj.Tag = 1;
+            obj.Data = crop;
+            return obj;
+        }
+
+
+
         public async Task<TData<List<Crop>>> GetList(CropParam param)
         {
             var response = new TData<List<Crop>>();

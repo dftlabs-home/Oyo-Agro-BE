@@ -81,6 +81,67 @@ namespace OyoAgro.BusinessLogic.Layer.Services
                 Plantingdate = param.Plantingdate,
                 Yieldquantity = param.Yieldquantity,
                 Plantedquantity = param.Plantedquantity,
+                Cropvariety = param.Cropvariety,
+
+
+            };
+            await _unitOfWork.CropRegistryRepository.SaveForm(cropReg);
+
+
+            obj.Tag = 1;
+            obj.Data = cropReg;
+            return obj;
+        }
+        
+        public async Task<TData<Cropregistry>> UpdateEntity(CropRegistryParam param)
+        {
+            var obj = new TData<Cropregistry>();
+            if (param.Cropregistryid == 0)
+            {
+                obj.Message = "Registry ID is required";
+                obj.Tag = 0;
+                return obj;
+            }
+
+            if (param.Croptypeid == 0)
+            {
+                obj.Message = "Crop Type is required";
+                obj.Tag = 0;
+                return obj;
+            }
+            if (param.Seasonid == 0)
+            {
+                obj.Message = "Season is required";
+                obj.Tag = 0;
+                return obj;
+            }
+            if (param.Croptypeid == 0)
+            {
+                obj.Message = "Crop Type is required";
+                obj.Tag = 0;
+                return obj;
+            }
+           
+            if (param.Plantingdate == null)
+            {
+                obj.Message = "Date Planted is required";
+                obj.Tag = 0;
+                return obj;
+            }
+
+            var cropReg = new Cropregistry
+            {
+                Cropregistryid = param.Cropregistryid,
+                Areaharvested = param.Areaharvested,
+                Areaplanted = param.Areaplanted,
+                Croptypeid = param.Croptypeid,
+                Farmid = param.Farmid,
+                Harvestdate = param.Harvestdate,
+                Seasonid = param.Seasonid,
+                Plantingdate = param.Plantingdate,
+                Yieldquantity = param.Yieldquantity,
+                Plantedquantity = param.Plantedquantity,
+                Cropvariety = param.Cropvariety,
 
             };
             await _unitOfWork.CropRegistryRepository.SaveForm(cropReg);

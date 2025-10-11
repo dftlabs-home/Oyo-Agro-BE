@@ -29,6 +29,18 @@ namespace OyoAgro.Api.Controllers
 
         }
 
+        [HttpPost("Update")]
+        public async Task<IActionResult> Update([FromBody] CropParam model)
+        {
+            var response = await _cropService.UpdateEntity(model);
+
+
+            return Ok(new { success = true, Data = response });
+
+        }
+
+
+
         [HttpGet("GetCrops")]
         public async Task<IActionResult> GetList()
         {

@@ -58,6 +58,47 @@ namespace OyoAgro.BusinessLogic.Layer.Services
             return obj;
         }
 
+
+        public async Task<TData<Association>> UpdateEntity(AssociationParam param)
+        {
+            var obj = new TData<Association>();
+
+            if (param.Associationid == 0)
+            {
+                obj.Tag = 0;
+                obj.Message = "Associaion ID is required";
+            }
+
+            var Entity = await _unitOfWork.AssociationRepository.GetEntity(param.Associationid);
+            if (Entity == null)
+            {
+                obj.Tag = 0;
+                obj.Message = "Associaion not found";
+            }
+            if (string.IsNullOrEmpty(param.Name))
+            {
+                obj.Message = " Name is required";
+                obj.Tag = 0;
+                return obj;
+            }
+
+
+            var association = new Association()
+            {
+                Associationid = param.Associationid,
+                Name = param.Name,
+                Registrationno = param.Registrationno,
+            };
+            await _unitOfWork.AssociationRepository.SaveForm(association);
+            obj.Tag = 1;
+            obj.Data = association;
+            return obj;
+        }
+
+
+
+
+
         public async Task<TData<List<Association>>> GetList(AssociationParam param)
         {
             var response = new TData<List<Association>>();

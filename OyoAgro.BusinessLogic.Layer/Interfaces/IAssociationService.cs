@@ -16,5 +16,6 @@ namespace OyoAgro.BusinessLogic.Layer.Interfaces
         Task<TData<List<Association>>> GetList();
         Task<TData<Association>> GetEntity(int associationId);
         Task<TData<Association>> DeleteEntity(int associationId);
+        Task<TData<Association>> UpdateEntity(AssociationParam param);
     }
 }

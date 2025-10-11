@@ -16,6 +16,7 @@ namespace OyoAgro.BusinessLogic.Layer.Interfaces
         Task<TData<List<Crop>>> GetList();
         Task<TData<Crop>> GetEntity(int cropId);
         Task<TData<Crop>> DeleteEntity(int cropId);
+        Task<TData<Crop>> UpdateEntity(CropParam param);
 
     }
 }

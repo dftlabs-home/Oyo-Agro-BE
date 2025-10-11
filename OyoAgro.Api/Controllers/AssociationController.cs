@@ -29,6 +29,15 @@ namespace OyoAgro.Api.Controllers
             return Ok(new { success = true, Data = response });
 
         }
+        [HttpPost("updateEntity")]
+        public async Task<IActionResult> updateEntity([FromBody] AssociationParam model)
+        {
+            var response = await _associationService.UpdateEntity(model);
+
+
+            return Ok(new { success = true, Data = response });
+
+        }
 
         [HttpGet("GetAssociations")]
         public async Task<IActionResult> GetList()

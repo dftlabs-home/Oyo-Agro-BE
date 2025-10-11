@@ -205,6 +205,84 @@ namespace OyoAgro.BusinessLogic.Layer.Services
         }
 
 
+        
+        
+        public async Task<TData<List<UsersViewModel>>> GetOfficer(int userId)
+        {
+            var response = new TData<List<UsersViewModel>>();
+            var obj = await _unitOfWork.Users.GetList();  
+            var LGAs = await _unitOfWork.LgaRepository.GetList();
+            var farmers = await _unitOfWork.FarmerRepository.GetList();
+            var association = await _unitOfWork.AssociationRepository.GetList();
+            var farms = await _unitOfWork.FarmRepository.GetList();
+            var address = await _unitOfWork.AddressRepository.GetList();
+            var res = (from user in obj.Where(x=> x.Userid == userId)   
+                           select new UsersViewModel
+                           {
+                               Userid = user.Userid,
+                               Firstname = user.Firstname,
+                               Lastname = user.Lastname,
+                               Email = user.Email,
+                               Middlename = user.Middlename,
+                               Phonenumber = user.Phonenumber,
+                               Lga = LGAs.Where(x=> x.Lgaid == user.Lgaid).FirstOrDefault()?.Lganame,
+                               Gender = user.Gender,
+                               Roleid = user.Roleid,
+                               FarmerCount = farmers.Count(x=> x.UserId == user.Userid),
+                               Address = address.Where(x=> x.Userid == userId).Select(AD => new AddressParam
+                               {
+                                   Streetaddress =AD.Streetaddress,
+                                   Latitude = AD.Latitude,
+                                   Longitude = AD.Longitude,    
+                                   Postalcode = AD.Postalcode,
+                                   Town = AD.Town,
+                                   Addressid = AD.Addressid,
+                                   Lgaid = AD.Lgaid
+
+                               }).FirstOrDefault(),
+                               Farmers = farmers.Where(x=> x.UserId == userId).Select(f =>  new FarmerViewModel
+                               {
+                                   Farmerid = f.Farmerid,
+                                   Availablelabor = f.Availablelabor,
+                                   Dateofbirth = f.Dateofbirth,
+                                   Email = f.Email,
+                                   Firstname  = f.Firstname,
+                                   Lastname = f.Lastname,
+                                   Middlename= f.Middlename,
+                                   Association = association.Where(x=> x.Associationid == f.Associationid).FirstOrDefault()?.Name,
+                                   Gender = f.Gender,
+                                   Householdsize = f.Householdsize,
+                                   Lga = LGAs.Where(x => x.Lgaid == user.Lgaid).FirstOrDefault()?.Lganame,
+                                   
+                                   Farms = farms.Where(x=> x.Farmerid == f.Farmerid).Select(t => new FarmsViewModel
+                                   {
+                                       Farmid = t.Farmerid,
+                                       Farmsize = t.Farmsize,
+                                       Streetaddress = address.Where(x=> x.Farmid == t.Farmid).FirstOrDefault()?.Streetaddress,
+                                       Latitude = address.Where(x => x.Farmid == t.Farmid).FirstOrDefault()?.Latitude,
+                                       Longitude = address.Where(x => x.Farmid == t.Farmid).FirstOrDefault()?.Longitude,
+                                       Town = address.Where(x => x.Farmid == t.Farmid).FirstOrDefault()?.Town,
+                                   })
+                                   .ToList(),
+                                   FarmCount = farms.Where(x=> x.Farmerid == f.Farmerid).Count()
+
+                               })
+                               .ToList(),
+                           })
+
+                           .ToList();
+
+            foreach (var user in res)
+            {
+                user.FarmCount = user.Farmers.Sum(f => f.Farms.Count);
+            }
+
+            response.Data = res;
+            response.Total = res.Count();
+            return response;
+        }
+
+
 
         public async Task<TData<Useraccount>> Logout(int userId)
         {

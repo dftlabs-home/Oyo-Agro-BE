@@ -22,6 +22,7 @@ namespace OyoAgro.DataAccess.Layer.Models.ViewModels
         public string? Lga { get; set; }
         public int FarmCount { get; set; }
         public int FarmerCount { get; set; }
+        public AddressParam? Address { get; set; }  
         public List<FarmerViewModel>? Farmers { get; set; }
 
     }

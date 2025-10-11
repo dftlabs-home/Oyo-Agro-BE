@@ -158,15 +158,15 @@ namespace OyoAgro.DataAccess.Layer.Models
 
                 entity.ToTable("crop");
                 entity.Property(e => e.Updatedat)
-                    .HasColumnName("updatedat")
+                    .HasColumnName("Updatedat")
                     .HasDefaultValueSql("now()");
 
                 entity.Property(e => e.Croptypeid).HasColumnName("croptypeid");
                 entity.Property(e => e.Createdat)
-                    .HasColumnName("createdat")
+                    .HasColumnName("Createdat")
                     .HasDefaultValueSql("now()");
 
-                entity.Property(e => e.Deletedat).HasColumnName("deletedat");
+                entity.Property(e => e.Deletedat).HasColumnName("Deletedat");
 
 
                 entity.Property(e => e.Name)

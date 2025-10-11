@@ -249,19 +249,30 @@ namespace OyoAgro.DataAccess.Layer.Repositories
         public async Task<int> Update<T>(T entity) where T : class
         {
             _context.Set<T>().Attach(entity);
-            Hashtable props = DatabasesExtension.GetPropertyInfo<T>(entity);
+
+            var props = DatabasesExtension.GetPropertyInfo<T>(entity);
+            var entityType = _context.Model.FindEntityType(typeof(T));
+
             foreach (string item in props.Keys)
             {
-                if (item == "Id")
-                {
+                // 🔸 Skip keys (like Id, UserId, FarmerId, etc.)
+                if (item.Equals("Id", StringComparison.OrdinalIgnoreCase) ||
+                    item.EndsWith("Id", StringComparison.OrdinalIgnoreCase))
                     continue;
-                }
-                object value = _context.Entry(entity).Property(item).CurrentValue;
+
+                // 🔸 Skip navigation properties (relations)
+                var property = entityType.FindProperty(item);
+                if (property == null)
+                    continue;
+
+                var value = _context.Entry(entity).Property(item).CurrentValue;
                 if (value != null)
                 {
                     _context.Entry(entity).Property(item).IsModified = true;
                 }
             }
+
+            // 🔸 Commit if no external transaction
             return _dbContextTransaction == null ? await this.CommitTrans() : 0;
         }
 
