@@ -13,8 +13,8 @@ namespace OyoAgro.DataAccess.Layer.Models.Params
         public int Seasonid { get; set; }
         public int Livestocktypeid { get; set; }
         public int? Quantity { get; set; }
-        public DateOnly? Startdate { get; set; }
-        public DateOnly? Enddate { get; set; }
+        public DateTime? Startdate { get; set; }
+        public DateTime? Enddate { get; set; }
 
     }
 }

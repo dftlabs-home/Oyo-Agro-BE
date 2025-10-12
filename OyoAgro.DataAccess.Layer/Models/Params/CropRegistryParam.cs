@@ -8,10 +8,10 @@ namespace OyoAgro.DataAccess.Layer.Models.Params
 {
     public class CropRegistryParam
     {
-        public long? Cropregistryid { get; set; }
-        public long? Farmid { get; set; }
-        public int? Seasonid { get; set; }
-        public int? Croptypeid { get; set; }
+        public long Cropregistryid { get; set; }
+        public long Farmid { get; set; }
+        public int Seasonid { get; set; }
+        public int Croptypeid { get; set; }
         public string? Cropvariety { get; set; }
         public decimal? Areaplanted { get; set; }
         public decimal? Plantedquantity { get; set; }
