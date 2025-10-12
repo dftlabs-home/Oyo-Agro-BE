@@ -23,6 +23,7 @@ namespace OyoAgro.Api.Authorizations
             services.AddScoped<ILiveStockService, LiveStockService>();
             services.AddScoped<INotificationTargetService, NotificationTargetService>();
             services.AddScoped<INotificationService, NotificationService>();
+            services.AddScoped<ISeasonServices, SeasonServices>();
 
             return services;
         }

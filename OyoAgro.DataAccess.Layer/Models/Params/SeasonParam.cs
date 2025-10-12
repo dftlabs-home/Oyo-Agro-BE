@@ -11,8 +11,8 @@ namespace OyoAgro.DataAccess.Layer.Models.Params
         public int Seasonid { get; set; }
         public string Name { get; set; } = null!;
         public int? Year { get; set; }
-        public DateOnly? Startdate { get; set; }
-        public DateOnly? Enddate { get; set; }
+        public DateTime? Startdate { get; set; }
+        public DateTime? Enddate { get; set; }
 
     }
 }

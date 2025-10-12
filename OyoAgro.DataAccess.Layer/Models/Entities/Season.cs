@@ -16,8 +16,8 @@ namespace OyoAgro.DataAccess.Layer.Models.Entities
         public Guid? Tempclientid { get; set; }
         public string Name { get; set; } = null!;
         public int? Year { get; set; }
-        public DateOnly? Startdate { get; set; }
-        public DateOnly? Enddate { get; set; }
+        public DateTime? Startdate { get; set; }
+        public DateTime? Enddate { get; set; }
      
         public long? Version { get; set; }
 
