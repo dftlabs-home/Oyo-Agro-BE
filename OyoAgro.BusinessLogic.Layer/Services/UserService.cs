@@ -162,6 +162,17 @@ namespace OyoAgro.BusinessLogic.Layer.Services
                                Gender = user.Gender,
                                Roleid = user.Roleid,
                                FarmerCount = farmers.Count(x=> x.UserId == user.Userid),
+                               Address = address.Where(x => x.Userid == user.Userid).Select(AD => new AddressParam
+                               {
+                                   Streetaddress = AD.Streetaddress,
+                                   Latitude = AD.Latitude,
+                                   Longitude = AD.Longitude,
+                                   Postalcode = AD.Postalcode,
+                                   Town = AD.Town,
+                                   Addressid = AD.Addressid,
+                                   Lgaid = AD.Lgaid
+
+                               }).FirstOrDefault(),
                                Farmers = farmers.Where(x=> x.UserId == user.Userid).Select(f =>  new FarmerViewModel
                                {
                                    Farmerid = f.Farmerid,

@@ -12,9 +12,9 @@ namespace OyoAgro.DataAccess.Layer.Interfaces
     {
         Task<List<Address>> GetList(AddressParam param);
         Task<List<Address>> GetList();
-        Task<List<Address>> GetListbyFarmId(int farmId);
-        Task<List<Address>> GetListbyFarmerId(int farmerId);
-        Task<List<Address>> GetListbyUserId(int userId);
+        Task<Address> GetEntitybyFarmId(int farmId);
+        Task<Address> GetEntitybyFarmerId(int farmerId);
+        Task<Address> GetEntitybyUserId(int userId);
         Task<Address> GetEntity(int addressId);
         Task DeleteForm(int ids);
         Task SaveForm(Address entity);

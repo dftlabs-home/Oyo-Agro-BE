@@ -8,6 +8,7 @@ using OyoAgro.DataAccess.Layer.Interfaces;
 using OyoAgro.DataAccess.Layer.Models.Dtos;
 using OyoAgro.DataAccess.Layer.Models.Entities;
 using OyoAgro.DataAccess.Layer.Models.Params;
+using OyoAgro.DataAccess.Layer.Models.ViewModels;
 
 namespace OyoAgro.BusinessLogic.Layer.Services
 {
@@ -93,7 +94,7 @@ namespace OyoAgro.BusinessLogic.Layer.Services
 
             var farmAddress = new Address
             {
-                Farmerid = Convert.ToInt32(farmSave.Farmid),
+                Farmid = Convert.ToInt32(farmSave.Farmid),
                 Lgaid = param.Lgaid,
                 Postalcode = param.Postalcode,
                 Streetaddress = param.Streetaddress,
@@ -130,11 +131,37 @@ namespace OyoAgro.BusinessLogic.Layer.Services
             return response;
         }
 
-        public async Task<TData<Farm>> GetEntity(int farmId)
+        public async Task<TData<FarmViewModel>> GetEntity(int farmId)
         {
-            var response = new TData<Farm>();
-            var obj = await _unitOfWork.FarmRepository.GetEntity(farmId);
-            response.Data = obj;
+            var response = new TData<FarmViewModel>
+            {
+                Data = new FarmViewModel()
+            };
+
+            var farm = await _unitOfWork.FarmRepository.GetEntity(farmId);
+            if (farm == null)
+                return response;
+
+            var farmAddress = await _unitOfWork.AddressRepository
+                .GetEntitybyFarmId(farmId);
+            var farmer = await _unitOfWork.FarmerRepository
+                .GetEntity(farm.Farmerid);
+            var farmType = await _unitOfWork.FarmTypeRepository
+                .GetEntity( farm.Farmtypeid);
+            var lga = farmAddress != null
+                ? await _unitOfWork.LgaRepository.GetEntity((int)farmAddress.Lgaid)
+                : null;
+
+            response.Data.Farmid = farm.Farmid;
+            response.Data.Farmer = $"{farmer?.Firstname ?? ""} {farmer?.Lastname ?? ""}".Trim();
+            response.Data.Farmtype = farmType?.Typename;
+            response.Data.Farmsize = farm.Farmsize;
+            response.Data.Longitude = farmAddress?.Longitude;
+            response.Data.Latitude = farmAddress?.Latitude;
+            response.Data.Streetaddress = farmAddress?.Streetaddress;
+            response.Data.Postalcode = farmAddress?.Postalcode;
+            response.Data.Lga = lga?.Lganame;
+
             return response;
         }
         public async Task<TData<Farm>> DeleteEntity(int farmId)

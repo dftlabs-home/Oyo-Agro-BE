@@ -26,20 +26,20 @@ namespace OyoAgro.DataAccess.Layer.Repositories
             var list = await BaseRepository().FindList<Address>();
             return list.ToList();
         }
-        public async Task<List<Address>> GetListbyFarmId(int farmId)
+        public async Task<Address> GetEntitybyFarmId(int farmId)
         {
-            var list = await BaseRepository().FindList<Address>(x => x.Farmid == farmId);
-            return list.ToList();
+            var list = await BaseRepository().FindEntity<Address>(x => x.Farmid == farmId);
+            return list;
         }
-        public async Task<List<Address>> GetListbyFarmerId(int farmerId)
+        public async Task<Address> GetEntitybyFarmerId(int farmerId)
         {
-            var list = await BaseRepository().FindList<Address>(x => x.Farmerid == farmerId);
-            return list.ToList();
+            var list = await BaseRepository().FindEntity<Address>(x => x.Farmerid == farmerId);
+            return list;
         }
-        public async Task<List<Address>> GetListbyUserId(int userId)
+        public async Task<Address> GetEntitybyUserId(int userId)
         {
-            var list = await BaseRepository().FindList<Address>(x => x.Userid == userId);
-            return list.ToList();
+            var list = await BaseRepository().FindEntity<Address>(x => x.Userid == userId);
+            return list;
         }
 
         public async Task<Address> GetEntity(int addressId)

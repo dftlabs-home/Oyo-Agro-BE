@@ -359,12 +359,12 @@ namespace OyoAgro.DataAccess.Layer.Models
                     .HasMaxLength(50)
                     .HasColumnName("typename");
                 entity.Property(e => e.Updatedat)
-                 .HasColumnName("updatedat")
+                 .HasColumnName("Updatedat")
                  .HasDefaultValueSql("now()");
                 entity.Property(e => e.Createdat)
-                 .HasColumnName("createdat")
+                 .HasColumnName("Createdat")
                  .HasDefaultValueSql("now()");
-                entity.Property(e => e.Deletedat).HasColumnName("deletedat");
+                entity.Property(e => e.Deletedat).HasColumnName("Deletedat");
 
 
             });
