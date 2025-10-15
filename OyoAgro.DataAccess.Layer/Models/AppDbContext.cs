@@ -416,12 +416,12 @@ namespace OyoAgro.DataAccess.Layer.Models
 
                 entity.Property(e => e.Livestocktypeid).HasColumnName("livestocktypeid");
                 entity.Property(e => e.Updatedat)
-              .HasColumnName("updatedat")
+              .HasColumnName("Updatedat")
               .HasDefaultValueSql("now()");
                 entity.Property(e => e.Createdat)
-                 .HasColumnName("createdat")
+                 .HasColumnName("Createdat")
                  .HasDefaultValueSql("now()");
-                entity.Property(e => e.Deletedat).HasColumnName("deletedat");
+                entity.Property(e => e.Deletedat).HasColumnName("Deletedat");
 
                 entity.Property(e => e.Name)
                     .HasMaxLength(100)

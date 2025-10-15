@@ -69,6 +69,17 @@ namespace OyoAgro.BusinessLogic.Layer.Services
                 obj.Tag = 0;
                 return obj;
             }
+            
+            if (param.Plantingdate != null && param.Harvestdate != null)
+            {
+                if (param.Plantingdate > param.Harvestdate)
+                {
+                    obj.Message = "Planting date cannot be greater than harvest date";
+                    obj.Tag = 0;
+                    return obj;
+                }
+                
+            }
 
             var cropReg = new Cropregistry
             {
