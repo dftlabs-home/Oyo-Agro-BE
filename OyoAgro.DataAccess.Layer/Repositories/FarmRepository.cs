@@ -32,7 +32,7 @@ namespace OyoAgro.DataAccess.Layer.Repositories
             return list.ToList();
         }
 
-        public async Task<Farm> GetEntity(int farmId)
+        public async Task<Farm> GetEntity(long farmId)
         {
             var list = await BaseRepository().FindEntity<Farm>(x => x.Farmid == farmId);
             return list;

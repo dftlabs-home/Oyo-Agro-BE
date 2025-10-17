@@ -9,7 +9,7 @@ namespace OyoAgro.Api.Controllers
     [ApiController]
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
-    //[Authorize]
+    [Authorize]
 
     public class FarmController : ControllerBase
     {
@@ -23,6 +23,15 @@ namespace OyoAgro.Api.Controllers
         public async Task<IActionResult> Create([FromBody] FarmParam model)
         {
             var response = await _farmService.SaveEntity(model);
+
+
+            return Ok(new { success = true, Data = response });
+
+        }
+           [HttpPost("Update")]
+        public async Task<IActionResult> update([FromBody] FarmParam model)
+        {
+            var response = await _farmService.UpdateEntity(model);
 
 
             return Ok(new { success = true, Data = response });

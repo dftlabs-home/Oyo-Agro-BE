@@ -9,17 +9,17 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = OyoAgro.Api
 build_property.RootNamespace = OyoAgro.Api
-build_property.ProjectDir = C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api\
+build_property.ProjectDir = C:\Users\Malik\source\repos\OyoAgro\OyoAgro\OyoAgro.Api\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Malik\source\repos\OyoAgro\OyoAgro.Api
+build_property.MSBuildProjectDirectory = C:\Users\Malik\source\repos\OyoAgro\OyoAgro\OyoAgro.Api
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 6.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Malik/source/repos/OyoAgro/OyoAgro.Api/Templates/_PasswordTemplate.cshtml]
+[C:/Users/Malik/source/repos/OyoAgro/OyoAgro/OyoAgro.Api/Templates/_PasswordTemplate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = VGVtcGxhdGVzXF9QYXNzd29yZFRlbXBsYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

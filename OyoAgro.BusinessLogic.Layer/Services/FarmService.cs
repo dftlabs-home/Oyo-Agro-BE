@@ -33,7 +33,7 @@ namespace OyoAgro.BusinessLogic.Layer.Services
                 return obj;
             }
 
-            if ( param.Farmerid == 0)
+            if (param.Farmerid == 0)
             {
                 obj.Message = "Farmer is required";
                 obj.Tag = 0;
@@ -74,19 +74,19 @@ namespace OyoAgro.BusinessLogic.Layer.Services
                 return obj;
             }
 
-           if (param.Lgaid == 0)
+            if (param.Lgaid == 0)
             {
                 obj.Message = "LGA is required";
                 obj.Tag = 0;
                 return obj;
             }
 
-         
+
             var farmSave = new Farm
             {
                 Farmerid = param.Farmerid,
                 Farmsize = param.Farmsize,
-                Farmtypeid = param.Farmtypeid,                
+                Farmtypeid = param.Farmtypeid,
 
             };
 
@@ -109,6 +109,96 @@ namespace OyoAgro.BusinessLogic.Layer.Services
             return obj;
         }
 
+
+        public async Task<TData<Farm>> UpdateEntity(FarmParam param)
+        {
+            var obj = new TData<Farm>();
+            if (param == null)
+            {
+                obj.Message = "pls provide required data";
+                obj.Tag = 0;
+                return obj;
+            }
+
+            if (param.Farmerid == 0)
+            {
+                obj.Message = "Farmer is required";
+                obj.Tag = 0;
+                return obj;
+            }
+            if (param.Farmid == 0)
+            {
+                obj.Message = "Farm Id is required";
+                obj.Tag = 0;
+                return obj;
+            }
+
+            if (param.Farmtypeid == 0)
+            {
+                obj.Message = "Farm Type is required";
+                obj.Tag = 0;
+                return obj;
+            }
+
+            if (param.Farmsize == 0)
+            {
+                obj.Message = "Farm Size is required";
+                obj.Tag = 0;
+                return obj;
+            }
+
+            //if (string.IsNullOrEmpty(param.Postalcode))
+            //{
+            //    obj.Message = "Postal Code is required";
+            //    obj.Tag = 0;
+            //    return obj;
+            //}
+
+            //if (string.IsNullOrEmpty(param.Streetaddress))
+            //{
+            //    obj.Message = "Address is required";
+            //    obj.Tag = 0;
+            //    return obj;
+            //}
+            //if (string.IsNullOrEmpty(param.Town))
+            //{
+            //    obj.Message = "Town is required";
+            //    obj.Tag = 0;
+            //    return obj;
+            //}
+
+            //if (param.Lgaid == 0)
+            //{
+            //    obj.Message = "LGA is required";
+            //    obj.Tag = 0;
+            //    return obj;
+            //}
+
+            var farm = await _unitOfWork.FarmRepository.GetEntity(param.Farmid);
+            if (farm == null)
+            {
+                obj.Message = "Farm not found";
+                obj.Tag = 0;
+                return obj;
+            }
+
+            var farmSave = new Farm
+            {
+                Farmid = param.Farmid,
+                Farmerid = param.Farmerid,
+                Farmsize = param.Farmsize,
+                Farmtypeid = param.Farmtypeid,
+
+            };
+
+            await _unitOfWork.FarmRepository.SaveForm(farmSave);
+          
+
+            obj.Tag = 1;
+            obj.Data = farmSave;
+            return obj;
+        }
+
         public async Task<TData<List<Farm>>> GetList(FarmParam param)
         {
             var response = new TData<List<Farm>>();
@@ -123,7 +213,7 @@ namespace OyoAgro.BusinessLogic.Layer.Services
             response.Data = obj;
             return response;
         }
-         public async Task<TData<List<Farm>>> GetListByFarmerId(int farmerId)
+        public async Task<TData<List<Farm>>> GetListByFarmerId(int farmerId)
         {
             var response = new TData<List<Farm>>();
             var obj = await _unitOfWork.FarmRepository.GetListbyFarmerId(farmerId);
@@ -147,7 +237,7 @@ namespace OyoAgro.BusinessLogic.Layer.Services
             var farmer = await _unitOfWork.FarmerRepository
                 .GetEntity(farm.Farmerid);
             var farmType = await _unitOfWork.FarmTypeRepository
-                .GetEntity( farm.Farmtypeid);
+                .GetEntity(farm.Farmtypeid);
             var lga = farmAddress != null
                 ? await _unitOfWork.LgaRepository.GetEntity((int)farmAddress.Lgaid)
                 : null;

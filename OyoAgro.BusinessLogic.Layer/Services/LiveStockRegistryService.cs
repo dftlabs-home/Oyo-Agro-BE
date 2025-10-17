@@ -70,6 +70,13 @@ namespace OyoAgro.BusinessLogic.Layer.Services
                 return obj;
             }
 
+            if (param.Startdate > param.Enddate)
+            {
+                obj.Message = "start date cannot be greater than end date";
+                obj.Tag = 0;
+                return obj;
+            }
+
             var cropReg = new Livestockregistry
             {
                 Quantity = param.Quantity,
