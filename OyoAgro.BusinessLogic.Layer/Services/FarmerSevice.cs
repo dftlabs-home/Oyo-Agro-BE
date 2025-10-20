@@ -163,6 +163,67 @@ namespace OyoAgro.BusinessLogic.Layer.Services
             obj.Data = farmerSave;
             return obj;
         }
+        
+        public async Task<TData<Farmer>> UpdateEntity(FarmerParam param)
+        {
+            var obj = new TData<Farmer>();
+            if (param == null)
+            {
+                obj.Message = "pls provide required data";
+                obj.Tag = 0;
+                return obj;
+            }
+            if (param.Farmerid == 0)
+            {
+                obj.Message = "FarmerId is required";
+                obj.Tag = 0;
+                return obj;
+            }
+
+            var farmer =  await _unitOfWork.FarmerRepository.GetEntity(param.Farmerid);
+            if (farmer == null)
+            {
+                obj.Message = "farmer not found";
+                obj.Tag = 0;
+                return obj;
+            }
+
+            var farmerSave = new Farmer
+            {
+                Farmerid = param.Farmerid,
+                Email = param.Email,
+                Firstname = param.Firstname,
+                Associationid = param.Associationid,
+                Availablelabor = param.Availablelabor,  
+                Dateofbirth = param.Dateofbirth,
+                Gender = param.Gender,
+                Householdsize = param.Householdsize,
+                Lastname = param.Lastname,
+                Middlename = param.Middlename,
+                Phonenumber = param.Phonenumber,
+                Photourl = param.Photourl,
+                UserId = param.UserId,
+            };
+
+            await _unitOfWork.FarmerRepository.SaveForm(farmerSave);
+
+            //var farmerAddress = new Address
+            //{
+            //    Farmerid = farmerSave.Farmerid,
+            //    Lgaid = param.Lgaid,
+            //    Postalcode = param.Postalcode,
+            //    Streetaddress = param.Streetaddress,
+            //    Latitude = param.Latitude,
+            //    Longitude = param.Longitude,
+            //    Town = param.Town,
+            //};
+            //await _unitOfWork.AddressRepository.SaveForm(farmerAddress);
+
+
+            obj.Tag = 1;
+            obj.Data = farmerSave;
+            return obj;
+        }
 
         public async Task<TData<List<Farmer>>> GetList(FarmerParam param)
         {

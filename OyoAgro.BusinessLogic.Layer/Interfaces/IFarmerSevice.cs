@@ -17,5 +17,6 @@ namespace OyoAgro.BusinessLogic.Layer.Interfaces
         Task<TData<Farmer>> DeleteEntity(int farmerId);
         Task<TData<Farmer>> GetEntity(int farmerId);
         Task<TData<List<Farmer>>> GetListByUserId(int userId);
+        Task<TData<Farmer>> UpdateEntity(FarmerParam param);
     }
 }

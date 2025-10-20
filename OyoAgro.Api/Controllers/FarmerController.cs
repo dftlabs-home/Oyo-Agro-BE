@@ -34,6 +34,20 @@ namespace OyoAgro.Api.Controllers
             return Ok(new { success = true, Data = response });
 
         }
+          [HttpPost("Update")]
+        public async Task<IActionResult> Update([FromBody] FarmerParam model)
+        {
+            var token = string.Empty;
+            var header = (string)HttpContext.Request.Headers["Authorization"]!;
+           
+            if (header != null) token = header.Substring(7);
+            var user = await new DataRepository().GetUserByToken(token);
+            model.UserId = user.userid;
+            var response = await _farmerSevice.UpdateEntity(model);
+
+            return Ok(new { success = true, Data = response });
+
+        }
 
         [HttpGet("GetFarmers")]
         public async Task<IActionResult> GetList()
