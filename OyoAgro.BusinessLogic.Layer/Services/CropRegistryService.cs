@@ -98,6 +98,8 @@ namespace OyoAgro.BusinessLogic.Layer.Services
             };
             await _unitOfWork.CropRegistryRepository.SaveForm(cropReg);
 
+            // Track counts: Global, User, Farmer, and Farm
+            //await TrackCropRegistryCounts(param.Farmid, 1);
 
             obj.Tag = 1;
             obj.Data = cropReg;
@@ -188,10 +190,143 @@ namespace OyoAgro.BusinessLogic.Layer.Services
         public async Task<TData<Cropregistry>> DeleteEntity(int cropRegistryId)
         {
             var response = new TData<Cropregistry>();
+            
+            // Get crop registry details before deletion to track counts
+            var cropRegistry = await _unitOfWork.CropRegistryRepository.GetEntity(cropRegistryId);
+            //if (cropRegistry != null)
+            //{
+            //    // Track counts: Global, User, Farmer, and Farm (decrement)
+            //    await TrackCropRegistryCounts(cropRegistry.Farmid, -1);
+            //}
+            
             await _unitOfWork.CropRegistryRepository.DeleteForm(cropRegistryId);
             response.Tag = 1;
             return response;
         }
+
+        /// <summary>
+        /// Track crop registry counts for global, user, farmer, and farm statistics
+        /// </summary>
+        /// <param name="farmId">Farm ID</param>
+        /// <param name="incrementBy">Amount to increment/decrement (1 or -1)</param>
+        //private async Task TrackCropRegistryCounts(int farmId, int incrementBy)
+        //{
+        //    try
+        //    {
+        //        // Get farm details to get farmer and user information
+        //        var farm = await _unitOfWork.FarmRepository.GetEntity(farmId);
+        //        if (farm?.Farmer != null)
+        //        {
+        //            // Update farmer's crop registry count
+        //            await UpdateFarmerCropRegistryCount(farm.Farmerid, incrementBy);
+                    
+        //            // Update user's crop registry count (the user who created/manages this farmer)
+        //            if (farm.Farmer.UserId.HasValue)
+        //            {
+        //                await UpdateUserCropRegistryCount(farm.Farmer.UserId.Value, incrementBy);
+        //            }
+        //        }
+                
+        //        // Update farm's crop registry count
+        //        await UpdateFarmCropRegistryCount(farmId, incrementBy);
+                
+        //        // Update global crop registry count
+        //        await UpdateGlobalCropRegistryCount(incrementBy);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        // Log error but don't fail the main operation
+        //        System.Diagnostics.Debug.WriteLine($"Error tracking crop registry counts: {ex.Message}");
+        //    }
+        //}
+
+        /// <summary>
+        /// Update global crop registry count
+        /// </summary>
+        //private async Task UpdateGlobalCropRegistryCount(int incrementBy)
+        //{
+        //    try
+        //    {
+        //        if (incrementBy > 0)
+        //        {
+        //            await _unitOfWork.DashboardMetricsRepository.IncrementCountAsync("Global", null, "CropRegistryCount", incrementBy);
+        //        }
+        //        else if (incrementBy < 0)
+        //        {
+        //            await _unitOfWork.DashboardMetricsRepository.DecrementCountAsync("Global", null, "CropRegistryCount", Math.Abs(incrementBy));
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        System.Diagnostics.Debug.WriteLine($"Error updating global crop registry count: {ex.Message}");
+        //    }
+        //}
+
+        /// <summary>
+        /// Update farmer's crop registry count
+        /// </summary>
+        //private async Task UpdateFarmerCropRegistryCount(int farmerId, int incrementBy)
+        //{
+        //    try
+        //    {
+        //        if (incrementBy > 0)
+        //        {
+        //            await _unitOfWork.DashboardMetricsRepository.IncrementCountAsync("Farmer", farmerId, "CropRegistryCount", incrementBy);
+        //        }
+        //        else if (incrementBy < 0)
+        //        {
+        //            await _unitOfWork.DashboardMetricsRepository.DecrementCountAsync("Farmer", farmerId, "CropRegistryCount", Math.Abs(incrementBy));
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        System.Diagnostics.Debug.WriteLine($"Error updating farmer crop registry count: {ex.Message}");
+        //    }
+        //}
+
+        /// <summary>
+        /// Update user's crop registry count
+        /// </summary>
+        //private async Task UpdateUserCropRegistryCount(int userId, int incrementBy)
+        //{
+        //    try
+        //    {
+        //        if (incrementBy > 0)
+        //        {
+        //            await _unitOfWork.DashboardMetricsRepository.IncrementCountAsync("User", userId, "CropRegistryCount", incrementBy);
+        //        }
+        //        else if (incrementBy < 0)
+        //        {
+        //            await _unitOfWork.DashboardMetricsRepository.DecrementCountAsync("User", userId, "CropRegistryCount", Math.Abs(incrementBy));
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        System.Diagnostics.Debug.WriteLine($"Error updating user crop registry count: {ex.Message}");
+        //    }
+        //}
+
+        /// <summary>
+        /// Update farm's crop registry count
+        /// </summary>
+        //private async Task UpdateFarmCropRegistryCount(int farmId, int incrementBy)
+        //{
+        //    try
+        //    {
+        //        if (incrementBy > 0)
+        //        {
+        //            await _unitOfWork.DashboardMetricsRepository.IncrementCountAsync("Farm", farmId, "CropRegistryCount", incrementBy);
+        //        }
+        //        else if (incrementBy < 0)
+        //        {
+        //            await _unitOfWork.DashboardMetricsRepository.DecrementCountAsync("Farm", farmId, "CropRegistryCount", Math.Abs(incrementBy));
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        System.Diagnostics.Debug.WriteLine($"Error updating farm crop registry count: {ex.Message}");
+        //    }
+        //}
 
     }
 }

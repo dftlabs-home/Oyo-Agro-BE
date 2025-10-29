@@ -90,7 +90,7 @@ namespace OyoAgro.Api.Controllers
 
         [Authorize]
         [HttpGet("GetOfficer/{userId}")]
-        public async Task<IActionResult> GetOfficer(int userId)
+        public async Task<IActionResult> GetOfficer(int userId) 
         {
             var response = await _userService.GetOfficer(userId);
 

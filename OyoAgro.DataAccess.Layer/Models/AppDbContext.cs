@@ -39,6 +39,7 @@ namespace OyoAgro.DataAccess.Layer.Models
         public virtual DbSet<Useraccount> Useraccounts { get; set; } = null!;
         public virtual DbSet<Userprofile> Userprofiles { get; set; } = null!;
         public virtual DbSet<Userregion> Userregions { get; set; } = null!;
+        //public virtual DbSet<DashboardMetrics> DashboardMetrics { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -46,7 +47,8 @@ namespace OyoAgro.DataAccess.Layer.Models
             {
                 //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 //optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=OyoAgro;Username=postgres;Password=Admin");
-                optionsBuilder.UseNpgsql("Host=turntable.proxy.rlwy.net; Port=34939; Database=oyoagrodb; Username=postgres; Password=GsinVqwnnTiyadmTWlHipqxtTjrmsZQF");
+                //optionsBuilder.UseNpgsql("Host=turntable.proxy.rlwy.net; Port=34939; Database=oyoagrodb; Username=postgres; Password=GsinVqwnnTiyadmTWlHipqxtTjrmsZQF");
+              optionsBuilder.UseNpgsql("Host=metro.proxy.rlwy.net;Port=26054;Database=oyoagrodb;Username=postgres;Password=JgkJfaPUQuHauuMZvbPaABQCQgmIjrrz");
             }   
         }
 
@@ -947,6 +949,70 @@ namespace OyoAgro.DataAccess.Layer.Models
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("userregion_userid_fkey");
             });
+
+            //modelBuilder.Entity<DashboardMetrics>(entity =>
+            //{
+            //    entity.ToTable("dashboardmetrics");
+
+            //    entity.HasKey(e => e.DashboardMetricsId)
+            //        .HasName("dashboardmetrics_pkey");
+
+            //    entity.Property(e => e.DashboardMetricsId).HasColumnName("dashboardmetricsid");
+            //    entity.Property(e => e.EntityType).HasColumnName("entitytype").HasMaxLength(50);
+            //    entity.Property(e => e.EntityId).HasColumnName("entityid");
+
+            //    entity.Property(e => e.FarmerCount).HasColumnName("farmercount");
+            //    entity.Property(e => e.FarmCount).HasColumnName("farmcount");
+            //    entity.Property(e => e.CropRegistryCount).HasColumnName("cropregistrycount");
+            //    entity.Property(e => e.LivestockRegistryCount).HasColumnName("livestockregistrycount");
+            //    entity.Property(e => e.TotalAreaPlanted).HasColumnName("totalareaplanted");
+            //    entity.Property(e => e.TotalAreaHarvested).HasColumnName("totalareaharvested");
+            //    entity.Property(e => e.TotalYieldQuantity).HasColumnName("totalyieldquantity");
+            //    entity.Property(e => e.TotalPlantedQuantity).HasColumnName("totalplantedquantity");
+            //    entity.Property(e => e.TotalLivestockQuantity).HasColumnName("totallivestockquantity");
+            //    entity.Property(e => e.LastCalculated).HasColumnName("lastcalculated");
+            //    entity.Property(e => e.LastUpdated).HasColumnName("lastupdated");
+            //    entity.Property(e => e.Notes).HasColumnName("notes");
+
+            //    entity.Property(e => e.Createdat)
+            //        .HasColumnName("createdat")
+            //        .HasDefaultValueSql("now()");
+
+            //    entity.Property(e => e.Updatedat)
+            //        .HasColumnName("updatedat")
+            //        .HasDefaultValueSql("now()");
+
+            //    entity.Property(e => e.Deletedat).HasColumnName("deletedat");
+
+            //    // Optional foreign key relationships
+            //    entity.HasOne(d => d.User)
+            //        .WithMany()
+            //        .HasForeignKey(d => d.EntityId)
+            //        .HasPrincipalKey(d => d.Userid)
+            //        .HasConstraintName("dashboardmetrics_userid_fkey")
+            //        .OnDelete(DeleteBehavior.Cascade)
+            //        .IsRequired(false);
+
+            //    entity.HasOne(d => d.Farmer)
+            //        .WithMany()
+            //        .HasForeignKey(d => d.EntityId)
+            //        .HasPrincipalKey(d => d.Farmerid)
+            //        .HasConstraintName("dashboardmetrics_farmerid_fkey")
+            //        .OnDelete(DeleteBehavior.Cascade)
+            //        .IsRequired(false);
+
+            //    entity.HasOne(d => d.Farm)
+            //        .WithMany()
+            //        .HasForeignKey(d => d.EntityId)
+            //        .HasPrincipalKey(d => d.Farmid)
+            //        .HasConstraintName("dashboardmetrics_farmid_fkey")
+            //        .OnDelete(DeleteBehavior.Cascade)
+            //        .IsRequired(false);
+
+            //    // Index for efficient queries
+            //    entity.HasIndex(e => new { e.EntityType, e.EntityId })
+            //        .HasDatabaseName("idx_dashboardmetrics_entity");
+            //});
 
             OnModelCreatingPartial(modelBuilder);
         }

@@ -33,6 +33,7 @@ namespace OyoAgro.DataAccess.Layer
         private ILivestockRepository? _livestockRepository;
         private INotificationTargetRepository? _notificationTargetRepository;
         private INotificationRepository? _notificationRepository;
+        private IDashboardMetricsRepository? _dashboardMetricsRepository;
         
         public UnitOfWork(AppDbContext context)
         {
@@ -97,6 +98,9 @@ namespace OyoAgro.DataAccess.Layer
 
            public INotificationRepository NotificationRepository=>
          _notificationRepository ??= new NotificationRepository();
+
+        //public IDashboardMetricsRepository DashboardMetricsRepository =>
+        // _dashboardMetricsRepository ??= new DashboardMetricsRepository(_context);
 
 
         public int Complete()

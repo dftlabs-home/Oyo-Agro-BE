@@ -92,6 +92,9 @@ namespace OyoAgro.BusinessLogic.Layer.Services
 
             await _unitOfWork.FarmRepository.SaveForm(farmSave);
 
+            // Track counts: Global, User, and Farmer
+            //await TrackFarmCounts(param.Farmerid, param.UserId, 1);
+
             var farmAddress = new Address
             {
                 Farmid = Convert.ToInt32(farmSave.Farmid),
@@ -257,10 +260,116 @@ namespace OyoAgro.BusinessLogic.Layer.Services
         public async Task<TData<Farm>> DeleteEntity(int farmId)
         {
             var response = new TData<Farm>();
+            
+            // Get farm details before deletion to track counts
+            var farm = await _unitOfWork.FarmRepository.GetEntity(farmId);
+            //if (farm != null)
+            //{
+            //    // Track counts: Global, User, and Farmer (decrement)
+            //    await TrackFarmCounts(farm.Farmerid, farm.Farmer?.UserId, -1);
+            //}
+            
             await _unitOfWork.FarmRepository.DeleteForm(farmId);
             response.Tag = 1;
             return response;
         }
+
+        /// <summary>
+        /// Track farm counts for global, user, and farmer statistics
+        /// </summary>
+        /// <param name="farmerId">Farmer ID</param>
+        /// <param name="userId">User ID (who created the farm)</param>
+        /// <param name="incrementBy">Amount to increment/decrement (1 or -1)</param>
+        //private async Task TrackFarmCounts(int farmerId, int? userId, int incrementBy)
+        //{
+        //    try
+        //    {
+        //        // Get farmer details to ensure we have the correct user
+        //        var farmer = await _unitOfWork.FarmerRepository.GetEntity(farmerId);
+        //        if (farmer?.UserId.HasValue == true)
+        //        {
+        //            // Update farmer's farm count
+        //            await UpdateFarmerFarmCount(farmerId, incrementBy);
+                    
+        //            // Update user's farm count (the user who created/manages this farmer)
+        //            await UpdateUserFarmCount(farmer.UserId.Value, incrementBy);
+        //        }
+                
+        //        // Update global farm count
+        //        await UpdateGlobalFarmCount(incrementBy);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        // Log error but don't fail the main operation
+        //        System.Diagnostics.Debug.WriteLine($"Error tracking farm counts: {ex.Message}");
+        //    }
+        //}
+
+        /// <summary>
+        /// Update global farm count
+        /// </summary>
+        //private async Task UpdateGlobalFarmCount(int incrementBy)
+        //{
+        //    try
+        //    {
+        //        if (incrementBy > 0)
+        //        {
+        //            await _unitOfWork.DashboardMetricsRepository.IncrementCountAsync("Global", null, "FarmCount", incrementBy);
+        //        }
+        //        else if (incrementBy < 0)
+        //        {
+        //            await _unitOfWork.DashboardMetricsRepository.DecrementCountAsync("Global", null, "FarmCount", Math.Abs(incrementBy));
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        System.Diagnostics.Debug.WriteLine($"Error updating global farm count: {ex.Message}");
+        //    }
+        //}
+
+        ///// <summary>
+        /// Update farmer's farm count
+        /// </summary>
+        //private async Task UpdateFarmerFarmCount(int farmerId, int incrementBy)
+        //{
+        //    try
+        //    {
+        //        if (incrementBy > 0)
+        //        {
+        //            await _unitOfWork.DashboardMetricsRepository.IncrementCountAsync("Farmer", farmerId, "FarmCount", incrementBy);
+        //        }
+        //        else if (incrementBy < 0)
+        //        {
+        //            await _unitOfWork.DashboardMetricsRepository.DecrementCountAsync("Farmer", farmerId, "FarmCount", Math.Abs(incrementBy));
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        System.Diagnostics.Debug.WriteLine($"Error updating farmer farm count: {ex.Message}");
+        //    }
+        //}
+
+        /// <summary>
+        /// Update user's farm count
+        /// </summary>
+        //private async Task UpdateUserFarmCount(int userId, int incrementBy)
+        //{
+        //    try
+        //    {
+        //        if (incrementBy > 0)
+        //        {
+        //            await _unitOfWork.DashboardMetricsRepository.IncrementCountAsync("User", userId, "FarmCount", incrementBy);
+        //        }
+        //        else if (incrementBy < 0)
+        //        {
+        //            await _unitOfWork.DashboardMetricsRepository.DecrementCountAsync("User", userId, "FarmCount", Math.Abs(incrementBy));
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        System.Diagnostics.Debug.WriteLine($"Error updating user farm count: {ex.Message}");
+        //    }
+        //}
 
     }
 }

@@ -90,6 +90,8 @@ namespace OyoAgro.BusinessLogic.Layer.Services
             };
             await _unitOfWork.LiveStockRegistryRepository.SaveForm(cropReg);
 
+            // Track counts: Global, User, Farmer, and Farm
+            //await TrackLivestockRegistryCounts(param.Farmid, 1);
 
             obj.Tag = 1;
             obj.Data = cropReg;
@@ -121,11 +123,143 @@ namespace OyoAgro.BusinessLogic.Layer.Services
         public async Task<TData<Livestockregistry>> DeleteEntity(int registryId)
         {
             var response = new TData<Livestockregistry>();
+            
+            // Get livestock registry details before deletion to track counts
+            var livestockRegistry = await _unitOfWork.LiveStockRegistryRepository.GetEntity(registryId);
+            //if (livestockRegistry != null)
+            //{
+            //    // Track counts: Global, User, Farmer, and Farm (decrement)
+            //    await TrackLivestockRegistryCounts(livestockRegistry.Farmid, -1);
+            //}
+            
             await _unitOfWork.LiveStockRegistryRepository.DeleteForm(registryId);
             response.Tag = 1;
             return response;
         }
 
+        /// <summary>
+        /// Track livestock registry counts for global, user, farmer, and farm statistics
+        /// </summary>
+        /// <param name="farmId">Farm ID</param>
+        /// <param name="incrementBy">Amount to increment/decrement (1 or -1)</param>
+        //private async Task TrackLivestockRegistryCounts(int farmId, int incrementBy)
+        //{
+        //    try
+        //    {
+        //        // Get farm details to get farmer and user information
+        //        var farm = await _unitOfWork.FarmRepository.GetEntity(farmId);
+        //        if (farm?.Farmer != null)
+        //        {
+        //            // Update farmer's livestock registry count
+        //            await UpdateFarmerLivestockRegistryCount(farm.Farmerid, incrementBy);
+                    
+        //            // Update user's livestock registry count (the user who created/manages this farmer)
+        //            if (farm.Farmer.UserId.HasValue)
+        //            {
+        //                await UpdateUserLivestockRegistryCount(farm.Farmer.UserId.Value, incrementBy);
+        //            }
+        //        }
+                
+        //        // Update farm's livestock registry count
+        //        //await UpdateFarmLivestockRegistryCount(farmId, incrementBy);
+                
+        //        // Update global livestock registry count
+        //        //await UpdateGlobalLivestockRegistryCount(incrementBy);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        // Log error but don't fail the main operation
+        //        System.Diagnostics.Debug.WriteLine($"Error tracking livestock registry counts: {ex.Message}");
+        //    }
+        //}
+
+        /// <summary>
+        /// Update global livestock registry count
+        /// </summary>
+        //private async Task UpdateGlobalLivestockRegistryCount(int incrementBy)
+        //{
+        //    try
+        //    {
+        //        if (incrementBy > 0)
+        //        {
+        //            await _unitOfWork.DashboardMetricsRepository.IncrementCountAsync("Global", null, "LivestockRegistryCount", incrementBy);
+        //        }
+        //        else if (incrementBy < 0)
+        //        {
+        //            await _unitOfWork.DashboardMetricsRepository.DecrementCountAsync("Global", null, "LivestockRegistryCount", Math.Abs(incrementBy));
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        System.Diagnostics.Debug.WriteLine($"Error updating global livestock registry count: {ex.Message}");
+        //    }
+        //}
+
+        ///// <summary>
+        /// Update farmer's livestock registry count
+        /// </summary>
+        //private async Task UpdateFarmerLivestockRegistryCount(int farmerId, int incrementBy)
+        //{
+        //    try
+        //    {
+        //        if (incrementBy > 0)
+        //        {
+        //            await _unitOfWork.DashboardMetricsRepository.IncrementCountAsync("Farmer", farmerId, "LivestockRegistryCount", incrementBy);
+        //        }
+        //        else if (incrementBy < 0)
+        //        {
+        //            await _unitOfWork.DashboardMetricsRepository.DecrementCountAsync("Farmer", farmerId, "LivestockRegistryCount", Math.Abs(incrementBy));
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        System.Diagnostics.Debug.WriteLine($"Error updating farmer livestock registry count: {ex.Message}");
+        //    }
+        //}
+
+        /// <summary>
+        /// Update user's livestock registry count
+        /// </summary>
+        //private async Task UpdateUserLivestockRegistryCount(int userId, int incrementBy)
+        //{
+        //    try
+        //    {
+        //        if (incrementBy > 0)
+        //        {
+        //            await _unitOfWork.DashboardMetricsRepository.IncrementCountAsync("User", userId, "LivestockRegistryCount", incrementBy);
+        //        }
+        //        else if (incrementBy < 0)
+        //        {
+        //            await _unitOfWork.DashboardMetricsRepository.DecrementCountAsync("User", userId, "LivestockRegistryCount", Math.Abs(incrementBy));
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        System.Diagnostics.Debug.WriteLine($"Error updating user livestock registry count: {ex.Message}");
+        //    }
+        //}
+
+        /// <summary>
+        /// Update farm's livestock registry count
+        /// </summary>
+        //private async Task UpdateFarmLivestockRegistryCount(int farmId, int incrementBy)
+        //{
+        //    try
+        //    {
+        //        if (incrementBy > 0)
+        //        {
+        //            await _unitOfWork.DashboardMetricsRepository.IncrementCountAsync("Farm", farmId, "LivestockRegistryCount", incrementBy);
+        //        }
+        //        else if (incrementBy < 0)
+        //        {
+        //            await _unitOfWork.DashboardMetricsRepository.DecrementCountAsync("Farm", farmId, "LivestockRegistryCount", Math.Abs(incrementBy));
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        System.Diagnostics.Debug.WriteLine($"Error updating farm livestock registry count: {ex.Message}");
+        //    }
+        //}
 
     }
 }

@@ -146,6 +146,9 @@ namespace OyoAgro.BusinessLogic.Layer.Services
 
             await _unitOfWork.FarmerRepository.SaveForm(farmerSave);
 
+            // Track counts: Global and User
+            //await TrackFarmerCounts(param.UserId, 1);
+
             var farmerAddress = new Address
             {
                 Farmerid = farmerSave.Farmerid,
@@ -259,10 +262,88 @@ namespace OyoAgro.BusinessLogic.Layer.Services
         public async Task<TData<Farmer>> DeleteEntity(int farmerId)
         {
             var response = new TData<Farmer>();
+            
+            // Get farmer details before deletion to track counts
+            var farmer = await _unitOfWork.FarmerRepository.GetEntity(farmerId);
+            //if (farmer != null)
+            //{
+            //    // Track counts: Global and User (decrement)
+            //    await TrackFarmerCounts(farmer.UserId, -1);
+            //}
+            
             await _unitOfWork.FarmerRepository.DeleteForm(farmerId);
             response.Tag = 1;
             return response;
         }
+
+        /// <summary>
+        /// Track farmer counts for global and user statistics
+        /// </summary>
+        /// <param name="userId">User ID (who created the farmer)</param>
+        /// <param name="incrementBy">Amount to increment/decrement (1 or -1)</param>
+        //private async Task TrackFarmerCounts(int? userId, int incrementBy)
+        //{
+        //    try
+        //    {
+        //        if (userId.HasValue)
+        //        {
+        //            // Update user's farmer count
+        //            await UpdateUserFarmerCount(userId.Value, incrementBy);
+        //        }
+                
+        //        // Update global farmer count
+        //        await UpdateGlobalFarmerCount(incrementBy);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        // Log error but don't fail the main operation
+        //        System.Diagnostics.Debug.WriteLine($"Error tracking farmer counts: {ex.Message}");
+        //    }
+        //}
+
+        /// <summary>
+        /// Update global farmer count
+        /// </summary>
+        //private async Task UpdateGlobalFarmerCount(int incrementBy)
+        //{
+        //    try
+        //    {
+        //        if (incrementBy > 0)
+        //        {
+        //            await _unitOfWork.DashboardMetricsRepository.IncrementCountAsync("Global", null, "FarmerCount", incrementBy);
+        //        }
+        //        else if (incrementBy < 0)
+        //        {
+        //            await _unitOfWork.DashboardMetricsRepository.DecrementCountAsync("Global", null, "FarmerCount", Math.Abs(incrementBy));
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        System.Diagnostics.Debug.WriteLine($"Error updating global farmer count: {ex.Message}");
+        //    }
+        //}
+
+        /// <summary>
+        /// Update user's farmer count
+        /// </summary>
+        //private async Task UpdateUserFarmerCount(int userId, int incrementBy)
+        //{
+        //    try
+        //    {
+        //        if (incrementBy > 0)
+        //        {
+        //            await _unitOfWork.DashboardMetricsRepository.IncrementCountAsync("User", userId, "FarmerCount", incrementBy);
+        //        }
+        //        else if (incrementBy < 0)
+        //        {
+        //            await _unitOfWork.DashboardMetricsRepository.DecrementCountAsync("User", userId, "FarmerCount", Math.Abs(incrementBy));
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        System.Diagnostics.Debug.WriteLine($"Error updating user farmer count: {ex.Message}");
+        //    }
+        //}
 
     }
 }
