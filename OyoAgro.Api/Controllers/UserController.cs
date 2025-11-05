@@ -60,6 +60,48 @@ namespace OyoAgro.Api.Controllers
             }
         }
 
+        [HttpPost("forgot-password")]
+        public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordParam param)
+        {
+            try
+            {
+                var response = await _userService.ForgotPassword(param);
+                return Ok(new { success = response.Tag == 1, Data = response });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { success = false, Data = new { Message = ex.Message } });
+            }
+        }
+
+        [HttpPost("reset-password")]
+        public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordParam param)
+        {
+            try
+            {
+                var response = await _userService.ResetPassword(param);
+                return Ok(new { success = response.Tag == 1, Data = response });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { success = false, Data = new { Message = ex.Message } });
+            }
+        }
+
+        [HttpGet("validate-reset-token")]
+        public async Task<IActionResult> ValidateResetToken([FromQuery] string token)
+        {
+            try
+            {
+                var response = await _userService.ValidateResetToken(token);
+                return Ok(new { success = response.Tag == 1, Data = response });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { success = false, Data = new { Message = ex.Message } });
+            }
+        }
+
         [Authorize]
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] UserParam model)

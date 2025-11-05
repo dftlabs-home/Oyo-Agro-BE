@@ -22,5 +22,7 @@ namespace OyoAgro.DataAccess.Layer
         public const int SMTP_PORT = 587;
         public const bool SMTP_SSL = true;
 
+        public const string API_BASE_URL = "https://your-api-domain.com"; // Update this with your actual API base URL
+
     }
 }

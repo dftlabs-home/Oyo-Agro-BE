@@ -16,6 +16,7 @@ namespace OyoAgro.DataAccess.Layer.Models.Entities
             Profileadditionalactivities = new HashSet<Profileadditionalactivity>();
             Userprofiles = new HashSet<Userprofile>();
             Userregions = new HashSet<Userregion>();
+            PasswordResetTokens = new HashSet<PasswordResetToken>();
         }
 
         public int Userid { get; set; }
@@ -36,12 +37,16 @@ namespace OyoAgro.DataAccess.Layer.Models.Entities
         public string? Securityanswer { get; set; }
         public bool? Isactive { get; set; }
         public bool? Islocked { get; set; }
+        public string? PasswordResetToken { get; set; }
+        public DateTime? PasswordResetTokenExpires { get; set; }
+        public DateTime? LastPasswordReset { get; set; }
 
         public virtual ICollection<Notification> Notifications { get; set; }
         public virtual ICollection<Notificationtarget> Notificationtargets { get; set; }
         public virtual ICollection<Profileadditionalactivity> Profileadditionalactivities { get; set; }
         public virtual ICollection<Userprofile> Userprofiles { get; set; }
         public virtual ICollection<Userregion> Userregions { get; set; }
+        public virtual ICollection<PasswordResetToken> PasswordResetTokens { get; set; }
 
         [NotMapped]
         public string Phonenumber { get; set; } 

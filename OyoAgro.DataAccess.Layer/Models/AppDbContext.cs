@@ -39,6 +39,7 @@ namespace OyoAgro.DataAccess.Layer.Models
         public virtual DbSet<Useraccount> Useraccounts { get; set; } = null!;
         public virtual DbSet<Userprofile> Userprofiles { get; set; } = null!;
         public virtual DbSet<Userregion> Userregions { get; set; } = null!;
+        public virtual DbSet<PasswordResetToken> PasswordResetTokens { get; set; } = null!;
         //public virtual DbSet<DashboardMetrics> DashboardMetrics { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -1013,6 +1014,69 @@ namespace OyoAgro.DataAccess.Layer.Models
             //    entity.HasIndex(e => new { e.EntityType, e.EntityId })
             //        .HasDatabaseName("idx_dashboardmetrics_entity");
             //});
+
+            modelBuilder.Entity<PasswordResetToken>(entity =>
+            {
+                entity.ToTable("passwordresettokens");
+
+                entity.HasKey(e => e.Id)
+                    .HasName("passwordresettokens_pkey");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.UserId).HasColumnName("userid");
+
+                entity.Property(e => e.Token)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("token");
+
+                entity.Property(e => e.ExpiresAt)
+                    .IsRequired()
+                    .HasColumnName("expiresat");
+
+                entity.Property(e => e.IsUsed)
+                    .IsRequired()
+                    .HasDefaultValue(false)
+                    .HasColumnName("isused");
+
+                entity.Property(e => e.UsedAt).HasColumnName("usedat");
+
+                entity.Property(e => e.IpAddress)
+                    .HasMaxLength(45)
+                    .HasColumnName("ipaddress");
+
+                entity.Property(e => e.UserAgent)
+                    .HasMaxLength(500)
+                    .HasColumnName("useragent");
+
+                entity.Property(e => e.Createdat)
+                    .HasColumnName("createdat")
+                    .HasDefaultValueSql("now()");
+
+                entity.Property(e => e.Updatedat)
+                    .HasColumnName("updatedat")
+                    .HasDefaultValueSql("now()");
+
+                entity.Property(e => e.Deletedat).HasColumnName("deletedat");
+
+                // Foreign key relationship
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.PasswordResetTokens)
+                    .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .HasConstraintName("fk_passwordresettokens_userid");
+
+                // Indexes for performance
+                entity.HasIndex(e => e.Token)
+                    .HasDatabaseName("idx_passwordresettokens_token");
+
+                entity.HasIndex(e => e.UserId)
+                    .HasDatabaseName("idx_passwordresettokens_userid");
+
+                entity.HasIndex(e => e.ExpiresAt)
+                    .HasDatabaseName("idx_passwordresettokens_expiresat");
+            });
 
             OnModelCreatingPartial(modelBuilder);
         }

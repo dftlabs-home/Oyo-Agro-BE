@@ -34,6 +34,7 @@ namespace OyoAgro.DataAccess.Layer
         private INotificationTargetRepository? _notificationTargetRepository;
         private INotificationRepository? _notificationRepository;
         private IDashboardMetricsRepository? _dashboardMetricsRepository;
+        private IPasswordResetTokenRepository? _passwordResetTokenRepository;
         
         public UnitOfWork(AppDbContext context)
         {
@@ -98,6 +99,9 @@ namespace OyoAgro.DataAccess.Layer
 
            public INotificationRepository NotificationRepository=>
          _notificationRepository ??= new NotificationRepository();
+
+        public IPasswordResetTokenRepository PasswordResetTokens =>
+         _passwordResetTokenRepository ??= new PasswordResetTokenRepository();
 
         //public IDashboardMetricsRepository DashboardMetricsRepository =>
         // _dashboardMetricsRepository ??= new DashboardMetricsRepository(_context);

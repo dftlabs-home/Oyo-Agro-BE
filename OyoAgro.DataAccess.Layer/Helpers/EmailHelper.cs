@@ -461,11 +461,101 @@ namespace OyoAgro.DataAccess.Layer.Helpers
                 result.Message = $"Resend API error: {responseBody}";
                 return result;
             }
+            catch (Exception ex) {
+                throw;
+            }
+        }
+
+        public static async Task<EmailResult> SendPasswordResetEmail(MailParameter user)
+        {
+            var result = new EmailResult();
+
+            try
+            {
+                var builder = new StringBuilder();
+
+                // ✅ Load template if exists
+                string templatePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Templates", "_PasswordResetTemplate.cshtml");
+
+                if (File.Exists(templatePath))
+                {
+                    using (StreamReader reader = new StreamReader(templatePath))
+                    {
+                        builder.Append(reader.ReadToEnd());
+                    }
+
+                    builder.Replace("[realname]", user.RealName);
+                    builder.Replace("[username]", user.UserName);
+                    builder.Replace("[resetlink]", user.ResetLink);
+                    builder.Replace("[company]", user.UserCompany);
+                    builder.Replace("[year]", DateTime.Now.Year.ToString());
+                    builder.Replace("[reserved]", GlobalConstant.RESERVED);
+                }
+                else
+                {
+                    // Fallback template
+                    builder.AppendLine($"<h2>Password Reset Request</h2>");
+                    builder.AppendLine($"<p>Hello {user.RealName},</p>");
+                    builder.AppendLine($"<p>You have requested to reset your password for your {user.UserCompany} account.</p>");
+                    builder.AppendLine($"<p>Click the link below to reset your password:</p>");
+                    builder.AppendLine($"<p><a href=\"{user.ResetLink}\" style=\"background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px;\">Reset Password</a></p>");
+                    builder.AppendLine($"<p>If the button doesn't work, copy and paste this link into your browser:</p>");
+                    builder.AppendLine($"<p>{user.ResetLink}</p>");
+                    builder.AppendLine($"<p>This link will expire in 24 hours for security reasons.</p>");
+                    builder.AppendLine($"<p>If you didn't request this password reset, please ignore this email.</p>");
+                    builder.AppendLine($"<p>Best regards,<br/>{user.UserCompany}</p>");
+                    builder.AppendLine($"<p>{DateTime.Now.Year} {GlobalConstant.RESERVED}</p>");
+                }
+
+                var apiKey = Environment.GetEnvironmentVariable("RESEND_API_KEY");
+                if (string.IsNullOrWhiteSpace(apiKey))
+                {
+                    result.Success = false;
+                    result.Message = "Resend API key not found.";
+                    return result;
+                }
+
+                using var client = new HttpClient();
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
+
+                var payload = new
+                {
+                    from = "Ministry of Agric Oyo <noreply@deepflytechlabs.online>",
+                    to = new[] { user.UserEmail },
+                    subject = "Password Reset Request - OYO MINISTRY OF AGRIC",
+                    html = builder.ToString()
+                };
+
+                var json = JsonSerializer.Serialize(payload);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync("https://api.resend.com/emails", content);
+                var responseBody = await response.Content.ReadAsStringAsync();
+
+                // ✅ Log to Railway
+                Console.Error.WriteLine("===== PASSWORD RESET EMAIL DEBUG =====");
+                Console.Error.WriteLine($"Time: {DateTime.Now}");
+                Console.Error.WriteLine($"To: {user.UserEmail}");
+                Console.Error.WriteLine($"Payload: {json}");
+                Console.Error.WriteLine($"Status: {response.StatusCode}");
+                Console.Error.WriteLine($"Response: {responseBody}");
+                Console.Error.WriteLine("=====================================");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    result.Success = true;
+                    result.Message = "Password reset email sent successfully.";
+                    return result;
+                }
+
+                result.Success = false;
+                result.Message = $"Resend API error: {responseBody}";
+                return result;
+            }
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = ex.Message;
-                LogErrorToRailway(ex);
+                result.Message = $"Error sending password reset email: {ex.Message}";
                 return result;
             }
         }

@@ -28,6 +28,7 @@ namespace OyoAgro.DataAccess.Layer.Interfaces
         ILivestockRepository LivestockRepository{ get; }
         INotificationTargetRepository NotificationTargetRepository{ get; }
         INotificationRepository NotificationRepository{ get; }
+        IPasswordResetTokenRepository PasswordResetTokens { get; }
         
         int Complete();
 

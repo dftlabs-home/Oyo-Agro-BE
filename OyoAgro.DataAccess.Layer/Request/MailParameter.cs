@@ -35,5 +35,6 @@ namespace OyoAgro.DataAccess.Layer.Request
         public string? UserPhoneNumber { get; set; }
         public string? DateSubmitted { get; set; }        
         public string? EmployeeName { get; set; }
+        public string? ResetLink { get; set; }
     }
 }

@@ -12,6 +12,7 @@ namespace OyoAgro.DataAccess.Layer.Interfaces
     {
         Task<Useraccount> GetUserByUserName(string username);
         Task<Useraccount> GetUserByToken(string token);
+        Task<Useraccount> GetUserByEmail(string email);
         //Task<Useraccount> LoginOff(int userId);
         Task SaveForm(Useraccount entity);
         Task UpdateUser(Useraccount entity);

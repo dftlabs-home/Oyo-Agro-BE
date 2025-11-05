@@ -78,6 +78,11 @@ namespace OyoAgro.DataAccess.Layer.Repositories
             return await BaseRepository().FindEntity<Useraccount>(x => x.Userid == UserId);
         }
 
+        public async Task<Useraccount> GetUserByEmail(string email)
+        {
+            return await BaseRepository().FindEntity<Useraccount>(x => x.Email == email);
+        }
+
         public async Task<List<Userprofile>> GetList()
         {
             var list = await BaseRepository().FindList<Userprofile>();

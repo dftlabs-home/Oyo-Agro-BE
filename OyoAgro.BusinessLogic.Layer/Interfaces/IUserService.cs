@@ -19,5 +19,8 @@ namespace OyoAgro.BusinessLogic.Layer.Interfaces
         Task<TData<string>> SaveForm(UserParam entity);
         Task<TData<List<UsersViewModel>>> GetList();
         Task<TData<List<UsersViewModel>>> GetOfficer(int userId);
+        Task<TData<string>> ForgotPassword(ForgotPasswordParam param);
+        Task<TData<string>> ResetPassword(ResetPasswordParam param);
+        Task<TData<bool>> ValidateResetToken(string token);
     }
 }
