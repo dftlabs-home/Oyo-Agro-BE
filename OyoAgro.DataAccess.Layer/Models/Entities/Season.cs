@@ -10,6 +10,7 @@ namespace OyoAgro.DataAccess.Layer.Models.Entities
         {
             Cropregistries = new HashSet<Cropregistry>();
             Livestockregistries = new HashSet<Livestockregistry>();
+            AgroAlliedRegistries = new HashSet<AgroAlliedRegistry>();
         }
 
         public int Seasonid { get; set; }
@@ -23,5 +24,6 @@ namespace OyoAgro.DataAccess.Layer.Models.Entities
 
         public virtual ICollection<Cropregistry> Cropregistries { get; set; }
         public virtual ICollection<Livestockregistry> Livestockregistries { get; set; }
+        public virtual ICollection<AgroAlliedRegistry> AgroAlliedRegistries { get; set; }
     }
 }

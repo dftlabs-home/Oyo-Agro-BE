@@ -40,6 +40,7 @@ namespace OyoAgro.DataAccess.Layer.Models
         public virtual DbSet<Userprofile> Userprofiles { get; set; } = null!;
         public virtual DbSet<Userregion> Userregions { get; set; } = null!;
         public virtual DbSet<PasswordResetToken> PasswordResetTokens { get; set; } = null!;
+        public virtual DbSet<AgroAlliedRegistry> AgroAlliedRegistries { get; set; } = null!;
         //public virtual DbSet<DashboardMetrics> DashboardMetrics { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -486,6 +487,56 @@ namespace OyoAgro.DataAccess.Layer.Models
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("livestockregistry_seasonid_fkey");
             });
+
+            modelBuilder.Entity<AgroAlliedRegistry>(entity =>
+            {
+                entity.ToTable("AgroAlliedRegistry");
+
+                entity.HasIndex(e => e.Tempclientid, "livestockregistry_tempclientid_key")
+                    .IsUnique();
+
+                entity.Property(e => e.AgroAlliedRegistryid).HasColumnName("AgroAlliedRegistryid");
+
+                entity.Property(e => e.Createdat)
+                    .HasColumnName("Createdat")
+                    .HasDefaultValueSql("now()");
+
+                entity.Property(e => e.Deletedat).HasColumnName("Deletedat");
+
+
+                entity.Property(e => e.Farmid).HasColumnName("Farmid");
+
+                entity.Property(e => e.BusinessType).HasColumnName("BusinessType");
+
+                entity.Property(e => e.PrimaryProduct).HasColumnName("PrimaryProduct");
+
+                entity.Property(e => e.Seasonid).HasColumnName("Seasonid");
+
+                entity.Property(e => e.ProductionCapacity).HasColumnName("ProductionCapacity");
+
+                entity.Property(e => e.Tempclientid).HasColumnName("Tempclientid");
+
+                entity.Property(e => e.Updatedat)
+                    .HasColumnName("Updatedat")
+                    .HasDefaultValueSql("now()");
+
+               
+
+                entity.HasOne(d => d.Farm)
+                    .WithMany(p => p.AgroAlliedRegistries)
+                    .HasForeignKey(d => d.Farmid)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("AgroAlliedRegistry_farmid_fkey");
+
+              
+                entity.HasOne(d => d.Season)
+                    .WithMany(p => p.AgroAlliedRegistries)
+                    .HasForeignKey(d => d.Seasonid)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("AgroAlliedRegistry_seasonid_fkey");
+            });
+
+
 
             modelBuilder.Entity<Notification>(entity =>
             {
