@@ -1,5 +1,6 @@
 ﻿using OyoAgro.BusinessLogic.Layer.Interfaces;
 using OyoAgro.BusinessLogic.Layer.Services;
+using OyoAgro.DataAccess.Layer.Interfaces;
 
 namespace OyoAgro.Api.Authorizations
 {
@@ -25,6 +26,8 @@ namespace OyoAgro.Api.Authorizations
             services.AddScoped<INotificationService, NotificationService>();
             services.AddScoped<ISeasonServices, SeasonServices>();
             services.AddScoped<IAgroAlliedRegistryService, AgroAlliedRegistryService>();
+            services.AddScoped<IPrimaryProductService, PrimaryProductService>();
+            services.AddScoped<IBusinessTypeService, BusinessTypeService>();
             //services.AddScoped<IDashboardService, DashboardService>();
 
             return services;

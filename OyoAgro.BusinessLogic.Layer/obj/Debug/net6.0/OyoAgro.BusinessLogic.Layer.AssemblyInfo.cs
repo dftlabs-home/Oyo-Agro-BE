@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OyoAgro.BusinessLogic.Layer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d4d4ebf64febf81735326eecaa8d32af5de49d36")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5d823566b5341468f1ad4431b5b8ee2d74e09611")]
 [assembly: System.Reflection.AssemblyProductAttribute("OyoAgro.BusinessLogic.Layer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OyoAgro.BusinessLogic.Layer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

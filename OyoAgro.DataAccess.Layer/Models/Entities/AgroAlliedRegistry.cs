@@ -16,11 +16,14 @@ namespace OyoAgro.DataAccess.Layer.Models.Entities
         public long Farmid { get; set; }
         public int Seasonid { get; set; }
 
-        public BusinessType BusinessType { get; set; }
-        public PrimaryProduct PrimaryProduct{ get; set; }
+        public int BusinessTypeId { get; set; }
+        public int PrimaryProductTypeId { get; set; }
         public decimal ProductionCapacity { get; set; }
         public virtual Farm Farm { get; set; } = null!;
         public virtual Season Season { get; set; } = null!;
+        public virtual BusinessType BusinessType { get; set; } = null!;
+        public virtual PrimaryProduct PrimaryProduct{ get; set; } = null!;
+
 
     }
 }

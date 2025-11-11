@@ -36,6 +36,8 @@ namespace OyoAgro.DataAccess.Layer
         private IDashboardMetricsRepository? _dashboardMetricsRepository;
         private IPasswordResetTokenRepository? _passwordResetTokenRepository;
         private IAgroAlliedRegistryRepository? _agroAlliedRegistryRepository;
+        private IBusinessTypeRepository? _businessTypeRepository;
+        private IPrimaryProductRepository? _primaryProductRepository;
         
         public UnitOfWork(AppDbContext context)
         {
@@ -105,6 +107,10 @@ namespace OyoAgro.DataAccess.Layer
          _passwordResetTokenRepository ??= new PasswordResetTokenRepository();
           public IAgroAlliedRegistryRepository AgroAlliedRegistryRepository =>
          _agroAlliedRegistryRepository ??= new AgroAlliedRegistryRepository();
+        public IPrimaryProductRepository PrimaryProductRepository =>
+         _primaryProductRepository ??= new PrimaryProductRepository();
+        public IBusinessTypeRepository BusinessTypeRepository =>
+         _businessTypeRepository ??= new BusinessTypeRepository();
 
         //public IDashboardMetricsRepository DashboardMetricsRepository =>
         // _dashboardMetricsRepository ??= new DashboardMetricsRepository(_context);

@@ -41,6 +41,8 @@ namespace OyoAgro.DataAccess.Layer.Models
         public virtual DbSet<Userregion> Userregions { get; set; } = null!;
         public virtual DbSet<PasswordResetToken> PasswordResetTokens { get; set; } = null!;
         public virtual DbSet<AgroAlliedRegistry> AgroAlliedRegistries { get; set; } = null!;
+        public virtual DbSet<BusinessType> BusinessTypes { get; set; } = null!;
+        public virtual DbSet<PrimaryProduct> PrimaryProducts { get; set; } = null!;
         //public virtual DbSet<DashboardMetrics> DashboardMetrics { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -154,6 +156,55 @@ namespace OyoAgro.DataAccess.Layer.Models
                     .HasColumnName("version")
                     .HasDefaultValueSql("1");
             });
+
+
+            modelBuilder.Entity<BusinessType>(entity =>
+            {
+                entity.HasKey(e => e.BusinessTypeId)
+                    .HasName("businesstype_pkey");
+
+                entity.ToTable("BusinessType");
+                entity.Property(e => e.Updatedat)
+                    .HasColumnName("Updatedat")
+                    .HasDefaultValueSql("now()");
+
+                entity.Property(e => e.BusinessTypeId).HasColumnName("BusinessTypeId");
+                entity.Property(e => e.Createdat)
+                    .HasColumnName("Createdat")
+                    .HasDefaultValueSql("now()");
+
+                entity.Property(e => e.Deletedat).HasColumnName("Deletedat");
+
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(100)
+                    .HasColumnName("Name");
+            });
+
+             modelBuilder.Entity<PrimaryProduct>(entity =>
+            {
+                entity.HasKey(e => e.PrimaryProductTypeId)
+                    .HasName("primaryproduct_pkey");
+
+                entity.ToTable("PrimaryProduct");
+                entity.Property(e => e.Updatedat)
+                    .HasColumnName("Updatedat")
+                    .HasDefaultValueSql("now()");
+
+                entity.Property(e => e.PrimaryProductTypeId).HasColumnName("PrimaryProductTypeId");
+                entity.Property(e => e.Createdat)
+                    .HasColumnName("Createdat")
+                    .HasDefaultValueSql("now()");
+
+                entity.Property(e => e.Deletedat).HasColumnName("Deletedat");
+
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(100)
+                    .HasColumnName("Name");
+            });
+
+
 
             modelBuilder.Entity<Crop>(entity =>
             {
@@ -534,6 +585,18 @@ namespace OyoAgro.DataAccess.Layer.Models
                     .HasForeignKey(d => d.Seasonid)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("AgroAlliedRegistry_seasonid_fkey");
+
+                entity.HasOne(d => d.BusinessType)
+                  .WithMany(p => p.AgroAlliedRegistries)
+                  .HasForeignKey(d => d.BusinessTypeId)
+                  .OnDelete(DeleteBehavior.ClientSetNull)
+                  .HasConstraintName("AgroAlliedRegistry_businesstypeid_fkey");
+
+                entity.HasOne(d => d.PrimaryProduct)
+                 .WithMany(p => p.AgroAlliedRegistries)
+                 .HasForeignKey(d => d.PrimaryProductTypeId)
+                 .OnDelete(DeleteBehavior.ClientSetNull)
+                 .HasConstraintName("AgroAlliedRegistry_primaryproducttypeId_fkey");
             });
 
 

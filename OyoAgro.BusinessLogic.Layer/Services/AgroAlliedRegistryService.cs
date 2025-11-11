@@ -43,13 +43,13 @@ namespace OyoAgro.BusinessLogic.Layer.Services
                 obj.Tag = 0;
                 return obj;
             }
-            if (param.BusinessType == 0)
+            if (param.BusinessTypeId == 0)
             {
                 obj.Message = "Business type is required";
                 obj.Tag = 0;
                 return obj;
             }
-            if (param.PrimaryProduct == 0)
+            if (param.PrimaryProductId == 0)
             {
                 obj.Message = "Primary product is required";
                 obj.Tag = 0;
@@ -67,8 +67,8 @@ namespace OyoAgro.BusinessLogic.Layer.Services
                 ProductionCapacity = param.ProductionCapacity,
                 Seasonid = param.Seasonid,
                 Farmid = param.Farmid,
-                BusinessType = param.BusinessType,
-                PrimaryProduct = param.PrimaryProduct,
+                BusinessTypeId = param.BusinessTypeId,
+                PrimaryProductTypeId = param.PrimaryProductId,
 
 
             };

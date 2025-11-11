@@ -30,6 +30,8 @@ namespace OyoAgro.DataAccess.Layer.Interfaces
         INotificationRepository NotificationRepository{ get; }
         IPasswordResetTokenRepository PasswordResetTokens { get; }
         IAgroAlliedRegistryRepository AgroAlliedRegistryRepository { get; }
+        IPrimaryProductRepository PrimaryProductRepository { get; }
+        IBusinessTypeRepository BusinessTypeRepository { get; }
         
         int Complete();
 
