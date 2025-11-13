@@ -553,25 +553,16 @@ namespace OyoAgro.DataAccess.Layer.Models
                     .HasDefaultValueSql("now()");
 
                 entity.Property(e => e.Deletedat).HasColumnName("Deletedat");
-
-
                 entity.Property(e => e.Farmid).HasColumnName("Farmid");
-
-                entity.Property(e => e.BusinessType).HasColumnName("BusinessType");
-
-                entity.Property(e => e.PrimaryProduct).HasColumnName("PrimaryProduct");
-
+                entity.Property(e => e.BusinessTypeId).HasColumnName("BusinessTypeId");
+                entity.Property(e => e.PrimaryProductTypeId).HasColumnName("PrimaryProductTypeId");
                 entity.Property(e => e.Seasonid).HasColumnName("Seasonid");
-
                 entity.Property(e => e.ProductionCapacity).HasColumnName("ProductionCapacity");
-
                 entity.Property(e => e.Tempclientid).HasColumnName("Tempclientid");
 
                 entity.Property(e => e.Updatedat)
                     .HasColumnName("Updatedat")
                     .HasDefaultValueSql("now()");
-
-               
 
                 entity.HasOne(d => d.Farm)
                     .WithMany(p => p.AgroAlliedRegistries)
@@ -579,7 +570,6 @@ namespace OyoAgro.DataAccess.Layer.Models
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("AgroAlliedRegistry_farmid_fkey");
 
-              
                 entity.HasOne(d => d.Season)
                     .WithMany(p => p.AgroAlliedRegistries)
                     .HasForeignKey(d => d.Seasonid)
@@ -587,16 +577,16 @@ namespace OyoAgro.DataAccess.Layer.Models
                     .HasConstraintName("AgroAlliedRegistry_seasonid_fkey");
 
                 entity.HasOne(d => d.BusinessType)
-                  .WithMany(p => p.AgroAlliedRegistries)
-                  .HasForeignKey(d => d.BusinessTypeId)
-                  .OnDelete(DeleteBehavior.ClientSetNull)
-                  .HasConstraintName("AgroAlliedRegistry_businesstypeid_fkey");
+                    .WithMany(p => p.AgroAlliedRegistries)
+                    .HasForeignKey(d => d.BusinessTypeId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("AgroAlliedRegistry_businesstypeid_fkey");
 
                 entity.HasOne(d => d.PrimaryProduct)
-                 .WithMany(p => p.AgroAlliedRegistries)
-                 .HasForeignKey(d => d.PrimaryProductTypeId)
-                 .OnDelete(DeleteBehavior.ClientSetNull)
-                 .HasConstraintName("AgroAlliedRegistry_primaryproducttypeId_fkey");
+                    .WithMany(p => p.AgroAlliedRegistries)
+                    .HasForeignKey(d => d.PrimaryProductTypeId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("AgroAlliedRegistry_primaryproducttypeId_fkey");
             });
 
 

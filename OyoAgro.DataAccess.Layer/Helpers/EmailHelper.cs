@@ -416,7 +416,8 @@ namespace OyoAgro.DataAccess.Layer.Helpers
                     builder.AppendLine($"{DateTime.Now.Year} {GlobalConstant.RESERVED}");
                 }
 
-                var apiKey = Environment.GetEnvironmentVariable("RESEND_API_KEY");
+                //var apiKey = Environment.GetEnvironmentVariable("RESEND_API_KEY");
+                var apiKey = "re_hCdf3ZnN_HGn1AM48vWPZ4GTsPksFYgFu";
                 if (string.IsNullOrWhiteSpace(apiKey))
                 {
                     result.Success = false;
@@ -490,6 +491,7 @@ namespace OyoAgro.DataAccess.Layer.Helpers
                     builder.Replace("[company]", user.UserCompany);
                     builder.Replace("[year]", DateTime.Now.Year.ToString());
                     builder.Replace("[reserved]", GlobalConstant.RESERVED);
+                    builder.Replace("[userToken]", user.UserToken);
                 }
                 else
                 {
@@ -499,15 +501,16 @@ namespace OyoAgro.DataAccess.Layer.Helpers
                     builder.AppendLine($"<p>You have requested to reset your password for your {user.UserCompany} account.</p>");
                     builder.AppendLine($"<p>Click the link below to reset your password:</p>");
                     builder.AppendLine($"<p><a href=\"{user.ResetLink}\" style=\"background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px;\">Reset Password</a></p>");
-                    builder.AppendLine($"<p>If the button doesn't work, copy and paste this link into your browser:</p>");
-                    builder.AppendLine($"<p>{user.ResetLink}</p>");
-                    builder.AppendLine($"<p>This link will expire in 24 hours for security reasons.</p>");
+                    builder.AppendLine($"<p>If the button doesn't work, copy and paste this token into your browser:</p>");
+                    builder.AppendLine($"<p>{user.UserToken}</p>");
+                    builder.AppendLine($"<p>This link/token will expire in 24 hours for security reasons.</p>");
                     builder.AppendLine($"<p>If you didn't request this password reset, please ignore this email.</p>");
                     builder.AppendLine($"<p>Best regards,<br/>{user.UserCompany}</p>");
                     builder.AppendLine($"<p>{DateTime.Now.Year} {GlobalConstant.RESERVED}</p>");
                 }
 
-                var apiKey = Environment.GetEnvironmentVariable("RESEND_API_KEY");
+                //var apiKey = Environment.GetEnvironmentVariable("RESEND_API_KEY");
+                var apiKey = "re_hCdf3ZnN_HGn1AM48vWPZ4GTsPksFYgFu";
                 if (string.IsNullOrWhiteSpace(apiKey))
                 {
                     result.Success = false;
@@ -547,7 +550,6 @@ namespace OyoAgro.DataAccess.Layer.Helpers
                     result.Message = "Password reset email sent successfully.";
                     return result;
                 }
-
                 result.Success = false;
                 result.Message = $"Resend API error: {responseBody}";
                 return result;

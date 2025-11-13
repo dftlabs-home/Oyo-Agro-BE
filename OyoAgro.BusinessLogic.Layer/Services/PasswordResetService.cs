@@ -278,7 +278,8 @@ namespace OyoAgro.BusinessLogic.Layer.Services
                     UserName = user.Username,
                     UserPassword = "", // Not needed for reset email
                     UserCompany = GlobalConstant.COMPANY,
-                    ResetLink = resetLink
+                    ResetLink = resetLink,
+                    UserToken = token
                 };
 
                 return await EmailHelper.SendPasswordResetEmail(mailParameter);

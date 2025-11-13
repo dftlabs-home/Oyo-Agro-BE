@@ -457,11 +457,18 @@ namespace OyoAgro.BusinessLogic.Layer.Services
                 }
 
                 // Generate new salt and hash password
-                var salt = GetPasswordSalt();
-                var hashedPassword = EncryptUserPassword(param.NewPassword, salt);
+
+                var Salt = new UserService(_unitOfWork).GetPasswordSalt();
+                var DecryptedPassword = param.NewPassword;
+                var hashedPassword = EncryptionHelper.Encrypt(DecryptedPassword, Salt);
+
+
+
+                //var salt = GetPasswordSalt();
+                //var hashedPassword = EncryptUserPassword(param.NewPassword, salt);
 
                 // Update user password
-                user.Salt = salt;
+                user.Salt = Salt;
                 user.Passwordhash = hashedPassword;
                 user.LastPasswordReset = DateTime.UtcNow;
                 user.PasswordResetToken = null;
@@ -560,7 +567,8 @@ namespace OyoAgro.BusinessLogic.Layer.Services
                     UserName = user.Username,
                     UserPassword = "", // Not needed for reset email
                     UserCompany = GlobalConstant.COMPANY,
-                    ResetLink = resetLink
+                    ResetLink = resetLink,
+                    UserToken = token
                 };
 
                 return await EmailHelper.SendPasswordResetEmail(mailParameter);
