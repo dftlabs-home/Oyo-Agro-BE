@@ -387,6 +387,7 @@ namespace OyoAgro.BusinessLogic.Layer.Services
 
                 response.Message = "If the email address exists in our system, you will receive a password reset link.";
                 response.Tag = 1;
+                response.Data = token;
                 return response;
             }
             catch (Exception ex)
