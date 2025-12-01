@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OyoAgro.Api.Authorizations;
 using OyoAgro.BusinessLogic.Layer.Interfaces;
 using OyoAgro.BusinessLogic.Layer.Services;
 using OyoAgro.DataAccess.Layer.Models.Params;
@@ -8,6 +9,7 @@ namespace OyoAgro.Api.Controllers
     [ApiController]
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
+    [Authorize]
     public class DashboardMetricController : ControllerBase
     {
         private readonly IDashboardMetricsService _metricsService;
