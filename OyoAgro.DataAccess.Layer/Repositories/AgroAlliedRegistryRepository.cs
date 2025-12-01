@@ -23,8 +23,16 @@ namespace OyoAgro.DataAccess.Layer.Repositories
 
         public async Task<List<AgroAlliedRegistry>> GetList()
         {
-            var list = await BaseRepository().FindList<AgroAlliedRegistry>();
-            return list.ToList();
+            try
+            {
+                var list = await BaseRepository().FindList<AgroAlliedRegistry>();
+                return list.ToList();
+            }
+            catch (Exception ex )
+            {
+
+                throw;
+            }
         }
 
         public async Task<AgroAlliedRegistry> GetEntity(int RegistryId)

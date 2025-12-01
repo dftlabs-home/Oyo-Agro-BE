@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OyoAgro.BusinessLogic.Layer.Interfaces;
+using OyoAgro.DataAccess.Layer.Enums;
 using OyoAgro.DataAccess.Layer.Interfaces;
 using OyoAgro.DataAccess.Layer.Models.Dtos;
 using OyoAgro.DataAccess.Layer.Models.Entities;
@@ -15,12 +16,12 @@ namespace OyoAgro.BusinessLogic.Layer.Services
     public class FarmService : IFarmService
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IDashboardMetricsService _metricsService;
 
-
-        public FarmService(IUnitOfWork unitOfWork)
+        public FarmService(IUnitOfWork unitOfWork, IDashboardMetricsService metricsService)
         {
             _unitOfWork = unitOfWork;
-
+            _metricsService = metricsService;
         }
 
         public async Task<TData<Farm>> SaveEntity(FarmParam param)
@@ -92,8 +93,24 @@ namespace OyoAgro.BusinessLogic.Layer.Services
 
             await _unitOfWork.FarmRepository.SaveForm(farmSave);
 
-            // Track counts: Global, User, and Farmer
-            //await TrackFarmCounts(param.Farmerid, param.UserId, 1);
+            // Increment farm count
+            try
+            {
+                var farmer = await _unitOfWork.FarmerRepository.GetEntity(param.Farmerid);
+                int? userId = farmer?.UserId;
+
+                await _metricsService.IncrementCountAsync(
+                    METRICNAMES.FARM_COUNT,
+                    userId: userId,
+                    farmerId: param.Farmerid,
+                    farmId: farmSave.Farmid,
+                    entityId: farmSave.Farmid
+                );
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error incrementing farm count: {ex.Message}");
+            }
 
             var farmAddress = new Address
             {
@@ -195,7 +212,8 @@ namespace OyoAgro.BusinessLogic.Layer.Services
             };
 
             await _unitOfWork.FarmRepository.SaveForm(farmSave);
-          
+
+            // Note: Updates don't change the count, so no metric tracking needed
 
             obj.Tag = 1;
             obj.Data = farmSave;
@@ -263,11 +281,28 @@ namespace OyoAgro.BusinessLogic.Layer.Services
             
             // Get farm details before deletion to track counts
             var farm = await _unitOfWork.FarmRepository.GetEntity(farmId);
-            //if (farm != null)
-            //{
-            //    // Track counts: Global, User, and Farmer (decrement)
-            //    await TrackFarmCounts(farm.Farmerid, farm.Farmer?.UserId, -1);
-            //}
+            
+            // Decrement farm count
+            if (farm != null)
+            {
+                try
+                {
+                    var farmer = await _unitOfWork.FarmerRepository.GetEntity(farm.Farmerid);
+                    int? userId = farmer?.UserId;
+
+                    await _metricsService.DecrementCountAsync(
+                        METRICNAMES.FARM_COUNT,
+                        userId: userId,
+                        farmerId: farm.Farmerid,
+                        farmId: farm.Farmid,
+                        entityId: farm.Farmid
+                    );
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine($"Error decrementing farm count: {ex.Message}");
+                }
+            }
             
             await _unitOfWork.FarmRepository.DeleteForm(farmId);
             response.Tag = 1;

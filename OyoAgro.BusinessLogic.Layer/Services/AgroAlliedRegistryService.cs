@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OyoAgro.BusinessLogic.Layer.Interfaces;
+using OyoAgro.DataAccess.Layer.Enums;
 using OyoAgro.DataAccess.Layer.Interfaces;
 using OyoAgro.DataAccess.Layer.Models.Dtos;
 using OyoAgro.DataAccess.Layer.Models.Entities;
@@ -14,11 +15,12 @@ namespace OyoAgro.BusinessLogic.Layer.Services
     public class AgroAlliedRegistryService : IAgroAlliedRegistryService
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IDashboardMetricsService _metricsService;
 
-        public AgroAlliedRegistryService(IUnitOfWork unitOfWork)
+        public AgroAlliedRegistryService(IUnitOfWork unitOfWork, IDashboardMetricsService metricsService)
         {
             _unitOfWork = unitOfWork;
-
+            _metricsService = metricsService;
         }
 
         public async Task<TData<AgroAlliedRegistry>> SaveEntity(AgroAlliedRegistryParam param)
@@ -74,8 +76,28 @@ namespace OyoAgro.BusinessLogic.Layer.Services
             };
             await _unitOfWork.AgroAlliedRegistryRepository.SaveForm(cropReg);
 
-            // Track counts: Global, User, Farmer, and Farm
-            //await TrackLivestockRegistryCounts(param.Farmid, 1);
+            // Increment agro-allied registry count
+            try
+            {
+                var farm = await _unitOfWork.FarmRepository.GetEntity(param.Farmid);
+                if (farm != null)
+                {
+                    var farmer = await _unitOfWork.FarmerRepository.GetEntity(farm.Farmerid);
+                    int? userId = farmer?.UserId;
+
+                    await _metricsService.IncrementCountAsync(
+                        METRICNAMES.AGRO_ALLIED_REGISTRY_COUNT,
+                        userId: userId,
+                        farmerId: farm.Farmerid,
+                        farmId: param.Farmid,
+                        entityId: cropReg.AgroAlliedRegistryid
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error incrementing agro-allied registry count: {ex.Message}");
+            }
 
             obj.Tag = 1;
             obj.Data = cropReg;
@@ -117,15 +139,36 @@ namespace OyoAgro.BusinessLogic.Layer.Services
         {
             var response = new TData<AgroAlliedRegistry>();
 
-            // Get livestock registry details before deletion to track counts
-            var livestockRegistry = await _unitOfWork.AgroAlliedRegistryRepository.GetEntity(registryId);
-            //if (livestockRegistry != null)
-            //{
-            //    // Track counts: Global, User, Farmer, and Farm (decrement)
-            //    await TrackLivestockRegistryCounts(livestockRegistry.Farmid, -1);
-            //}
+            // Get agro-allied registry details before deletion
+            var agroAlliedRegistry = await _unitOfWork.AgroAlliedRegistryRepository.GetEntity(registryId);
+            
+            // Decrement agro-allied registry count
+            if (agroAlliedRegistry != null)
+            {
+                try
+                {
+                    var farm = await _unitOfWork.FarmRepository.GetEntity(agroAlliedRegistry.Farmid);
+                    if (farm != null)
+                    {
+                        var farmer = await _unitOfWork.FarmerRepository.GetEntity(farm.Farmerid);
+                        int? userId = farmer?.UserId;
 
-            await _unitOfWork.LiveStockRegistryRepository.DeleteForm(registryId);
+                        await _metricsService.DecrementCountAsync(
+                            METRICNAMES.AGRO_ALLIED_REGISTRY_COUNT,
+                            userId: userId,
+                            farmerId: farm.Farmerid,
+                            farmId: agroAlliedRegistry.Farmid,
+                            entityId: agroAlliedRegistry.AgroAlliedRegistryid
+                        );
+                    }
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine($"Error decrementing agro-allied registry count: {ex.Message}");
+                }
+            }
+
+            await _unitOfWork.AgroAlliedRegistryRepository.DeleteForm(registryId);
             response.Tag = 1;
             return response;
         }

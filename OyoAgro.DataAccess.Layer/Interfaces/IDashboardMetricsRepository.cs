@@ -1,19 +1,19 @@
 using System;
-using System.Linq;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using OyoAgro.DataAccess.Layer.Interfaces;
+using OyoAgro.DataAccess.Layer.Enums;
 using OyoAgro.DataAccess.Layer.Models.Entities;
+using OyoAgro.DataAccess.Layer.Models.Params;
 
 namespace OyoAgro.DataAccess.Layer.Interfaces
 {
-    public interface IDashboardMetricsRepository 
+    public interface IDashboardMetricsRepository
     {
-        //Task<DashboardMetrics?> GetMetricsAsync(string entityType, int? entityId = null);
-        //Task<DashboardMetrics> GetOrCreateMetricsAsync(string entityType, int? entityId = null);
-        //Task IncrementCountAsync(string entityType, int? entityId, string countField, int incrementBy = 1);
-        //Task DecrementCountAsync(string entityType, int? entityId, string countField, int decrementBy = 1);
-        //Task UpdateCountAsync(string entityType, int? entityId, string countField, int newValue);
-        //Task UpdateMetricAsync(string entityType, int? entityId, string fieldName, object value);
+        Task SaveForm(DashboardMetrics entity);
+        Task<List<DashboardMetrics>> GetList(DashboardMetricsParam param);
+        Task<List<DashboardMetrics>> GetList();
+        Task<DashboardMetrics?> GetEntity(int metricId);
+        Task<DashboardMetrics?> GetMetricByPeriod(METRICNAMES metricName, int? userId = null, int? farmerId = null, long? farmId = null, int dailyPeriod = 0, int weeklyPeriod = 0, int monthlyPeriod = 0);
+        Task UpdateMetricCount(METRICNAMES metricName, int incrementBy, int? userId = null, int? farmerId = null, long? farmId = null, long? entityId = null);
     }
 }

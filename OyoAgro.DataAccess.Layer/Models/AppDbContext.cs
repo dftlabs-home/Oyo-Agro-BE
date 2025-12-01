@@ -43,7 +43,7 @@ namespace OyoAgro.DataAccess.Layer.Models
         public virtual DbSet<AgroAlliedRegistry> AgroAlliedRegistries { get; set; } = null!;
         public virtual DbSet<BusinessType> BusinessTypes { get; set; } = null!;
         public virtual DbSet<PrimaryProduct> PrimaryProducts { get; set; } = null!;
-        //public virtual DbSet<DashboardMetrics> DashboardMetrics { get; set; } = null!;
+        public virtual DbSet<DashboardMetrics> DashboardMetrics { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -1125,6 +1125,61 @@ namespace OyoAgro.DataAccess.Layer.Models
             //    entity.HasIndex(e => new { e.EntityType, e.EntityId })
             //        .HasDatabaseName("idx_dashboardmetrics_entity");
             //});
+
+            modelBuilder.Entity<DashboardMetrics>(entity =>
+            {
+                entity.ToTable("dashboardmetrics");
+                entity.HasKey(e => e._MetricId);
+                entity.Property(e => e._MetricId).HasColumnName("Metric_Id");
+                entity.Property(e => e._MetricName).HasColumnName("Metric_Name").HasConversion<int>();
+                entity.Property(e => e._MetricValue).HasColumnName("Metric_Value");
+                //entity.Property(e => e._MetricMonthlyPeriod).HasColumnName("Metric_MonthlyPeriod");
+                //entity.Property(e => e._MetricWeeklyPeriod).HasColumnName("Metric_WeeklyPeriod");
+                //entity.Property(e => e._MetricDailyPeriod).HasColumnName("Metric_DailyPeriod");
+                entity.Property(e => e._MetricCreateDate).HasColumnName("Metric_CreateDate").HasDefaultValueSql("now()");
+                entity.Property(e => e._MetricUpdatedDate).HasColumnName("Metric_UpdatedDate").HasDefaultValueSql("now()");
+                entity.Property(e => e._SysNumber).HasColumnName("SysNumber");
+                entity.Property(e => e.CreatedByUserId).HasColumnName("CreatedByUserId");
+                entity.Property(e => e.RelatedFarmerId).HasColumnName("RelatedFarmerId");
+                entity.Property(e => e.RelatedFarmId).HasColumnName("RelatedFarmId");
+                entity.Property(e => e.EntityId).HasColumnName("EntityId");
+                entity.Property(e => e.Createdat).HasColumnName("createdat").HasDefaultValueSql("now()");
+                entity.Property(e => e.Updatedat).HasColumnName("updatedat").HasDefaultValueSql("now()");
+                entity.Property(e => e.Deletedat).HasColumnName("deletedat");
+
+                entity.HasOne(d => d.CreatedByUser)
+                    .WithMany()
+                    .HasForeignKey(d => d.CreatedByUserId)
+                    .HasConstraintName("fk_dashboardmetrics_user");
+
+                entity.HasOne(d => d.RelatedFarmer)
+                    .WithMany()
+                    .HasForeignKey(d => d.RelatedFarmerId)
+                    .HasConstraintName("fk_dashboardmetrics_farmer");
+
+                entity.HasOne(d => d.RelatedFarm)
+                    .WithMany()
+                    .HasForeignKey(d => d.RelatedFarmId)
+                    .HasConstraintName("fk_dashboardmetrics_farm");
+
+                // Indexes for performance
+                entity.HasIndex(e => e._MetricName)
+                    .HasDatabaseName("idx_dashboardmetrics_name");
+                entity.HasIndex(e => e.CreatedByUserId)
+                    .HasDatabaseName("idx_dashboardmetrics_user");
+                entity.HasIndex(e => e.RelatedFarmerId)
+                    .HasDatabaseName("idx_dashboardmetrics_farmer");
+                entity.HasIndex(e => e.RelatedFarmId)
+                    .HasDatabaseName("idx_dashboardmetrics_farm");
+                //entity.HasIndex(e => e._MetricDailyPeriod)
+                //    .HasDatabaseName("idx_dashboardmetrics_daily");
+                //entity.HasIndex(e => e._MetricWeeklyPeriod)
+                //    .HasDatabaseName("idx_dashboardmetrics_weekly");
+                //entity.HasIndex(e => e._MetricMonthlyPeriod)
+                //    .HasDatabaseName("idx_dashboardmetrics_monthly");
+                entity.HasIndex(e => e._MetricCreateDate)
+                    .HasDatabaseName("idx_dashboardmetrics_createdate");
+            });
 
             modelBuilder.Entity<PasswordResetToken>(entity =>
             {

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OyoAgro.BusinessLogic.Layer.Interfaces;
+using OyoAgro.DataAccess.Layer.Enums;
 using OyoAgro.DataAccess.Layer.Interfaces;
 using OyoAgro.DataAccess.Layer.Models.Dtos;
 using OyoAgro.DataAccess.Layer.Models.Entities;
@@ -13,13 +14,13 @@ namespace OyoAgro.BusinessLogic.Layer.Services
 {
     public class LiveStockRegistryService : ILiveStockRegistryService
     {
-
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IDashboardMetricsService _metricsService;
 
-        public LiveStockRegistryService(IUnitOfWork unitOfWork)
+        public LiveStockRegistryService(IUnitOfWork unitOfWork, IDashboardMetricsService metricsService)
         {
             _unitOfWork = unitOfWork;
-
+            _metricsService = metricsService;
         }
 
         public async Task<TData<Livestockregistry>> SaveEntity(LiveStockRegistryParam param)
@@ -90,8 +91,28 @@ namespace OyoAgro.BusinessLogic.Layer.Services
             };
             await _unitOfWork.LiveStockRegistryRepository.SaveForm(cropReg);
 
-            // Track counts: Global, User, Farmer, and Farm
-            //await TrackLivestockRegistryCounts(param.Farmid, 1);
+            // Increment livestock registry count
+            try
+            {
+                var farm = await _unitOfWork.FarmRepository.GetEntity(param.Farmid);
+                if (farm != null)
+                {
+                    var farmer = await _unitOfWork.FarmerRepository.GetEntity(farm.Farmerid);
+                    int? userId = farmer?.UserId;
+
+                    await _metricsService.IncrementCountAsync(
+                        METRICNAMES.LIVESTOCK_REGISTRY_COUNT,
+                        userId: userId,
+                        farmerId: farm.Farmerid,
+                        farmId: param.Farmid,
+                        entityId: cropReg.Livestockregistryid
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error incrementing livestock registry count: {ex.Message}");
+            }
 
             obj.Tag = 1;
             obj.Data = cropReg;
@@ -124,13 +145,34 @@ namespace OyoAgro.BusinessLogic.Layer.Services
         {
             var response = new TData<Livestockregistry>();
             
-            // Get livestock registry details before deletion to track counts
+            // Get livestock registry details before deletion
             var livestockRegistry = await _unitOfWork.LiveStockRegistryRepository.GetEntity(registryId);
-            //if (livestockRegistry != null)
-            //{
-            //    // Track counts: Global, User, Farmer, and Farm (decrement)
-            //    await TrackLivestockRegistryCounts(livestockRegistry.Farmid, -1);
-            //}
+            
+            // Decrement livestock registry count
+            if (livestockRegistry != null)
+            {
+                try
+                {
+                    var farm = await _unitOfWork.FarmRepository.GetEntity(livestockRegistry.Farmid);
+                    if (farm != null)
+                    {
+                        var farmer = await _unitOfWork.FarmerRepository.GetEntity(farm.Farmerid);
+                        int? userId = farmer?.UserId;
+
+                        await _metricsService.DecrementCountAsync(
+                            METRICNAMES.LIVESTOCK_REGISTRY_COUNT,
+                            userId: userId,
+                            farmerId: farm.Farmerid,
+                            farmId: livestockRegistry.Farmid,
+                            entityId: livestockRegistry.Livestockregistryid
+                        );
+                    }
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine($"Error decrementing livestock registry count: {ex.Message}");
+                }
+            }
             
             await _unitOfWork.LiveStockRegistryRepository.DeleteForm(registryId);
             response.Tag = 1;

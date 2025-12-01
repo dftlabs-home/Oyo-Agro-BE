@@ -32,6 +32,7 @@ namespace OyoAgro.DataAccess.Layer.Interfaces
         IAgroAlliedRegistryRepository AgroAlliedRegistryRepository { get; }
         IPrimaryProductRepository PrimaryProductRepository { get; }
         IBusinessTypeRepository BusinessTypeRepository { get; }
+        IDashboardMetricsRepository DashboardMetricsRepository { get; }
         
         int Complete();
 

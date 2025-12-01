@@ -1,120 +1,106 @@
 -- Migration script to create DashboardMetrics table
--- This creates a dedicated table for storing dashboard metrics/counts
+-- This creates a table for storing transaction metrics with period tracking
+-- Each metric tracks operations (CREATE, UPDATE, DELETE) with daily, weekly, and monthly periods
 
 -- Create dashboardmetrics table
-CREATE TABLE dashboardmetrics (
-    dashboardmetricsid SERIAL PRIMARY KEY,
-    entitytype VARCHAR(50) NOT NULL,
-    entityid INTEGER,
-    
-    -- Count fields
-    farmercount INTEGER DEFAULT 0,
-    farmcount INTEGER DEFAULT 0,
-    cropregistrycount INTEGER DEFAULT 0,
-    livestockregistrycount INTEGER DEFAULT 0,
-    
-    -- Additional metrics
-    totalareaplanted DECIMAL(18,2) DEFAULT 0,
-    totalareaharvested DECIMAL(18,2) DEFAULT 0,
-    totalyieldquantity DECIMAL(18,2) DEFAULT 0,
-    totalplantedquantity DECIMAL(18,2) DEFAULT 0,
-    totallivestockquantity INTEGER DEFAULT 0,
-    
-    -- Metadata
-    lastcalculated TIMESTAMP DEFAULT NOW(),
-    lastupdated TIMESTAMP DEFAULT NOW(),
-    notes TEXT,
-    
-    -- Base entity fields
+CREATE TABLE IF NOT EXISTS dashboardmetrics (
+    "Metric_Id" SERIAL PRIMARY KEY,
+    "Metric_Name" INTEGER NOT NULL,
+    "Metric_Value" INTEGER NOT NULL DEFAULT 1,
+    "Metric_MonthlyPeriod" INTEGER NOT NULL,
+    "Metric_WeeklyPeriod" INTEGER NOT NULL,
+    "Metric_DailyPeriod" INTEGER NOT NULL,
+    "Metric_CreateDate" TIMESTAMP DEFAULT NOW(),
+    "Metric_UpdatedDate" TIMESTAMP DEFAULT NOW(),
+    "SysNumber" BIGINT,
+    "CreatedByUserId" INTEGER,
+    "RelatedFarmerId" INTEGER,
+    "RelatedFarmId" BIGINT,
+    "EntityId" BIGINT,
     createdat TIMESTAMP DEFAULT NOW(),
     updatedat TIMESTAMP DEFAULT NOW(),
     deletedat TIMESTAMP NULL
 );
 
 -- Create indexes for efficient queries
-CREATE INDEX idx_dashboardmetrics_entity ON dashboardmetrics (entitytype, entityid);
-CREATE INDEX idx_dashboardmetrics_entitytype ON dashboardmetrics (entitytype);
-CREATE INDEX idx_dashboardmetrics_entityid ON dashboardmetrics (entityid);
+CREATE INDEX IF NOT EXISTS idx_dashboardmetrics_name ON dashboardmetrics("Metric_Name");
+CREATE INDEX IF NOT EXISTS idx_dashboardmetrics_user ON dashboardmetrics("CreatedByUserId");
+CREATE INDEX IF NOT EXISTS idx_dashboardmetrics_farmer ON dashboardmetrics("RelatedFarmerId");
+CREATE INDEX IF NOT EXISTS idx_dashboardmetrics_farm ON dashboardmetrics("RelatedFarmId");
+CREATE INDEX IF NOT EXISTS idx_dashboardmetrics_daily ON dashboardmetrics("Metric_DailyPeriod");
+CREATE INDEX IF NOT EXISTS idx_dashboardmetrics_weekly ON dashboardmetrics("Metric_WeeklyPeriod");
+CREATE INDEX IF NOT EXISTS idx_dashboardmetrics_monthly ON dashboardmetrics("Metric_MonthlyPeriod");
+CREATE INDEX IF NOT EXISTS idx_dashboardmetrics_createdate ON dashboardmetrics("Metric_CreateDate" DESC);
 
--- Add foreign key constraints (optional, for referential integrity)
--- Note: These are optional and can be commented out if you prefer not to have FK constraints
+-- Composite index for period-based queries
+CREATE INDEX IF NOT EXISTS idx_dashboardmetrics_period ON dashboardmetrics("Metric_Name", "Metric_DailyPeriod", "Metric_WeeklyPeriod", "Metric_MonthlyPeriod");
+
+-- Composite index for relationship queries
+CREATE INDEX IF NOT EXISTS idx_dashboardmetrics_relationships ON dashboardmetrics("CreatedByUserId", "RelatedFarmerId", "RelatedFarmId");
+
+-- Add foreign key constraints for referential integrity
+-- Note: Drop constraints first if they exist (for re-running the script)
 
 -- Foreign key to useraccount table
-ALTER TABLE dashboardmetrics 
-ADD CONSTRAINT dashboardmetrics_userid_fkey 
-FOREIGN KEY (entityid) REFERENCES useraccount(userid) 
-ON DELETE CASCADE;
+DO $$ 
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM pg_constraint WHERE conname = 'fk_dashboardmetrics_user'
+    ) THEN
+        ALTER TABLE dashboardmetrics 
+        ADD CONSTRAINT fk_dashboardmetrics_user 
+        FOREIGN KEY ("CreatedByUserId") REFERENCES useraccount(userid)
+        ON DELETE SET NULL;
+    END IF;
+END $$;
 
 -- Foreign key to farmer table
-ALTER TABLE dashboardmetrics 
-ADD CONSTRAINT dashboardmetrics_farmerid_fkey 
-FOREIGN KEY (entityid) REFERENCES farmer(farmerid) 
-ON DELETE CASCADE;
+DO $$ 
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM pg_constraint WHERE conname = 'fk_dashboardmetrics_farmer'
+    ) THEN
+        ALTER TABLE dashboardmetrics 
+        ADD CONSTRAINT fk_dashboardmetrics_farmer 
+        FOREIGN KEY ("RelatedFarmerId") REFERENCES farmer(farmerid)
+        ON DELETE SET NULL;
+    END IF;
+END $$;
 
 -- Foreign key to farm table
-ALTER TABLE dashboardmetrics 
-ADD CONSTRAINT dashboardmetrics_farmid_fkey 
-FOREIGN KEY (entityid) REFERENCES farm(farmid) 
-ON DELETE CASCADE;
+DO $$ 
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM pg_constraint WHERE conname = 'fk_dashboardmetrics_farm'
+    ) THEN
+        ALTER TABLE dashboardmetrics 
+        ADD CONSTRAINT fk_dashboardmetrics_farm 
+        FOREIGN KEY ("RelatedFarmId") REFERENCES farm(farmid)
+        ON DELETE SET NULL;
+    END IF;
+END $$;
 
 -- Add comments to document the table and fields
-COMMENT ON TABLE dashboardmetrics IS 'Dedicated table for storing dashboard metrics and counts';
-COMMENT ON COLUMN dashboardmetrics.entitytype IS 'Type of entity: User, Farmer, Farm, or Global';
-COMMENT ON COLUMN dashboardmetrics.entityid IS 'ID of the entity (null for Global metrics)';
-COMMENT ON COLUMN dashboardmetrics.farmercount IS 'Number of farmers';
-COMMENT ON COLUMN dashboardmetrics.farmcount IS 'Number of farms';
-COMMENT ON COLUMN dashboardmetrics.cropregistrycount IS 'Number of crop registrations';
-COMMENT ON COLUMN dashboardmetrics.livestockregistrycount IS 'Number of livestock registrations';
-COMMENT ON COLUMN dashboardmetrics.totalareaplanted IS 'Total area planted';
-COMMENT ON COLUMN dashboardmetrics.totalareaharvested IS 'Total area harvested';
-COMMENT ON COLUMN dashboardmetrics.totalyieldquantity IS 'Total yield quantity';
-COMMENT ON COLUMN dashboardmetrics.totalplantedquantity IS 'Total planted quantity';
-COMMENT ON COLUMN dashboardmetrics.totallivestockquantity IS 'Total livestock quantity';
-COMMENT ON COLUMN dashboardmetrics.lastcalculated IS 'When the metrics were last calculated';
-COMMENT ON COLUMN dashboardmetrics.lastupdated IS 'When the metrics were last updated';
+COMMENT ON TABLE dashboardmetrics IS 'Table for storing transaction metrics with period tracking (daily, weekly, monthly)';
+COMMENT ON COLUMN dashboardmetrics."Metric_Id" IS 'Primary key identifier for the metric record';
+COMMENT ON COLUMN dashboardmetrics."Metric_Name" IS 'Enum value representing the operation type (e.g., FARM_CREATE, FARMER_UPDATE)';
+COMMENT ON COLUMN dashboardmetrics."Metric_Value" IS 'Count value for this metric in the specified period';
+COMMENT ON COLUMN dashboardmetrics."Metric_MonthlyPeriod" IS 'Period identifier: Year * 100 + Month (e.g., 202412 for December 2024)';
+COMMENT ON COLUMN dashboardmetrics."Metric_WeeklyPeriod" IS 'Period identifier: Year * 100 + Week (e.g., 202450 for week 50 of 2024)';
+COMMENT ON COLUMN dashboardmetrics."Metric_DailyPeriod" IS 'Period identifier: Year * 10000 + Month * 100 + Day (e.g., 20241225 for Dec 25, 2024)';
+COMMENT ON COLUMN dashboardmetrics."Metric_CreateDate" IS 'When this metric record was first created';
+COMMENT ON COLUMN dashboardmetrics."Metric_UpdatedDate" IS 'When this metric record was last updated';
+COMMENT ON COLUMN dashboardmetrics."SysNumber" IS 'System number for tracking (Unix timestamp in milliseconds)';
+COMMENT ON COLUMN dashboardmetrics."CreatedByUserId" IS 'ID of the user who performed the operation';
+COMMENT ON COLUMN dashboardmetrics."RelatedFarmerId" IS 'ID of the farmer related to this operation (if applicable)';
+COMMENT ON COLUMN dashboardmetrics."RelatedFarmId" IS 'ID of the farm related to this operation (if applicable)';
+COMMENT ON COLUMN dashboardmetrics."EntityId" IS 'ID of the entity that was operated on (the actual record ID)';
 
--- Insert initial global metrics record
-INSERT INTO dashboardmetrics (entitytype, entityid, farmercount, farmcount, cropregistrycount, livestockregistrycount)
-VALUES ('Global', NULL, 0, 0, 0, 0);
-
--- Create a function to initialize metrics for existing entities
-CREATE OR REPLACE FUNCTION initialize_dashboard_metrics()
-RETURNS VOID AS $$
-BEGIN
-    -- Initialize metrics for all users
-    INSERT INTO dashboardmetrics (entitytype, entityid, farmercount, farmcount, cropregistrycount, livestockregistrycount)
-    SELECT 'User', u.userid, 0, 0, 0, 0
-    FROM useraccount u
-    WHERE u.deletedat IS NULL
-    AND NOT EXISTS (
-        SELECT 1 FROM dashboardmetrics dm 
-        WHERE dm.entitytype = 'User' AND dm.entityid = u.userid
-    );
-    
-    -- Initialize metrics for all farmers
-    INSERT INTO dashboardmetrics (entitytype, entityid, farmercount, farmcount, cropregistrycount, livestockregistrycount)
-    SELECT 'Farmer', f.farmerid, 0, 0, 0, 0
-    FROM farmer f
-    WHERE f.deletedat IS NULL
-    AND NOT EXISTS (
-        SELECT 1 FROM dashboardmetrics dm 
-        WHERE dm.entitytype = 'Farmer' AND dm.entityid = f.farmerid
-    );
-    
-    -- Initialize metrics for all farms
-    INSERT INTO dashboardmetrics (entitytype, entityid, farmercount, farmcount, cropregistrycount, livestockregistrycount)
-    SELECT 'Farm', f.farmid, 0, 0, 0, 0
-    FROM farm f
-    WHERE f.deletedat IS NULL
-    AND NOT EXISTS (
-        SELECT 1 FROM dashboardmetrics dm 
-        WHERE dm.entitytype = 'Farm' AND dm.entityid = f.farmid
-    );
-END;
-$$ LANGUAGE plpgsql;
-
--- Execute the function to initialize metrics for existing entities
-SELECT initialize_dashboard_metrics();
-
--- Drop the function as it's no longer needed
-DROP FUNCTION initialize_dashboard_metrics();
+-- Note: Metric_Name enum values:
+-- USER_CREATE = 1, USER_UPDATE = 2, USER_DELETE = 3
+-- FARMER_CREATE = 10, FARMER_UPDATE = 11, FARMER_DELETE = 12
+-- FARM_CREATE = 20, FARM_UPDATE = 21, FARM_DELETE = 22
+-- CROP_REGISTRY_CREATE = 30, CROP_REGISTRY_UPDATE = 31, CROP_REGISTRY_DELETE = 32
+-- LIVESTOCK_REGISTRY_CREATE = 40, LIVESTOCK_REGISTRY_DELETE = 41
+-- AGRO_ALLIED_REGISTRY_CREATE = 50, AGRO_ALLIED_REGISTRY_DELETE = 51
+-- And many more... (see MetricNames.cs enum for complete list)

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OyoAgro.BusinessLogic.Layer.Interfaces;
+using OyoAgro.DataAccess.Layer.Enums;
 using OyoAgro.DataAccess.Layer.Interfaces;
 using OyoAgro.DataAccess.Layer.Models.Dtos;
 using OyoAgro.DataAccess.Layer.Models.Entities;
@@ -14,12 +15,12 @@ namespace OyoAgro.BusinessLogic.Layer.Services
     public class CropRegistryService : ICropRegistryService
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IDashboardMetricsService _metricsService;
 
-
-        public CropRegistryService(IUnitOfWork unitOfWork)
+        public CropRegistryService(IUnitOfWork unitOfWork, IDashboardMetricsService metricsService)
         {
             _unitOfWork = unitOfWork;
-
+            _metricsService = metricsService;
         }
 
         public async Task<TData<Cropregistry>> SaveEntity(CropRegistryParam param)
@@ -98,8 +99,28 @@ namespace OyoAgro.BusinessLogic.Layer.Services
             };
             await _unitOfWork.CropRegistryRepository.SaveForm(cropReg);
 
-            // Track counts: Global, User, Farmer, and Farm
-            //await TrackCropRegistryCounts(param.Farmid, 1);
+            // Increment crop registry count
+            try
+            {
+                var farm = await _unitOfWork.FarmRepository.GetEntity(param.Farmid);
+                if (farm != null)
+                {
+                    var farmer = await _unitOfWork.FarmerRepository.GetEntity(farm.Farmerid);
+                    int? userId = farmer?.UserId;
+
+                    await _metricsService.IncrementCountAsync(
+                        METRICNAMES.CROP_REGISTRY_COUNT,
+                        userId: userId,
+                        farmerId: farm.Farmerid,
+                        farmId: param.Farmid,
+                        entityId: cropReg.Cropregistryid
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error incrementing crop registry count: {ex.Message}");
+            }
 
             obj.Tag = 1;
             obj.Data = cropReg;
@@ -159,6 +180,7 @@ namespace OyoAgro.BusinessLogic.Layer.Services
             };
             await _unitOfWork.CropRegistryRepository.SaveForm(cropReg);
 
+            // Note: Updates don't change the count, so no metric tracking needed
 
             obj.Tag = 1;
             obj.Data = cropReg;
@@ -191,13 +213,34 @@ namespace OyoAgro.BusinessLogic.Layer.Services
         {
             var response = new TData<Cropregistry>();
             
-            // Get crop registry details before deletion to track counts
+            // Get crop registry details before deletion
             var cropRegistry = await _unitOfWork.CropRegistryRepository.GetEntity(cropRegistryId);
-            //if (cropRegistry != null)
-            //{
-            //    // Track counts: Global, User, Farmer, and Farm (decrement)
-            //    await TrackCropRegistryCounts(cropRegistry.Farmid, -1);
-            //}
+            
+            // Decrement crop registry count
+            if (cropRegistry != null)
+            {
+                try
+                {
+                    var farm = await _unitOfWork.FarmRepository.GetEntity(cropRegistry.Farmid);
+                    if (farm != null)
+                    {
+                        var farmer = await _unitOfWork.FarmerRepository.GetEntity(farm.Farmerid);
+                        int? userId = farmer?.UserId;
+
+                        await _metricsService.DecrementCountAsync(
+                            METRICNAMES.CROP_REGISTRY_COUNT,
+                            userId: userId,
+                            farmerId: farm.Farmerid,
+                            farmId: cropRegistry.Farmid,
+                            entityId: cropRegistry.Cropregistryid
+                        );
+                    }
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine($"Error decrementing crop registry count: {ex.Message}");
+                }
+            }
             
             await _unitOfWork.CropRegistryRepository.DeleteForm(cropRegistryId);
             response.Tag = 1;

@@ -112,8 +112,8 @@ namespace OyoAgro.DataAccess.Layer
         public IBusinessTypeRepository BusinessTypeRepository =>
          _businessTypeRepository ??= new BusinessTypeRepository();
 
-        //public IDashboardMetricsRepository DashboardMetricsRepository =>
-        // _dashboardMetricsRepository ??= new DashboardMetricsRepository(_context);
+        public IDashboardMetricsRepository DashboardMetricsRepository =>
+         _dashboardMetricsRepository ??= new DashboardMetricsRepository();
 
 
         public int Complete()
