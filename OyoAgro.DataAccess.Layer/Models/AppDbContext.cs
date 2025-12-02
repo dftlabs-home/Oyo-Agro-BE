@@ -52,7 +52,7 @@ namespace OyoAgro.DataAccess.Layer.Models
                 //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 //optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=OyoAgro;Username=postgres;Password=Admin");
                 //optionsBuilder.UseNpgsql("Host=turntable.proxy.rlwy.net; Port=34939; Database=oyoagrodb; Username=postgres; Password=GsinVqwnnTiyadmTWlHipqxtTjrmsZQF");
-                optionsBuilder.UseNpgsql("Host=metro.proxy.rlwy.net;Port=26054;Database=oyoagrodb;Username=postgres;Password=JgkJfaPUQuHauuMZvbPaABQCQgmIjrrz");
+                optionsBuilder.UseNpgsql("Host=ballast.proxy.rlwy.net;Port=57826;Database=oyoagrodb;Username=postgres;Password=TyRqhAJGkeKpIZljrCJGSCWcFKZZrvZu");
             }   
         }
 
