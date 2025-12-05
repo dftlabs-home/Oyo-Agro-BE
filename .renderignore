@@ -1,0 +1,23 @@
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.cache
+
+# Build outputs
+bin/
+obj/
+/app/publish/
+
+# IDE files
+*.dbmdl
+*.dbproj.schemaview
+*.jfm
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+

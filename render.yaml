@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: oyoagro-api
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: Database__DBProvider
+        value: postgresql
+      - key: Database__DefaultConnection
+        value: YOUR_EXISTING_DATABASE_CONNECTION_STRING
+      - key: Jwt__Key
+        value: CHANGE_THIS_TO_A_SECURE_RANDOM_STRING
+      - key: Jwt__Issuer
+        value: OyoAgroApi
+      - key: Jwt__Audience
+        value: OyoAgroClient
+      - key: Jwt__DurationInMinutes
+        value: 3
+
