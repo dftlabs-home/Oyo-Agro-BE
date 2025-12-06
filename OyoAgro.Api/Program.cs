@@ -13,6 +13,30 @@ using OyoAgro.DataAccess.Layer.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Log connection string in Development mode only (for debugging)
+if (builder.Environment.IsDevelopment())
+{
+    var connectionString = builder.Configuration["Database:DefaultConnection"];
+    var dbProvider = builder.Configuration["Database:DBProvider"];
+    Console.WriteLine("=== Development Mode ===");
+    Console.WriteLine($"Database Provider: {dbProvider}");
+    if (!string.IsNullOrEmpty(connectionString))
+    {
+        // Mask password in connection string for security
+        var maskedConnection = connectionString;
+        var passwordMatch = System.Text.RegularExpressions.Regex.Match(connectionString, @"Password=([^;]+)");
+        if (passwordMatch.Success)
+        {
+            maskedConnection = connectionString.Replace(passwordMatch.Groups[1].Value, "***");
+        }
+        Console.WriteLine($"Connection String: {maskedConnection}");
+    }
+    else
+    {
+        Console.WriteLine("WARNING: Connection string is empty!");
+    }
+    Console.WriteLine("=======================");
+}
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -93,10 +117,15 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-// Configure port for Render deployment
-var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
-app.Urls.Clear();
-app.Urls.Add($"http://0.0.0.0:{port}");
+// Configure port for Render deployment (only when PORT env variable is set)
+var port = Environment.GetEnvironmentVariable("PORT");
+if (!string.IsNullOrEmpty(port))
+{
+    // Production/Render deployment - use PORT environment variable
+    app.Urls.Clear();
+    app.Urls.Add($"http://0.0.0.0:{port}");
+}
+// Otherwise, use launchSettings.json URLs for local development
 
 app.Run();
 
