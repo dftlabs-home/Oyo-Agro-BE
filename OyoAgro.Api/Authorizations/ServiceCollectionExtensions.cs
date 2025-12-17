@@ -29,6 +29,7 @@ namespace OyoAgro.Api.Authorizations
             services.AddScoped<IPrimaryProductService, PrimaryProductService>();
             services.AddScoped<IBusinessTypeService, BusinessTypeService>();
             services.AddScoped<IDashboardMetricsService, DashboardMetricsService>();
+            services.AddScoped<IDashboardReportingService, DashboardReportingService>();
             //services.AddScoped<IDashboardService, DashboardService>();
 
             return services;

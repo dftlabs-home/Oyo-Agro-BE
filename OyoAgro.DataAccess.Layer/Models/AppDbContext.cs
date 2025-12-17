@@ -44,6 +44,7 @@ namespace OyoAgro.DataAccess.Layer.Models
         public virtual DbSet<BusinessType> BusinessTypes { get; set; } = null!;
         public virtual DbSet<PrimaryProduct> PrimaryProducts { get; set; } = null!;
         public virtual DbSet<DashboardMetrics> DashboardMetrics { get; set; } = null!;
+        public virtual DbSet<VwDashboardReportingBase> VwDashboardReportingBases { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -1243,6 +1244,127 @@ namespace OyoAgro.DataAccess.Layer.Models
                 entity.HasIndex(e => e.ExpiresAt)
                     .HasDatabaseName("idx_passwordresettokens_expiresat");
             });
+
+
+            modelBuilder.Entity<VwDashboardReportingBase>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("vw_dashboard_reporting_base");
+
+                entity.Property(e => e.Areaharvested).HasColumnName("areaharvested");
+
+                entity.Property(e => e.Areaplanted).HasColumnName("areaplanted");
+
+                entity.Property(e => e.AssociationName)
+                    .HasMaxLength(150)
+                    .HasColumnName("association_name");
+
+                entity.Property(e => e.Associationid).HasColumnName("associationid");
+
+                entity.Property(e => e.Availablelabor).HasColumnName("availablelabor");
+
+                entity.Property(e => e.BusinessTypeId).HasColumnName("business_type_id");
+
+                entity.Property(e => e.BusinessTypeName).HasColumnName("business_type_name");
+
+                entity.Property(e => e.Dateofbirth).HasColumnName("dateofbirth");
+
+                entity.Property(e => e.EnterpriseType).HasColumnName("enterprise_type");
+
+                entity.Property(e => e.FarmerCreatedAt).HasColumnName("farmer_created_at");
+
+                entity.Property(e => e.FarmerEmail)
+                    .HasMaxLength(150)
+                    .HasColumnName("farmer_email");
+
+                entity.Property(e => e.FarmerFullName).HasColumnName("farmer_full_name");
+
+                entity.Property(e => e.FarmerPhone)
+                    .HasMaxLength(20)
+                    .HasColumnName("farmer_phone");
+
+                entity.Property(e => e.FarmerUpdatedAt).HasColumnName("farmer_updated_at");
+
+                entity.Property(e => e.Farmerid).HasColumnName("farmerid");
+
+                entity.Property(e => e.Farmid).HasColumnName("farmid");
+
+                entity.Property(e => e.Farmsize).HasColumnName("farmsize");
+
+                entity.Property(e => e.Gender)
+                    .HasMaxLength(20)
+                    .HasColumnName("gender");
+
+                entity.Property(e => e.HarvestPercentage).HasColumnName("harvest_percentage");
+
+                entity.Property(e => e.Harvestdate).HasColumnName("harvestdate");
+
+                entity.Property(e => e.Householdsize).HasColumnName("householdsize");
+
+                entity.Property(e => e.InputQuantity).HasColumnName("input_quantity");
+
+                entity.Property(e => e.ItemTypeId).HasColumnName("item_type_id");
+
+                entity.Property(e => e.ItemTypeName)
+                    .HasColumnType("character varying")
+                    .HasColumnName("item_type_name");
+
+                entity.Property(e => e.Lgaid).HasColumnName("lgaid");
+
+                entity.Property(e => e.Lganame)
+                    .HasMaxLength(100)
+                    .HasColumnName("lganame");
+
+                entity.Property(e => e.OfficerName).HasColumnName("officer_name");
+
+                entity.Property(e => e.OfficerUserid).HasColumnName("officer_userid");
+
+                entity.Property(e => e.OutputQuantity).HasColumnName("output_quantity");
+
+                entity.Property(e => e.Plantingdate).HasColumnName("plantingdate");
+
+                entity.Property(e => e.PrimaryProductId).HasColumnName("primary_product_id");
+
+                entity.Property(e => e.PrimaryProductName).HasColumnName("primary_product_name");
+
+                entity.Property(e => e.RecordCount).HasColumnName("record_count");
+
+                entity.Property(e => e.Regionid).HasColumnName("regionid");
+
+                entity.Property(e => e.Regionname)
+                    .HasMaxLength(100)
+                    .HasColumnName("regionname");
+
+                entity.Property(e => e.SeasonEndDate).HasColumnName("season_end_date");
+
+                entity.Property(e => e.SeasonName)
+                    .HasMaxLength(50)
+                    .HasColumnName("season_name");
+
+                entity.Property(e => e.SeasonStartDate).HasColumnName("season_start_date");
+
+                entity.Property(e => e.SeasonYear).HasColumnName("season_year");
+
+                entity.Property(e => e.Seasonid).HasColumnName("seasonid");
+
+                entity.Property(e => e.Town)
+                    .HasMaxLength(100)
+                    .HasColumnName("town");
+
+                entity.Property(e => e.YieldPerArea).HasColumnName("yield_per_area");
+                entity.Property(e => e.Createdat)
+                   .HasColumnName("Createdat")
+                   .HasDefaultValueSql("now()");
+
+                entity.Property(e => e.Updatedat)
+                    .HasColumnName("Updatedat")
+                    .HasDefaultValueSql("now()");
+
+                entity.Property(e => e.Deletedat).HasColumnName("Deletedat");
+
+            });
+
 
             OnModelCreatingPartial(modelBuilder);
         }

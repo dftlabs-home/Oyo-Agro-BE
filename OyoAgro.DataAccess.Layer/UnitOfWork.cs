@@ -38,6 +38,7 @@ namespace OyoAgro.DataAccess.Layer
         private IAgroAlliedRegistryRepository? _agroAlliedRegistryRepository;
         private IBusinessTypeRepository? _businessTypeRepository;
         private IPrimaryProductRepository? _primaryProductRepository;
+        private IDashboardReportingRepository? _dashboardReportingRepository;
         
         public UnitOfWork(AppDbContext context)
         {
@@ -114,6 +115,9 @@ namespace OyoAgro.DataAccess.Layer
 
         public IDashboardMetricsRepository DashboardMetricsRepository =>
          _dashboardMetricsRepository ??= new DashboardMetricsRepository();
+
+        public IDashboardReportingRepository DashboardReportingRepository=>
+         _dashboardReportingRepository ??= new DashboardReportingRepository();
 
 
         public int Complete()
